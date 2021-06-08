@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0.3;
+      }
+    </style>
+  </defs>
+  <path id="Icon_Products" data-name="Icon Products" class="cls-1" d="M16.125,11.285A6.328,6.328,0,0,0,10,6,6.218,6.218,0,0,0,4.458,9.535,5.158,5.158,0,0,0,0,14.75,5.134,5.134,0,0,0,5,20H15.833A4.276,4.276,0,0,0,20,15.625,4.27,4.27,0,0,0,16.125,11.285Z" transform="translate(0 -6)"/>
+</svg>
