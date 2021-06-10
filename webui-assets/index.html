@@ -10,13 +10,9 @@
 
     <!-- Local Stylesheet -->
 
-    <link
-      rel="stylesheet"
-      href="./styling/style.css"
-    />
-      <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    <link rel="stylesheet" href="assets/styling/style.css" />
+    <!-- integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous" -->
-    
 
     <!-- Bootstrap CSS -->
     <link
@@ -30,19 +26,13 @@
       rel="stylesheet"
     />
 
-
     <!-- Modular library -->
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.js"
     ></script>
 
-    <title>DC-portal</title>
-
-    <style>
-      
-    </style>
-  
+    <title>DC-Portal</title>
   </head>
   <body className="text-center" style="background-color: white">
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
@@ -51,19 +41,22 @@
         transpiler: "babel",
         baseURL: "",
         map: {
-          "babel":"https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js",
-          "react":"https://unpkg.com/react@16/umd/react.development.js",
-          "react-dom":"https://unpkg.com/react-dom@16/umd/react-dom.development.js",
+          babel:
+            "https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js",
+          react: "https://unpkg.com/react@16/umd/react.development.js",
+          "react-dom":
+            "https://unpkg.com/react-dom@16/umd/react-dom.development.js",
+          "react-router-dom":
+            "https://unpkg.com/react-router-dom@5.0.0/umd/react-router-dom.min.js",
         },
         babelOptions: {
           compact: true,
         },
       });
       // loads
-      System.import("./loadWebUI.js");
+      System.import("assets/loadWebUI.js");
     </script>
-    <div id="root">
-    </div>
+    <div id="root"></div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
