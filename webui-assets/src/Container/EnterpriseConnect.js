@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-export default class ThreadConnect extends React.Component {
+export default class EnterpriseConnect extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -231,11 +231,74 @@ Highcharts.chart("lineChart", {
   ],
 }); */
 
-    /*Highcharts.setOptions({
-      colors: ["#1f78b4"],
-    });*/
+  /*   Highcharts.setOptions({
+      colors: ["green"],
+    }); */
 
-    Highcharts.chart("container", {
+    // Create the chart
+Highcharts.chart('container', {
+  chart: {
+    type: 'pie'
+  },
+  title: {
+    text: 'Quality of Service',
+    style: {
+      color: "rgb(31, 120, 180)",
+      fontWeight: "bolder",
+      fontFamily: "GE Inspira Sans !important",
+      fontSize: "1.5vw !important"
+    }
+  },
+  subtitle: {
+    text: `<div>95%</div><br>Agent Up Time of Total`,
+    align: "center",
+    verticalAlign: "middle",
+    style: {
+      "fontSize": "7px",
+      "textAlign": "center"
+    },
+    x: 0,
+    y: -60,
+    useHTML: true
+  },
+  plotOptions: {
+    pie: {
+      shadow: false,
+      center: ["50%", "20%"],
+      dataLabels: {
+        enabled: false
+      },
+      states: {
+        hover: {
+          enabled: false
+        }
+      },
+      size: "50%",
+      innerSize: "95%",
+      borderColor: null,
+      borderWidth: 8
+    }
+
+  },
+  tooltip: {
+    valueSuffix: '%'
+  },
+  series: [{
+    innerSize: '80%',
+    data: [{
+      name: 'Speed',
+      y: 6,
+      color: 'red'
+    }, {
+      name: 'Non Prioritised',
+      y: 80,
+      color: 'green'
+    }]
+  }],
+});
+
+
+    /* Highcharts.chart("container", {
       chart: {
         type: "column",
       },
@@ -290,7 +353,6 @@ Highcharts.chart("lineChart", {
             ["Nov", 11.5],
             ["Dec", 11.2],
           ],
-          color:'#1f78b4',
           dataLabels: {
             // enabled: true,
             rotation: -90,
@@ -305,7 +367,7 @@ Highcharts.chart("lineChart", {
           },
         },
       ],
-    });
+    }); */
   }
 
   render() {
@@ -318,26 +380,23 @@ Highcharts.chart("lineChart", {
                 <b>Summary</b>
               </h6>
               <div className="row service-details">
-                <div className="col">Connector Count: 8</div>
+                <div className="col">Gateway Count: 8</div>
                 <div className="col">
-                  Connector Status:{" "}
-                  <span className="badge badge-success"></span>
+                Gateway Status:
                 </div>
-                <div className="col">Subscription Count: 4</div>
-                <div className="col">Subscription Status:</div>
+                <div className="col">Agent Count: 4</div>
+                <div className="col">Agent Status:</div>
               </div>
             </div>
             <div className="col m-1 border border-success p-2 text-left">
               <h6>
-                <b>Connectors</b>
+                <b>Agents - Client & Server</b>
               </h6>
               <div className="row service-details g-2">
-                <div className="col">SCX Races DB</div>
-                <div className="col">SCX Zeal DB</div>
-                <div className="col">CC Kinesis Consumer</div>
-                <div className="col">CC SFDC Corporate</div>
-                <div className="col">CC SFDC Aviation</div>
-                <div className="col">SOFI API</div>
+                <div className="col">Customer Connect JMS Client Agent #922838</div>
+                <div className="col">Customer Connect JMS Server Agent #922838</div>
+                <div className="col">SCX Racer DB Client Agent #959034</div>
+                <div className="col">SCX Racer DB Server Agent #959034</div>
               </div>
             </div>
           </div>
@@ -349,10 +408,7 @@ Highcharts.chart("lineChart", {
                 <b>Subscription Summary</b>
               </h6>
               <ul className="pl-3 text-success">
-                <li>Shared Sourcing Services(SSS): Healthy</li>
-                <li>Supplier Connect(SCx): Restarting</li>
-                <li>Customer Connect(CC): Healthy</li>
-                <li>Corporate Shared: Healthy</li>
+                <li>Gateway #GAT93027387(CORP POC): Healthy</li>
               </ul>
               <div className="row service-text">
                 <div className="col">
@@ -360,8 +416,7 @@ Highcharts.chart("lineChart", {
                     <b>Alerts</b>
                   </h6>
                   <ul className="list-unstyled">
-                    <li>SCx Subscription is restarting</li>
-                    <li>SCx Racer DB connector is down</li>
+                    <li>Client Agent #9281824 (Customer Connect JMS) is restarting</li>
                   </ul>
                 </div>
               </div>

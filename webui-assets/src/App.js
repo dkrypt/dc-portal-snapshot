@@ -3,7 +3,8 @@ import React from "react";
 import Sidebar from "./Components/Sidebar.js";
 import { CenterHeader } from "./Components/CenterHeader.js";
 import Dashboard from "./Container/Dashboard.js";
-import { ThreadConnect } from "./Container/ThreadConnect.js";
+import ThreadConnect from "./Container/ThreadConnect.js";
+import EnterpriseConnect from "./Container/EnterpriseConnect.js";
 
 export default class App extends React.Component {
   /**
@@ -46,13 +47,13 @@ export default class App extends React.Component {
 
     switch (currentPage) {
       case "Dashboard":
-        return <Dashboard />;
+        return <Dashboard clickEvent={this.switchPage.bind(this)} />;
       case "ThreadConnect":
         return <ThreadConnect />;
       /*case 'Dive':
-        return <Dive />;
-      case 'EnterpriseConnect':
-        return <EnterpriseConnect />;*/
+        return <Dive />;*/
+      case "EnterpriseConnect":
+        return <EnterpriseConnect />;
       default:
         return null;
     }

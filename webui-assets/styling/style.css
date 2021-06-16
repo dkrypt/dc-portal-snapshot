@@ -85,6 +85,16 @@ h6 {
   color: white;
 }
 
+.green-color {
+  color: #158a99;
+  border-color: #158a99;
+}
+
+.service-text {
+  color: rgb(31, 120, 180);
+  text-decoration: none;
+}
+
 .social-tag {
   font-size: 0.9vw;
   color: darkgrey;

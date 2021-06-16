@@ -7,8 +7,8 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="container-lg w-100 p-3 border border-success mb-5">
-          <div className="text-center my-2 text-success subs-text">
+        <div className="container-lg w-100 p-3 border border-success mb-4">
+          <div className="text-center my-2 green-color subs-text">
             <h5>
               <b>My Services</b>
             </h5>
@@ -16,13 +16,27 @@ export default class Dashboard extends React.Component {
           <div className="row mx-1" style={{ color: "#1f78b4" }}>
             <div className="col m-1 border border-success p-2 text-left">
               <h6>
-                <b>Thread Connect</b>
+                <b>
+                  <a
+                    className="service-text"
+                    href="#"
+                    onClick={this.props.clickEvent.bind(this, {
+                      pageName: "ThreadConnect",
+                      headerText: "My Thread Connect Service",
+                      subHeaderText: "Global",
+                    })}
+                  >
+                    Thread Connect
+                  </a>
+                </b>
               </h6>
+
               <span className="thread-span"></span>
               <div className="row service-details">
                 <div className="col">Connector Count: 8</div>
                 <div className="col">
-                  Connector Status: <span class="badge badge-success"></span>
+                  Connector Status:{" "}
+                  <span className="badge badge-success"></span>
                 </div>
                 <div className="col">Subscription Count: 4</div>
                 <div className="col">Subscription Status:</div>
@@ -30,13 +44,26 @@ export default class Dashboard extends React.Component {
             </div>
             <div className="col m-1 border border-success p-2 text-left">
               <h6>
-                <b>Enterprise Connect</b>
+                <b>
+                  <a
+                    className="service-text"
+                    href="#"
+                    onClick={this.props.clickEvent.bind(this, {
+                      pageName: "EnterpriseConnect",
+                      headerText: "My Enterprise Connect Service",
+                      subHeaderText: "Global",
+                    })}
+                  >
+                    Enterprise Connect
+                  </a>
+                </b>
               </h6>
               <span className="thread-span"></span>
               <div className="row service-details">
                 <div className="col">Connector Count: 8</div>
                 <div className="col">
-                  Connector Status: <span class="badge badge-success"></span>
+                  Connector Status:{" "}
+                  <span className="badge badge-success"></span>
                 </div>
                 <div className="col">Gateway Count: 2</div>
                 <div className="col">Gateway Status:</div>
@@ -50,7 +77,8 @@ export default class Dashboard extends React.Component {
               <div className="row service-details">
                 <div className="col">Dashboard Count: 8</div>
                 <div className="col">
-                  Dashboard Status: <span class="badge badge-success"></span>
+                  Dashboard Status:{" "}
+                  <span className="badge badge-success"></span>
                 </div>
                 <div className="col">Subscription Count: 4</div>
                 <div className="col">Subscription Status:</div>
@@ -59,7 +87,7 @@ export default class Dashboard extends React.Component {
           </div>
         </div>
         <div className="container-lg w-100 p-3 border border-success">
-          <div className="text-center my-2 text-success subs-text">
+          <div className="text-center my-2 green-color subs-text">
             <h5>
               <b>Planned Outages</b>
             </h5>
@@ -78,7 +106,7 @@ export default class Dashboard extends React.Component {
             </div>
             <div className="border-bottom border-dark border-1 mx-4"></div>
           </div>
-          <div className="text-center my-2 text-success subs-text">
+          <div className="text-center my-2 green-color subs-text">
             <h5>
               <b>Important Announcements</b>
             </h5>
