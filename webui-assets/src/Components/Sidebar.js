@@ -14,10 +14,10 @@ export default class Sidebar extends React.Component {
               <img
                 className="img-fluid"
                 alt=""
-                src="assets/src/images/Logo-GE.svg"
+                src="assets/src/images/Logo-GE1.svg"
               />
             </span>
-            <div className="portal-name p-2 mt-3 ml-2">
+            <div className="portal-name p-2 mt-2 ml-2">
               <div
                 className="my-1 text-sm-left border-bottom"
                 style={{ fontSize: "1.8vw" }}
@@ -39,7 +39,7 @@ export default class Sidebar extends React.Component {
               className="list-group-item list-group-item-action"
             >
               Products & Services
-            </a>{" "}
+            </a>
             {/**onClick={this.props.clickEvent.bind(this, {pageName:'ProductsAndServices', headerText:'Products & Services', subHeaderText:''})} */}
           </span>
           <span className="sidebarMenu">
@@ -98,7 +98,7 @@ export default class Sidebar extends React.Component {
             </a>
           </span>
         </div>
-        <footer>
+        <footer className="mt-4">
           <div className="social-media text-center page-footer">
             <div className="social-tag">Socialize with us</div>
             <img

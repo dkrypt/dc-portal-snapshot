@@ -3,9 +3,24 @@
   src: url(../font/GEInspiraSans-Regular-v02.ttf);
 }
 
+::placeholder {
+  color: #002E5D;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #002E5D;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: #002E5D;
+}
+
+
 body {
   overflow-x: hidden;
   font-family: GE Inspira Sans !important;
+  color: #005EB8 !important;
 }
 
 h5 {
@@ -23,7 +38,7 @@ h6 {
 #sidebar-wrapper {
   width: 28%;
   min-height: 100vh;
-  background-color: #1f78b4 !important;
+  background-color: #0C2340 !important;
   -webkit-transition: margin 0.25s ease-out;
   -moz-transition: margin 0.25s ease-out;
   -o-transition: margin 0.25s ease-out;
@@ -47,7 +62,7 @@ h6 {
   height: 7.5rem;
   /* padding: 2rem 1rem 1rem 1rem !important; */
   color: white;
-  background-color: #158a99;
+  background-color: #005EB8;
   /* margin-bottom: 1.5rem; */
 }
 
@@ -60,8 +75,6 @@ h6 {
 .dashboard-header {
   font-size: 2vw;
   font-weight: bold;
-  color: #1f78b4;
-  /* margin: 1rem 0 0 1rem; */
 }
 
 .global-icon img {
@@ -70,13 +83,13 @@ h6 {
 
 .global-icon {
   font-size: 0.7vw;
-  color: grey;
+  color: #333F48;
   font-weight: lighter;
 }
 
 .list-group-flush .list-group-item {
   border-width: 0 0 0px !important;
-  background-color: #1f78b4 !important;
+  background-color: inherit !important;
   color: white;
 }
 
@@ -85,14 +98,14 @@ h6 {
   color: white;
 }
 
-.green-color {
-  color: #158a99;
-  border-color: #158a99;
+.service-text {
+  color: #005EB8;
+  text-decoration: none;
 }
 
-.service-text {
-  color: rgb(31, 120, 180);
-  text-decoration: none;
+a:hover{
+  color: #333F48 !important;
+  text-decoration: none !important;
 }
 
 .social-tag {
@@ -124,7 +137,7 @@ h6 {
 .round {
   width: 100%;
   border-radius: 0px;
-  border: 1.5px #158a99 solid;
+  border: 1.5px #333F48 solid;
   padding: 5px 30px 5px 5px;
   position: absolute;
   top: 0;
@@ -148,6 +161,11 @@ h6 {
 .service-details {
   font-size: 14px;
   flex-flow: column;
+  color: #333F48 !important;
+}
+
+.borderStyle{
+  border: 1px #0C2340 solid;
 }
 
 .search {

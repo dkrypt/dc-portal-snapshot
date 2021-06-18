@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-export default class ThreadConnect extends React.Component {
+export default class Dive extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -11,9 +11,10 @@ export default class ThreadConnect extends React.Component {
 
   // istanbul ignore next
   highChart() {
+    // Create the chart
     Highcharts.chart("container", {
       chart: {
-        type: "column",
+        type: "line",
       },
       title: {
         text: "Usage Statistics",
@@ -25,60 +26,47 @@ export default class ThreadConnect extends React.Component {
         },
       },
       // subtitle: {
-      //     text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+      //     text: 'Source: WorldClimate.com'
       // },
       xAxis: {
-        type: "category",
-        labels: {
-          rotation: -45,
-          style: {
-            fontSize: "13px",
-            fontFamily: "GE Inspira Sans !important",
-          },
-        },
+        categories: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
       },
       yAxis: {
-        min: 0,
-        title: {
-          // text: 'Population (millions)'
+        // title: {
+        //     text: 'GE Power PMXE2E'
+        // }
+      },
+      plotOptions: {
+        line: {
+          dataLabels: {
+            enabled: true,
+          },
+          enableMouseTracking: false,
         },
       },
-      legend: {
-        enabled: false,
-      },
-      // tooltip: {
-      //     pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
-      // },
       series: [
         {
-          // name: 'Population',
+          name: "GE Power PMXE2E",
           data: [
-            ["Jan", 24.2],
-            ["Feb", 20.8],
-            ["Mar", 14.9],
-            ["Apr", 13.7],
-            ["May", 13.1],
-            ["Jun", 12.7],
-            ["Jul", 12.4],
-            ["Aug", 12.2],
-            ["Sep", 12.0],
-            ["Oct", 11.7],
-            ["Nov", 11.5],
-            ["Dec", 11.2],
+            7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6,
           ],
-          color: "#1f78b4",
-          dataLabels: {
-            // enabled: true,
-            rotation: -90,
-            color: "#FFFFFF",
-            align: "right",
-            format: "{point.y:.1f}", // one decimal
-            y: 10, // 10 pixels down from the top
-            style: {
-              fontSize: "13px",
-              fontFamily: "GE Inspira Sans !important",
-            },
-          },
+        },
+        {
+          name: "GE Power",
+          data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         },
       ],
     });
@@ -94,23 +82,23 @@ export default class ThreadConnect extends React.Component {
                 <b>Summary</b>
               </h6>
               <div className="row service-details">
-                <div className="col">Connector Count: 8</div>
-                <div className="col"></div>
+                <div className="col">Dashboard Count: 8</div>
+                <div className="col">Dashboard Status:</div>
                 <div className="col">Subscription Count: 4</div>
                 <div className="col">Subscription Status:</div>
               </div>
             </div>
             <div className="col m-1 borderStyle p-2 text-left">
               <h6>
-                <b>Connectors</b>
+                <b>Subscription Summary</b>
               </h6>
               <div className="row service-details g-2">
-                <div className="col">SCX Races DB</div>
-                <div className="col">SCX Zeal DB</div>
-                <div className="col">CC Kinesis Consumer</div>
-                <div className="col">CC SFDC Corporate</div>
-                <div className="col">CC SFDC Aviation</div>
-                <div className="col">SOFI API</div>
+                <div className="col">Ariba Vendor Onboarding</div>
+                <div className="col">BMS_Material Master</div>
+                <div className="col">BMS_Production Order</div>
+                <div className="col">Goods Receipt</div>
+                <div className="col">Purchare Order</div>
+                <div className="col">Tech Assignment</div>
               </div>
             </div>
           </div>
@@ -121,11 +109,20 @@ export default class ThreadConnect extends React.Component {
               <h6>
                 <b>Subscription Summary</b>
               </h6>
-              <ul className="pl-3 text-success">
-                <li>Shared Sourcing Services(SSS): Healthy</li>
-                <li>Supplier Connect(SCx): Restarting</li>
-                <li>Customer Connect(CC): Healthy</li>
-                <li>Corporate Shared: Healthy</li>
+              <ul className="pl-3 service-details">
+                <li>
+                  <a
+                    href="#"
+                    onClick={this.props.clickEvent.bind(this, {
+                      pageName: "DivePower",
+                      headerText: "My Dive Service",
+                      subHeaderText: "Dive Power PMX E2E",
+                    })}
+                  >
+                    GE Power PMXE2E: Healthy
+                  </a>
+                </li>
+                <li>GE Power: No Dashboards & Users</li>
               </ul>
               <div className="row service-text">
                 <div className="col">
@@ -133,8 +130,8 @@ export default class ThreadConnect extends React.Component {
                     <b>Alerts</b>
                   </h6>
                   <ul className="list-unstyled service-details">
-                    <li>SCx Subscription is restarting</li>
-                    <li>SCx Racer DB connector is down</li>
+                    <li>GE Power Subscription has no active Dashboard</li>
+                    <li>GE Power Subscription has no active Users</li>
                   </ul>
                 </div>
               </div>

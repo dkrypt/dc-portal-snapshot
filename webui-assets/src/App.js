@@ -5,6 +5,8 @@ import { CenterHeader } from "./Components/CenterHeader.js";
 import Dashboard from "./Container/Dashboard.js";
 import ThreadConnect from "./Container/ThreadConnect.js";
 import EnterpriseConnect from "./Container/EnterpriseConnect.js";
+import Dive from "./Container/Dive.js";
+import DivePower from "./Container/DivePower.js";
 
 export default class App extends React.Component {
   /**
@@ -49,11 +51,13 @@ export default class App extends React.Component {
       case "Dashboard":
         return <Dashboard clickEvent={this.switchPage.bind(this)} />;
       case "ThreadConnect":
-        return <ThreadConnect />;
-      /*case 'Dive':
-        return <Dive />;*/
+        return <ThreadConnect clickEvent={this.switchPage.bind(this)} />;
+      case "Dive":
+        return <Dive clickEvent={this.switchPage.bind(this)} />;
+      case "DivePower":
+        return <DivePower clickEvent={this.switchPage.bind(this)} />;
       case "EnterpriseConnect":
-        return <EnterpriseConnect />;
+        return <EnterpriseConnect clickEvent={this.switchPage.bind(this)} />;
       default:
         return null;
     }

@@ -7,14 +7,14 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="container-lg w-100 p-3 border border-success mb-4">
+        <div className="container-lg w-100 p-3 borderStyle mb-4">
           <div className="text-center my-2 green-color subs-text">
             <h5>
               <b>My Services</b>
             </h5>
           </div>
-          <div className="row mx-1" style={{ color: "#1f78b4" }}>
-            <div className="col m-1 border border-success p-2 text-left">
+          <div className="row mx-1">
+            <div className="col m-1 borderStyle p-2 text-left">
               <h6>
                 <b>
                   <a
@@ -26,7 +26,16 @@ export default class Dashboard extends React.Component {
                       subHeaderText: "Global",
                     })}
                   >
-                    Thread Connect
+                    <div className="row">
+                      <div className="col">Thread Connect</div>
+                      <div className="col-3">
+                        <img
+                          className="img-fluid"
+                          src="assets/src/images/Icon-TC.svg"
+                          alt="TC-Icon"
+                        ></img>
+                      </div>
+                    </div>
                   </a>
                 </b>
               </h6>
@@ -42,7 +51,7 @@ export default class Dashboard extends React.Component {
                 <div className="col">Subscription Status:</div>
               </div>
             </div>
-            <div className="col m-1 border border-success p-2 text-left">
+            <div className="col m-1 borderStyle p-2 text-left">
               <h6>
                 <b>
                   <a
@@ -54,7 +63,16 @@ export default class Dashboard extends React.Component {
                       subHeaderText: "Global",
                     })}
                   >
-                    Enterprise Connect
+                    <div className="row">
+                      <div className="col">Enterprise Connect</div>
+                      <div className="col-3">
+                        <img
+                          className="img-fluid"
+                          src="assets/src/images/Icon-EC.svg"
+                          alt="EC-Icon"
+                        ></img>
+                      </div>
+                    </div>
                   </a>
                 </b>
               </h6>
@@ -69,9 +87,30 @@ export default class Dashboard extends React.Component {
                 <div className="col">Gateway Status:</div>
               </div>
             </div>
-            <div className="col m-1 border border-success p-2 text-left">
+            <div className="col m-1 borderStyle p-2 text-left">
               <h6>
-                <b>Dive</b>
+                <b>
+                  <a
+                    className="service-text"
+                    href="#"
+                    onClick={this.props.clickEvent.bind(this, {
+                      pageName: "Dive",
+                      headerText: "My Dive Service",
+                      subHeaderText: "Global-Dive",
+                    })}
+                  >
+                    <div className="row">
+                      <div className="col">Dive</div>
+                      <div className="col-3">
+                        <img
+                          className="img-fluid"
+                          src="assets/src/images/Icon-Dive.svg"
+                          alt="Dive-Icon"
+                        ></img>
+                      </div>
+                    </div>
+                  </a>
+                </b>
               </h6>
               <span className="thread-span"></span>
               <div className="row service-details">
@@ -86,15 +125,12 @@ export default class Dashboard extends React.Component {
             </div>
           </div>
         </div>
-        <div className="container-lg w-100 p-3 border border-success">
+        <div className="container-lg w-100 p-3 borderStyle">
           <div className="text-center my-2 green-color subs-text">
             <h5>
               <b>Planned Outages</b>
             </h5>
-            <div
-              className="d-flex flex-column inside-box"
-              style={{ color: "#1f78b4", fontSize: "12px" }}
-            >
+            <div className="d-flex flex-column service-details">
               <div className="text-center para-text my-2">
                 March 22, 2021 (04:00 To 05:00 EST) Thread Connect Corporate
                 Production will undergo monthly patching activity
@@ -110,10 +146,7 @@ export default class Dashboard extends React.Component {
             <h5>
               <b>Important Announcements</b>
             </h5>
-            <div
-              className="d-flex flex-column inside-box"
-              style={{ color: "#1f78b4", fontSize: "12px" }}
-            >
+            <div className="d-flex flex-column service-details">
               <div className="text-center para-text my-2">
                 GE Healthcare Unveils Vscan Air, a New Intuitive, Wireless
                 Handheld Ultrasound
