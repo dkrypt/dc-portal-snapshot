@@ -17,3 +17,4 @@ EC_SEED_HOST=<this app's URL> \
 EC_SEED_NODE=<the domain seeder's URL. when specified a same value from EC_SEED_HOST, the app becomes self-seeding node> \
 ghcr.io/ec-release/api:v1.2beta
 ```
+The deployment requires a pair of client(license) ID and owner's hash which can be aquired [from here](https://github.com/EC-Release/certifactory).
