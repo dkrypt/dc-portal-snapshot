@@ -8,7 +8,7 @@ export default class Dashboard extends React.Component {
     return (
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-4">
-          <div className="text-center my-2 green-color subs-text">
+          <div className="text-center mb-2">
             <h5>
               <b>My Services</b>
             </h5>
@@ -100,7 +100,7 @@ export default class Dashboard extends React.Component {
                     })}
                   >
                     <div className="row">
-                      <div className="col">Dive</div>
+                      <div className="col">DIVE</div>
                       <div className="col-3">
                         <img
                           className="img-fluid"
@@ -126,7 +126,7 @@ export default class Dashboard extends React.Component {
           </div>
         </div>
         <div className="container-lg w-100 p-3 borderStyle">
-          <div className="text-center my-2 green-color subs-text">
+          <div className="text-center mb-2">
             <h5>
               <b>Planned Outages</b>
             </h5>
@@ -140,9 +140,9 @@ export default class Dashboard extends React.Component {
                 will not be reachable due to planned maintenance activity
               </div>
             </div>
-            <div className="border-bottom border-dark border-1 mx-4"></div>
+            <div className="border-bottom border-grey border-1 mx-1"></div>
           </div>
-          <div className="text-center my-2 green-color subs-text">
+          <div className="text-center mb-2">
             <h5>
               <b>Important Announcements</b>
             </h5>

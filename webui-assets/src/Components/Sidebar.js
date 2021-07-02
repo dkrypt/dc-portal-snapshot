@@ -10,7 +10,7 @@ export default class Sidebar extends React.Component {
       <div className="bg-light border-right" id="sidebar-wrapper">
         <div className="sidebar-heading p-2">
           <div className="d-flex flex-row">
-            <span className="mt-4 ml-1">
+            <span className="mt-4 ml-4">
               <img
                 className="img-fluid"
                 alt=""
@@ -30,7 +30,7 @@ export default class Sidebar extends React.Component {
             </div>
           </div>
         </div>
-        <div className="list-group list-group-flush pt-4 px-2 pb-2 pl-4">
+        <div className="list-group list-group-flush pt-4 pr-2 pb-2">
           <span className="sidebarMenu">
             <img alt="" src="assets/src/images/Icon-Products.svg" />
             <a
@@ -56,6 +56,20 @@ export default class Sidebar extends React.Component {
               Dashboard
             </a>
           </span>
+          <span className="sidebarMenu">
+            <img alt="" src="assets/src/images/Icon-Settings.svg" />
+            <a
+              href="#"
+              className="list-group-item list-group-item-action"
+              onClick={this.props.clickEvent.bind(this, {
+                pageName: "ManageSubscriptions",
+                headerText: "Manage Subscriptions",
+                subHeaderText: "Global",
+              })}
+            >
+              Manage Subscriptions
+            </a>
+          </span>
           {/* <span className="sidebarMenu" >
                   <img alt="" src='assets/src/images/Icon-Subscriptions.svg'/>
                   <a href="#" className="list-group-item list-group-item-action">SUBSCRIPTIONS</a>
@@ -65,42 +79,75 @@ export default class Sidebar extends React.Component {
             <a
               href="#"
               className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(
-                this,
-                "AnnouncementsAndEvents"
-              )}
+              onClick={this.props.clickEvent.bind(this, {
+                pageName: "AnnouncementsAndEvents",
+                headerText: "Announcements & Events",
+                subHeaderText: "Global",
+              })}
             >
               Announcements & Events
             </a>
           </span>
           <span className="sidebarMenu">
             <img alt="" src="assets/src/images/Icon-Engagement-Requests.svg" />
-            <a href="#" className="list-group-item list-group-item-action">
+            <a
+              href="#"
+              className="list-group-item list-group-item-action"
+              onClick={this.props.clickEvent.bind(this, {
+                pageName: "EngagementRequests",
+                headerText: "Engagement Requests",
+                subHeaderText: "Global",
+              })}
+            >
               Engagement Requests
             </a>
           </span>
           <span className="sidebarMenu">
             <img alt="" src="assets/src/images/Icon-Support.svg" />
-            <a href="#" className="list-group-item list-group-item-action">
+            <a
+              href="#"
+              className="list-group-item list-group-item-action"
+              onClick={this.props.clickEvent.bind(this, {
+                pageName: "Support",
+                headerText: "Support",
+                subHeaderText: "Global",
+              })}
+            >
               Support
             </a>
           </span>
           <span className="sidebarMenu">
             <img alt="" src="assets/src/images/Icon-Settings.svg" />
-            <a href="#" className="list-group-item list-group-item-action">
+            <a
+              href="#"
+              className="list-group-item list-group-item-action"
+              onClick={this.props.clickEvent.bind(this, {
+                pageName: "Preferences",
+                headerText: "Preferences",
+                subHeaderText: "Global",
+              })}
+            >
               Preferences
             </a>
           </span>
           <span className="sidebarMenu">
             <img alt="" src="assets/src/images/Icon-Administration.svg" />
-            <a href="#" className="list-group-item list-group-item-action">
+            <a
+              href="#"
+              className="list-group-item list-group-item-action"
+              onClick={this.props.clickEvent.bind(this, {
+                pageName: "Administration",
+                headerText: "Administration",
+                subHeaderText: "Global",
+              })}
+            >
               Administration
             </a>
           </span>
         </div>
         <footer className="mt-4">
           <div className="social-media text-center page-footer">
-            <div className="social-tag">Socialize with us</div>
+            <div className="social-tag text-muted">Socialize with us</div>
             <img
               alt=""
               className="px-2"
@@ -117,8 +164,8 @@ export default class Sidebar extends React.Component {
               src="assets/src/images/Icon-Confluence.svg"
             />
           </div>
-          <div className="footer-copyright text-center text-white">
-            <small>© Digital Connect 2021 | Copyrights Reserved</small>
+          <div className="footer-copyright text-center text-muted mt-2">
+            © 2021 General Electric
           </div>
         </footer>
       </div>

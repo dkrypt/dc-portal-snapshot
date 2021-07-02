@@ -17,7 +17,7 @@ export const CenterHeader = (props) => {
             <input
               type="text"
               name="search"
-              className="round"
+              className="round borderStyle"
               placeholder="search"
             />
             <input type="submit" className="corner" value="" />
