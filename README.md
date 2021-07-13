@@ -24,4 +24,4 @@ Instance | API | Description
 -- | --- | ---
 [dc-portal](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/dc) | [swagger](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | staging
 [dc-portal-1x](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/dcsc) | [swagger](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | dev
-[sdc] | [swagger](https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/assets/swagger-ui/) | security domain controller
+sdc | [swagger](https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/assets/swagger-ui/) | security domain controller
