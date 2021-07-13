@@ -18,3 +18,10 @@ EC_SEED_NODE=<the domain seeder's URL. when specified a same value from EC_SEED_
 ghcr.io/ec-release/api:v1.2beta
 ```
 The deployment requires a pair of client(license) ID and owner's hash which can be aquired [from here](https://github.com/EC-Release/certifactory).
+
+## Live Instances
+Instance | API | Description
+-- | --- | ---
+[dc-portal](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/dc) | [swagger](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | staging
+[dc-portal-1x](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/dcsc) | [swagger](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | dev
+[sdc] | [swagger](https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/assets/swagger-ui/) | security domain controller
