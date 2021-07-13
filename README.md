@@ -23,5 +23,9 @@ The deployment requires a pair of client(license) ID and owner's hash which can 
 Instance | API | Description
 -- | --- | ---
 [dc-portal](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/dc) | [swagger](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | staging
-[dc-portal-1x](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/dcsc) | [swagger](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | dev
+[dc-portal-1x](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/dcsc) | N/A | dev
 sdc | [swagger](https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/assets/swagger-ui/) | security domain controller
+[system access](https://ng-portal-3.run.aws-usw02-dev.ice.predix.io/v1.2beta/ec) | N/A | seeder management. E.g. terminal access, logs, reboot, etc.
+
+## Seeders Access
+
