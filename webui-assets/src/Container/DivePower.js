@@ -73,39 +73,46 @@ export default class DivePower extends React.Component {
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-5">
           <div className="row mx-1">
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>Summary</b>
-              </h6>
+            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
+              <div className="titles">SUMMARY</div>
               <div className="row service-details">
-                <div className="col">Dashboard Count: 8</div>
-                <div className="col">Dashboard Status:</div>
-                <div className="col">Subscription Status:</div>
-                <div className="col">User Count: 4</div>
+                <div className="col service-tile-content">
+                  Dashboard Count: 8
+                </div>
+                <div className="col service-tile-content">
+                  Dashboard Status:
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Status:
+                </div>
+                <div className="col service-tile-content">User Count: 4</div>
               </div>
             </div>
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>Subscription Summary</b>
-              </h6>
+            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
+              <div className="titles">SUBSCRIPTION SUMMARY</div>
               <div className="row service-details g-2">
-                <div className="col">Ariba Vendor Onboarding</div>
-                <div className="col">BMS_Material Master</div>
-                <div className="col">BMS_Production Order</div>
-                <div className="col">Goods Receipt</div>
-                <div className="col">Purchare Order</div>
-                <div className="col">Tech Assignment</div>
+                <div className="col service-tile-content">
+                  Ariba Vendor Onboarding
+                </div>
+                <div className="col service-tile-content">
+                  BMS_Material Master
+                </div>
+                <div className="col service-tile-content">
+                  BMS_Production Order
+                </div>
+                <div className="col service-tile-content">Goods Receipt</div>
+                <div className="col service-tile-content">Purchare Order</div>
+                <div className="col service-tile-content">Tech Assignment</div>
               </div>
             </div>
           </div>
         </div>
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
-            <div className="col-6 mt-2">
-              <h6>
-                <b>Subscription Insights</b>
-                <span class="badge badge-success ml-1">Active</span>
-              </h6>
+            <div className="col service-tile-content-6 mt-2">
+              <div className="titles">SUBSCRIPTION INSIGHTS</div>
+              <span className="badge badge-success ml-1">Active</span>
+
               <ul className="pl-3 list-unstyled service-details">
                 <li>Subscription Plan: Yearly(Platinum)</li>
                 <li>Created Date: March 29,2021</li>
@@ -114,23 +121,23 @@ export default class DivePower extends React.Component {
                 <li>Next Invoice Generation: March 29,2022</li>
               </ul>
               <div className="row justify-content-center">
-                <div className="col">
+                <div className="col service-tile-content">
                   <button
                     type="button"
                     className="btn btn-warning text-white m-1"
                   >
                     Change Plan
                   </button>
-                  <button type="button" class="btn btn-danger m-1">
+                  <button type="button" className="btn btn-danger m-1">
                     Cancel Subscription
                   </button>
                 </div>
               </div>
               {/* <div className="row service-text">
-                <div className="col">
-                  <h6>
+                <div className="col service-tile-content">
+                  <h5>
                     <b>Alerts</b>
-                  </h6>
+                  </h5>
                   <ul className="list-unstyled">
                     <li>GE Power Subscription has no active Dashboard</li>
                     <li>GE Power Subscription has no active Users</li>

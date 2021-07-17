@@ -25,19 +25,22 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
 
     <!-- Modular library -->
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.31/system.js"
     ></script>
-    
-    <script src="assets/static/js/service-worker-compatibility.js" ></script>
 
-<!--     <script
+    <script
       type="text/javascript"
       src="https://storage.googleapis.com/workbox-cdn/releases/6.1.5/workbox-sw.js"
-    ></script> -->
+      crossorigin="anonymous"
+    ></script>
 
     <!-- HighChart Library -->
     <!-- <script src="assets/static/js/highchart.js" defer></script>
@@ -87,11 +90,27 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+
     <!-- HighChart Library -->
     <script src="assets/static/js/highchart.js" defer></script>
     <!-- <script src="assets/static/js/series-label.js" defer></script> -->
     <script src="assets/static/js/exporting.js" defer></script>
     <script src="assets/static/js/export-data.js" defer></script>
-    <script src="assets/static/js/accessibility.js" defer></script>    
+    <script src="assets/static/js/accessibility.js" defer></script>
+    <script
+      src="assets/static/js/service-worker-compatibility.js"
+      defer
+    ></script>
+    <script src="assets/static/js/scrollController.js" defer></script>
   </body>
 </html>

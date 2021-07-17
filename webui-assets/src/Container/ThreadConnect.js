@@ -89,28 +89,34 @@ export default class ThreadConnect extends React.Component {
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-5">
           <div className="row mx-1">
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>Summary</b>
-              </h6>
+            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
+              <div className="titles">SUMMARY</div>
               <div className="row service-details">
-                <div className="col">Connector Count: 8</div>
-                <div className="col"></div>
-                <div className="col">Subscription Count: 4</div>
-                <div className="col">Subscription Status:</div>
+                <div className="col service-tile-content">
+                  Connector Count: 8
+                </div>
+                <div className="col service-tile-content"></div>
+                <div className="col service-tile-content">
+                  Subscription Count: 4
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Status:
+                </div>
               </div>
             </div>
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>Connectors</b>
-              </h6>
+            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
+              <div className="titles">CONNECTORS</div>
               <div className="row service-details g-2">
-                <div className="col">SCX Races DB</div>
-                <div className="col">SCX Zeal DB</div>
-                <div className="col">CC Kinesis Consumer</div>
-                <div className="col">CC SFDC Corporate</div>
-                <div className="col">CC SFDC Aviation</div>
-                <div className="col">SOFI API</div>
+                <div className="col service-tile-content">SCX Races DB</div>
+                <div className="col service-tile-content">SCX Zeal DB</div>
+                <div className="col service-tile-content">
+                  CC Kinesis Consumer
+                </div>
+                <div className="col service-tile-content">
+                  CC SFDC Corporate
+                </div>
+                <div className="col service-tile-content">CC SFDC Aviation</div>
+                <div className="col service-tile-content">SOFI API</div>
               </div>
             </div>
           </div>
@@ -118,9 +124,7 @@ export default class ThreadConnect extends React.Component {
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
             <div className="col-6 mt-2">
-              <h6>
-                <b>Subscription Summary</b>
-              </h6>
+              <div className="titles">SUBSCRIPTION SUMMARY</div>
               <ul className="pl-3 text-success">
                 <li>Shared Sourcing Services(SSS): Healthy</li>
                 <li>Supplier Connect(SCx): Restarting</li>
@@ -128,10 +132,8 @@ export default class ThreadConnect extends React.Component {
                 <li>Corporate Shared: Healthy</li>
               </ul>
               <div className="row service-text">
-                <div className="col">
-                  <h6>
-                    <b>Alerts</b>
-                  </h6>
+                <div className="col service-tile-content">
+                  <div className="titles">ALERTS</div>
                   <ul className="list-unstyled service-details">
                     <li>SCx Subscription is restarting</li>
                     <li>SCx Racer DB connector is down</li>

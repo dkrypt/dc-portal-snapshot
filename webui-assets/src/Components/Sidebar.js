@@ -7,167 +7,202 @@ export default class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className="bg-light border-right" id="sidebar-wrapper">
-        <div className="sidebar-heading p-2">
-          <div className="d-flex flex-row">
-            <span className="mt-4 ml-4">
+      <div className="col-3 p-0" id="sidebar-wrapper">
+        <div className="sidebar-heading p-3">
+          <div className="d-flex flex-row p-3">
+            <div className="col-3 pr-0 GE-Logo">
               <img
                 className="img-fluid"
                 alt=""
                 src="assets/src/images/Logo-GE1.svg"
               />
-            </span>
-            <div className="portal-name p-2 mt-2 ml-2">
-              <div
-                className="my-1 text-sm-left border-bottom"
-                style={{ fontSize: "1.8vw" }}
-              >
-                <b>Digital Connect</b>
+            </div>
+            <div className="col-9 pl-0 portal-name">
+              <div className="text-center headers">
+                <b>DIGITAL CONNECT</b>
               </div>
-              <div className="text-center mt-1" style={{ fontSize: "0.8vw" }}>
+              <div className="border-bottom mx-2"></div>
+              <div className="text-center user-details pt-1">
                 <b>User | GE Corporate</b>
               </div>
             </div>
           </div>
         </div>
-        <div className="list-group list-group-flush pt-4 pr-2 pb-2">
+        <div className="list-group list-group-flush p-0 mt-2">
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Products.svg" />
             <a
               target="_blank"
               href="https://dc-wordpress-ci.digitalconnect.apps.ge.com/"
               className="list-group-item list-group-item-action"
             >
-              Products & Services
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Products.svg"
+              />
+              PRODUCTS & SERVICES
             </a>
             {/**onClick={this.props.clickEvent.bind(this, {pageName:'ProductsAndServices', headerText:'Products & Services', subHeaderText:''})} */}
           </span>
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Dashboard.svg" />
             <a
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Dashboard",
-                headerText: "Dashboard",
-                subHeaderText: "Global",
+                headerText: "DASHBOARD",
+                subHeaderText: "GLOBAL",
               })}
             >
-              Dashboard
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Dashboard.svg"
+              />{" "}
+              DASHBOARD
             </a>
           </span>
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Settings.svg" />
             <a
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "ManageSubscriptions",
-                headerText: "Manage Subscriptions",
-                subHeaderText: "Global",
+                headerText: "MANAGE SUBSCRIPTIONS",
+                subHeaderText: "GLOBAL",
               })}
             >
-              Manage Subscriptions
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Settings.svg"
+              />{" "}
+              MANAGE SUBSCRIPTIONS
             </a>
           </span>
           {/* <span className="sidebarMenu" >
-                  <img alt="" src='assets/src/images/Icon-Subscriptions.svg'/>
+                  <img className="img-fluid" alt="" src='assets/src/images/Icon-Subscriptions.svg'/>
                   <a href="#" className="list-group-item list-group-item-action">SUBSCRIPTIONS</a>
                 </span> */}
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Announcements-Events.svg" />
             <a
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "AnnouncementsAndEvents",
-                headerText: "Announcements & Events",
-                subHeaderText: "Global",
+                headerText: "ANNOUNCEMENTS & EVENTS",
+                subHeaderText: "GLOBAL",
               })}
             >
-              Announcements & Events
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Announcements-Events.svg"
+              />{" "}
+              ANNOUNCEMENTS & EVENTS
             </a>
           </span>
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Engagement-Requests.svg" />
-            <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "EngagementRequests",
-                headerText: "Engagement Requests",
-                subHeaderText: "Global",
-              })}
-            >
-              Engagement Requests
+            <a href="#" className="list-group-item list-group-item-action">
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Engagement-Requests.svg"
+              />{" "}
+              ENGAGEMENT REQUESTS
             </a>
+            <div className="dropdown-content">
+              <a
+                href="#"
+                onClick={this.props.clickEvent.bind(this, {
+                  pageName: "NewEngagementRequest",
+                  headerText: "NEW ENGAGEMENT REQUEST",
+                  subHeaderText: "GLOBAL",
+                })}
+              >
+                NEW ENGAGEMENT REQUEST
+              </a>
+              <a href="#">ENHANCEMENT REQUEST</a>
+            </div>
           </span>
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Support.svg" />
             <a
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Support",
-                headerText: "Support",
-                subHeaderText: "Global",
+                headerText: "SUPPORT",
+                subHeaderText: "GLOBAL",
               })}
             >
-              Support
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Support.svg"
+              />{" "}
+              SUPPORT
             </a>
           </span>
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Settings.svg" />
             <a
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Preferences",
-                headerText: "Preferences",
-                subHeaderText: "Global",
+                headerText: "PREFERENCES",
+                subHeaderText: "GLOBAL",
               })}
             >
-              Preferences
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Settings.svg"
+              />{" "}
+              PREFERENCES
             </a>
           </span>
           <span className="sidebarMenu">
-            <img alt="" src="assets/src/images/Icon-Administration.svg" />
             <a
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Administration",
-                headerText: "Administration",
-                subHeaderText: "Global",
+                headerText: "ADMINISTRATION",
+                subHeaderText: "GLOBAL",
               })}
             >
-              Administration
+              <img
+                className="img-fluid"
+                alt=""
+                src="assets/src/images/Icon-Administration.svg"
+              />{" "}
+              ADMINISTRATION
             </a>
           </span>
         </div>
-        <footer className="mt-4">
+        <div className="col-3 footer">
           <div className="social-media text-center page-footer">
-            <div className="social-tag text-muted">Socialize with us</div>
+            <div className="social-tag text-muted">Socialize With Us</div>
             <img
               alt=""
-              className="px-2"
+              className="img-fluid px-2"
               src="assets/src/images/Icon-Github.svg"
             />
             <img
               alt=""
-              className="px-2"
+              className="img-fluid px-2"
               src="assets/src/images/Icon-Yammer.svg"
             />
             <img
               alt=""
-              className="px-2"
+              className="img-fluid px-2"
               src="assets/src/images/Icon-Confluence.svg"
             />
           </div>
           <div className="footer-copyright text-center text-muted mt-2">
-            © 2021 General Electric
+            © 2021 GENERAL ELECTRIC
           </div>
-        </footer>
+        </div>
       </div>
     );
   }

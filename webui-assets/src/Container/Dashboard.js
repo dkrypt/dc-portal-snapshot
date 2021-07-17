@@ -4,132 +4,179 @@ export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    $(".carousel").flickity({
+      cellAlign: "left",
+      contain: true,
+      freeScroll: true,
+      prevNextButtons: false,
+      groupCells: 3,
+      autoPlay: 3000,
+    });
+  }
+
   render() {
     return (
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-4">
-          <div className="text-center mb-2">
-            <h5>
-              <b>My Services</b>
-            </h5>
-          </div>
-          <div className="row mx-1">
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>
-                  <a
-                    className="service-text"
-                    href="#"
-                    onClick={this.props.clickEvent.bind(this, {
-                      pageName: "ThreadConnect",
-                      headerText: "My Thread Connect Service",
-                      subHeaderText: "Global",
-                    })}
-                  >
-                    <div className="row">
-                      <div className="col">Thread Connect</div>
-                      <div className="col-3">
-                        <img
-                          className="img-fluid"
-                          src="assets/src/images/Icon-TC.svg"
-                          alt="TC-Icon"
-                        ></img>
-                      </div>
-                    </div>
-                  </a>
-                </b>
-              </h6>
-
-              <span className="thread-span"></span>
-              <div className="row service-details">
-                <div className="col">Connector Count: 8</div>
-                <div className="col">
-                  Connector Status:{" "}
-                  <span className="badge badge-success"></span>
+          <div className="text-center titles mb-3">MY SERVICES</div>
+          <div className="carousel">
+            <div className="carousel-cell borderStyle p-2">
+              <a
+                className="service-text"
+                href="#"
+                onClick={this.props.clickEvent.bind(this, {
+                  pageName: "ThreadConnect",
+                  headerText: "MY THREAD CONNECT SERVICE",
+                  subHeaderText: "GLOBAL",
+                })}
+              >
+                <div className="row mb-2">
+                  <div className="col titles service-tile-content">
+                    THREAD CONNECT
+                  </div>
+                  <div className="col-3 text-center service-tile-content">
+                    <img
+                      className="img-fluid"
+                      src="assets/src/images/Icon-TC.svg"
+                      alt="TC-Icon"
+                    ></img>
+                  </div>
                 </div>
-                <div className="col">Subscription Count: 4</div>
-                <div className="col">Subscription Status:</div>
+              </a>
+              <div className="row service-details">
+                <div className="col service-tile-content">
+                  Connector Count: 8
+                </div>
+                <div className="col service-tile-content">
+                  Connector Status:<span className="redDot"></span>
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Count: 4
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Status:<span className="greenDot"></span>
+                </div>
               </div>
             </div>
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>
-                  <a
-                    className="service-text"
-                    href="#"
-                    onClick={this.props.clickEvent.bind(this, {
-                      pageName: "EnterpriseConnect",
-                      headerText: "My Enterprise Connect Service",
-                      subHeaderText: "Global",
-                    })}
-                  >
-                    <div className="row">
-                      <div className="col">Enterprise Connect</div>
-                      <div className="col-3">
-                        <img
-                          className="img-fluid"
-                          src="assets/src/images/Icon-EC.svg"
-                          alt="EC-Icon"
-                        ></img>
-                      </div>
-                    </div>
-                  </a>
-                </b>
-              </h6>
-              <span className="thread-span"></span>
-              <div className="row service-details">
-                <div className="col">Connector Count: 8</div>
-                <div className="col">
-                  Connector Status:{" "}
-                  <span className="badge badge-success"></span>
+            <div className="carousel-cell borderStyle p-2">
+              <a
+                className="service-text"
+                href="#"
+                onClick={this.props.clickEvent.bind(this, {
+                  pageName: "EnterpriseConnect",
+                  headerText: "MY ENTERPRISE CONNECT SERVICE",
+                  subHeaderText: "GLOBAL",
+                })}
+              >
+                <div className="row mb-2">
+                  <div className="col titles service-tile-content">
+                    ENTERPRISE CONNECT
+                  </div>
+                  <div className="col-3 text-center service-tile-content">
+                    <img
+                      className="img-fluid"
+                      src="assets/src/images/Icon-EC.svg"
+                      alt="EC-Icon"
+                      style={{ width: "75%" }}
+                    ></img>
+                  </div>
                 </div>
-                <div className="col">Gateway Count: 2</div>
-                <div className="col">Gateway Status:</div>
+              </a>
+              <div className="row service-details">
+                <div className="col service-tile-content">
+                  Connector Count: 8
+                </div>
+                <div className="col service-tile-content">
+                  Connector Status:<span className="yellowDot"></span>
+                </div>
+                <div className="col service-tile-content">Gateway Count: 2</div>
+                <div className="col service-tile-content">
+                  Gateway Status:<span className="redDot"></span>
+                </div>
               </div>
             </div>
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>
-                  <a
-                    className="service-text"
-                    href="#"
-                    onClick={this.props.clickEvent.bind(this, {
-                      pageName: "Dive",
-                      headerText: "My Dive Service",
-                      subHeaderText: "Global-Dive",
-                    })}
-                  >
-                    <div className="row">
-                      <div className="col">DIVE</div>
-                      <div className="col-3">
-                        <img
-                          className="img-fluid"
-                          src="assets/src/images/Icon-Dive.svg"
-                          alt="Dive-Icon"
-                        ></img>
-                      </div>
-                    </div>
-                  </a>
-                </b>
-              </h6>
-              <span className="thread-span"></span>
-              <div className="row service-details">
-                <div className="col">Dashboard Count: 8</div>
-                <div className="col">
-                  Dashboard Status:{" "}
-                  <span className="badge badge-success"></span>
+            <div className="carousel-cell borderStyle p-2">
+              <a
+                className="service-text"
+                href="#"
+                onClick={this.props.clickEvent.bind(this, {
+                  pageName: "Dive",
+                  headerText: "MY DIVE SERVICE",
+                  subHeaderText: "GLOBAL-DIVE",
+                })}
+              >
+                <div className="row mb-2">
+                  <div className="col titles service-tile-content">DIVE</div>
+                  <div className="col-3 text-center service-tile-content">
+                    <img
+                      className="img-fluid"
+                      src="assets/src/images/Icon-Dive.svg"
+                      alt="Dive-Icon"
+                    ></img>
+                  </div>
                 </div>
-                <div className="col">Subscription Count: 4</div>
-                <div className="col">Subscription Status:</div>
+              </a>
+              <div className="row service-details">
+                <div className="col service-tile-content">
+                  Dashboard Count: 8
+                </div>
+                <div className="col service-tile-content">
+                  Dashboard Status:<span className="greenDot"></span>
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Count: 4
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Status:<span className="yellowDot"></span>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-cell borderStyle p-2">
+              <a
+                className="service-text"
+                href="#"
+                onClick={this.props.clickEvent.bind(this, {
+                  pageName: "Globalscape",
+                  headerText: "MY GLOBALSCAPE SERVICE",
+                  subHeaderText: "GLOBAL-GLOBALSCAPE",
+                })}
+              >
+                <div className="row mb-2">
+                  <div className="col titles service-tile-content">
+                    GLOBALSCAPE
+                  </div>
+                  <div className="col-3 text-center service-tile-content">
+                    <img
+                      className="img-fluid"
+                      src="assets/src/images/Icon-Globalscape.svg"
+                      alt=""
+                      style={{ width: "75%" }}
+                    ></img>
+                  </div>
+                </div>
+              </a>
+              <div className="row service-details">
+                <div className="col service-tile-content">
+                  Dashboard Count: 8
+                </div>
+                <div className="col service-tile-content">
+                  Dashboard Status:<span className="yellowDot"></span>
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Count: 4
+                </div>
+                <div className="col service-tile-content">
+                  Subscription Status:<span className="greenDot"></span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="text-center mb-2">
-            <h5>
-              <b>Planned Outages</b>
-            </h5>
+            <div className="titles">PLANNED OUTAGES</div>
             <div className="d-flex flex-column service-details">
               <div className="text-center para-text my-2">
                 March 22, 2021 (04:00 To 05:00 EST) Thread Connect Corporate
@@ -143,9 +190,7 @@ export default class Dashboard extends React.Component {
             <div className="border-bottom border-grey border-1 mx-1"></div>
           </div>
           <div className="text-center mb-2">
-            <h5>
-              <b>Important Announcements</b>
-            </h5>
+            <div className="titles">IMPORTANT ANNOUNCEMENTS</div>
             <div className="d-flex flex-column service-details">
               <div className="text-center para-text my-2">
                 GE Healthcare Unveils Vscan Air, a New Intuitive, Wireless

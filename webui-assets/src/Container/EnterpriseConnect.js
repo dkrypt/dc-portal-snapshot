@@ -83,48 +83,44 @@ export default class EnterpriseConnect extends React.Component {
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-5">
           <div className="row mx-1">
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>Summary</b>
-              </h6>
+            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
+              <div className="titles">SUMMARY</div>
               <div className="row service-details">
-                <div className="col">Gateway Count: 8</div>
-                <div className="col">Gateway Status:</div>
-                <div className="col">Agent Count: 4</div>
-                <div className="col">Agent Status:</div>
+                <div className="col service-tile-content">Gateway Count: 8</div>
+                <div className="col service-tile-content">Gateway Status:</div>
+                <div className="col service-tile-content">Agent Count: 4</div>
+                <div className="col service-tile-content">Agent Status:</div>
               </div>
             </div>
-            <div className="col m-1 borderStyle p-2 text-left">
-              <h6>
-                <b>Agents - Client & Server</b>
-              </h6>
+            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
+              <div className="titles">AGENTS - CLIENTS & SERVER</div>
               <div className="row service-details g-2">
-                <div className="col">
+                <div className="col service-tile-content">
                   Customer Connect JMS Client Agent #922838
                 </div>
-                <div className="col">
+                <div className="col service-tile-content">
                   Customer Connect JMS Server Agent #922838
                 </div>
-                <div className="col">SCX Racer DB Client Agent #959034</div>
-                <div className="col">SCX Racer DB Server Agent #959034</div>
+                <div className="col service-tile-content">
+                  SCX Racer DB Client Agent #959034
+                </div>
+                <div className="col service-tile-content">
+                  SCX Racer DB Server Agent #959034
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
-            <div className="col-6 mt-2">
-              <h6>
-                <b>Subscription Summary</b>
-              </h6>
+            <div className="col-6 service-tile-content mt-2">
+              <div className="titles">SUBSCRIPTION SUMMARY</div>
               <ul className="pl-3 text-success">
                 <li>Gateway #GAT93027387(CORP POC): Healthy</li>
               </ul>
               <div className="row service-text">
-                <div className="col">
-                  <h6>
-                    <b>Alerts</b>
-                  </h6>
+                <div className="col service-tile-content">
+                  <div className="titles">ALERTS</div>
                   <ul className="list-unstyled service-details">
                     <li>
                       Client Agent #9281824 (Customer Connect JMS) is restarting
