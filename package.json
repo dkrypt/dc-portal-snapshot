@@ -15,7 +15,8 @@
         "protractor": "^5.4.2",
         "react": "^16.9.0",
         "react-dom": "^16.9.0",
-        "typescript": "^3.7.3"
+        "typescript": "^3.7.3",
+        "react-bootstrap": "^1.6.1"
     },
     "scripts": {
         "preinstall": "npx npm-force-resolutions",

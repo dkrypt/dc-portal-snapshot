@@ -78,24 +78,24 @@ export default class Dive extends React.Component {
         <div className="container-lg w-100 p-3 borderStyle mb-5">
           <div className="row mx-1">
             <div className="col service-tile-content m-1 borderStyle p-2 text-left">
-            <div className="titles">SUMMARY</div>
+              <div className="titles">SUMMARY</div>
               <div className="row service-details">
                 <div className="col service-tile-content">
                   Dashboard Count: 8
                 </div>
                 <div className="col service-tile-content">
-                  Dashboard Status:
+                  Dashboard Status: <span className="greenDot"></span>
                 </div>
                 <div className="col service-tile-content">
                   Subscription Count: 4
                 </div>
                 <div className="col service-tile-content">
-                  Subscription Status:
+                  Subscription Status: <span className="redDot"></span>
                 </div>
               </div>
             </div>
             <div className="col service-tile-content m-1 borderStyle p-2 text-left">
-            <div className="titles">SUBSCRIPTION SUMMARY</div>              
+              <div className="titles">SUBSCRIPTION SUMMARY</div>
               <div className="row service-details g-2">
                 <div className="col service-tile-content">
                   Ariba Vendor Onboarding
@@ -116,7 +116,7 @@ export default class Dive extends React.Component {
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
             <div className="col-6 service-tile-content mt-2">
-            <div className="titles">SUBSCRIPTION SUMMARY</div>
+              <div className="titles">SUBSCRIPTION SUMMARY</div>
               <ul className="pl-3 service-details">
                 <li>
                   <a
@@ -134,7 +134,7 @@ export default class Dive extends React.Component {
               </ul>
               <div className="row service-text">
                 <div className="col service-tile-content">
-                <div className="titles">ALERTS</div>
+                  <div className="titles">ALERTS</div>
                   <ul className="list-unstyled service-details">
                     <li>GE Power Subscription has no active Dashboard</li>
                     <li>GE Power Subscription has no active Users</li>

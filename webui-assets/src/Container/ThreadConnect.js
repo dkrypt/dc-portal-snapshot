@@ -1,12 +1,149 @@
 import React, { Fragment } from "react";
 
+import CustomCarousel from "../Components/Carousal.js";
+
 export default class ThreadConnect extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      date: moment().format("DD-MM-YYYY"),
+      month: moment().format("MMMM"),
+      serviceCardDisplay: [],
+      firstTimeLoad: [],
+      serviceCards: [
+        {
+          serviceName: "IBS",
+          style: {
+            display: "block",
+          },
+          onClick: {
+            pageName: "IBS",
+            headerText: "IBS",
+          },
+          img: {
+            src: "assets/src/images/Icon-TC.png",
+            alt: "TC-Icon",
+            style: "",
+          },
+          serviceInfo: {
+            Status: "Healthy $status",
+            "Connector Count for $month": 5,
+            "Transaction Count for $date": 1250,
+            "TC Release": "1.11.4.3.2.41",
+          },
+          displayPermissions: {
+            displayCard: true,
+          },
+        },
+        {
+          serviceName: "GPAS-Lite",
+          style: {
+            display: "block",
+          },
+          onClick: {
+            pageName: "GPAS-Lite",
+            headerText: "GPAS-LITE",
+          },
+          img: {
+            src: "assets/src/images/Icon-TC.png",
+            alt: "TC-Icon",
+            style: "",
+          },
+          serviceInfo: {
+            Status: "Restarting $status",
+            "Connector Count for $month": 8,
+            "Transaction Count for $date": 2250,
+            "TC Release": "1.11.4.3.2.41",
+          },
+          displayPermissions: {
+            displayCard: true,
+          },
+        },
+      ],
+    };
   }
 
   componentDidMount() {
     this.highChart();
+    var serviceNames = [];
+    this.state.serviceCards.map((service) => {
+      serviceNames.push(service.serviceName);
+    });
+    this.props.setPersonaHandler(serviceNames);
+
+    let serviceArray = Object.assign([], this.state.serviceCards);
+    let tempArr = [];
+    let modeRan = serviceArray.length / 3;
+    let arrMode =
+      serviceArray.length <= 3
+        ? serviceArray.length == 3
+          ? Math.floor(modeRan) - 1
+          : Math.floor(modeRan)
+        : Math.ceil(modeRan) - 1;
+    console.log("ArrMode: ", arrMode);
+    for (var i = 0; i <= arrMode; i++) {
+      tempArr[i] = [];
+      for (var j = 0; j < 3; j++) {
+        if (serviceArray.length > 0) {
+          tempArr[i].push(serviceArray[0]);
+          serviceArray.splice(0, 1);
+        }
+      }
+    }
+    console.log("Temp: ", tempArr);
+
+    setTimeout(() => {
+      this.setState({
+        serviceCardDisplay: tempArr,
+        firstTimeLoad: tempArr,
+      });
+      console.log("Onmount SrCr: ", this.state.serviceCardDisplay);
+      let carouselNode = document.querySelector(".carousel-indicators");
+
+      if (carouselNode != null) {
+        carouselNode.classList.add("col-12");
+        console.log("FC: ", carouselNode);
+      }
+    }, 100);
+
+    /* if(this.state.serviceCards.length < 3){
+      let carouselNode = document.querySelector(".carousel-indicators");
+      carouselNode.setAttribute("style","display:none")
+    } */
+  }
+
+  componentDidUpdate(prevprops, prevstate) {
+    if (prevprops.persona != this.props.persona) {
+      console.log("prev: ", prevprops.persona, "...this: ", this.props.persona);
+      let updateServiceCards = Object.assign([], this.state.serviceCards);
+      console.log("FirstTimeload: ", this.state.firstTimeLoad);
+      let tempCard = [[]];
+      updateServiceCards.map((service, index) => {
+        if (this.props.persona == service.serviceName) {
+          tempCard[0].push(service);
+        }
+      });
+      console.log("TempCard: ", tempCard);
+      if (this.props.persona == "GLOBAL") {
+        this.setState({
+          serviceCardDisplay: this.state.firstTimeLoad,
+        });
+      } else {
+        this.setState({
+          serviceCardDisplay: tempCard,
+        });
+      }
+      console.log(
+        "Updated serviceCardDisplay: ",
+        this.state.serviceCardDisplay
+      );
+
+      /* if(this.state.serviceCardDisplay.length < 3){
+        let carouselNode = document.querySelector(".carousel-indicators");
+        carouselNode.setAttribute("style","display:none")
+      } */
+    }
   }
 
   // istanbul ignore next
@@ -24,9 +161,9 @@ export default class ThreadConnect extends React.Component {
           fontSize: "1.5vw !important",
         },
       },
-      // subtitle: {
-      //     text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
-      // },
+      /* subtitle: {
+          text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+      }, */
       xAxis: {
         type: "category",
         labels: {
@@ -40,18 +177,18 @@ export default class ThreadConnect extends React.Component {
       yAxis: {
         min: 0,
         title: {
-          // text: 'Population (millions)'
+          /* text: 'Population (millions)' */
         },
       },
       legend: {
         enabled: false,
       },
-      // tooltip: {
-      //     pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
-      // },
+      /* tooltip: {
+          pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
+      }, */
       series: [
         {
-          // name: 'Population',
+          /* name: 'Population', */
           data: [
             ["Jan", 24.2],
             ["Feb", 20.8],
@@ -68,7 +205,7 @@ export default class ThreadConnect extends React.Component {
           ],
           color: "#1f78b4",
           dataLabels: {
-            // enabled: true,
+            /*  enabled: true, */
             rotation: -90,
             color: "#FFFFFF",
             align: "right",
@@ -87,43 +224,19 @@ export default class ThreadConnect extends React.Component {
   render() {
     return (
       <Fragment>
-        <div className="container-lg w-100 p-3 borderStyle mb-5">
-          <div className="row mx-1">
-            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
-              <div className="titles">SUMMARY</div>
-              <div className="row service-details">
-                <div className="col service-tile-content">
-                  Connector Count: 8
-                </div>
-                <div className="col service-tile-content"></div>
-                <div className="col service-tile-content">
-                  Subscription Count: 4
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Status:
-                </div>
-              </div>
-            </div>
-            <div className="col service-tile-content m-1 borderStyle p-2 text-left">
-              <div className="titles">CONNECTORS</div>
-              <div className="row service-details g-2">
-                <div className="col service-tile-content">SCX Races DB</div>
-                <div className="col service-tile-content">SCX Zeal DB</div>
-                <div className="col service-tile-content">
-                  CC Kinesis Consumer
-                </div>
-                <div className="col service-tile-content">
-                  CC SFDC Corporate
-                </div>
-                <div className="col service-tile-content">CC SFDC Aviation</div>
-                <div className="col service-tile-content">SOFI API</div>
-              </div>
-            </div>
-          </div>
+        <div
+          className="container-lg w-100 p-3 borderStyle mb-5"
+          id="carousel-container"
+        >
+          <div className="text-center titles mb-3">MY SUBSCRIPTIONS</div>
+          <CustomCarousel
+            serviceCardDisplay={this.state.serviceCardDisplay}
+            clickEvent={this.props.clickEvent}
+          />
         </div>
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
-            <div className="col-6 mt-2">
+            {/* <div className="col-6 mt-2">
               <div className="titles">SUBSCRIPTION SUMMARY</div>
               <ul className="pl-3 text-success">
                 <li>Shared Sourcing Services(SSS): Healthy</li>
@@ -140,7 +253,7 @@ export default class ThreadConnect extends React.Component {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="col-6">
               <div className="card border-0">
                 <div className="card-body p-0">

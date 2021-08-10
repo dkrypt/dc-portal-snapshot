@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  outline: none !important;
 }
 
 @font-face {
@@ -405,23 +406,6 @@ a:hover {
     }
 } */
 
-/* external css: flickity.css */
-
-.carousel-cell {
-  width: 28%;
-  height: 145px;
-  margin-right: 10px;
-  border-radius: 5px;
-}
-
-.flickity-page-dots {
-  bottom: -10px !important;
-}
-
-.flickity-viewport {
-  min-height: 158px;
-}
-
 .choices {
   border-radius: 0.25rem !important;
 }
@@ -436,4 +420,49 @@ a:hover {
   border-color: inherit !important;
   outline: 0;
   box-shadow: inherit !important;
+}
+
+.dropdown-menu {
+  font-size: 12px !important;
+}
+
+.carousel {
+  display: flex;
+  flex-flow: wrap-reverse;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item,
+.col-sm-4 {
+  position: unset !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  display: none !important;
+}
+
+.carousel-indicators {
+  position: relative !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  text-align: center;
+  line-height: 1;
+  margin-top: 0.5rem;
+}
+
+.carousel-indicators button {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin: 0 8px;
+  background: #333;
+  border-radius: 50%;
+  opacity: 0.25;
+  cursor: pointer;
+}
+
+.carousel-indicators button .active {
+  opacity: 1;
 }

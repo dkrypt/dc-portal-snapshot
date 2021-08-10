@@ -80,10 +80,10 @@ export default class DivePower extends React.Component {
                   Dashboard Count: 8
                 </div>
                 <div className="col service-tile-content">
-                  Dashboard Status:
+                  Dashboard Status: <span className="yellowDot"></span>
                 </div>
                 <div className="col service-tile-content">
-                  Subscription Status:
+                  Subscription Status: <span className="greenDot"></span>
                 </div>
                 <div className="col service-tile-content">User Count: 4</div>
               </div>

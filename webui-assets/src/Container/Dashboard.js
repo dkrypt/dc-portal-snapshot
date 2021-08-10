@@ -1,19 +1,190 @@
 import React, { Fragment } from "react";
 
+import CustomCarousel from "../Components/Carousal.js";
+
 export default class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      serviceCardDisplay: [],
+      firstTimeLoad: [],
+      serviceCards: [
+        {
+          serviceName: "THREAD CONNECT",
+          style: {
+            display: "block",
+          },
+          onClick: {
+            pageName: "ThreadConnect",
+            headerText: "MY THREAD CONNECT SERVICE",
+            subHeaderText: this.props.persona,
+          },
+          img: {
+            src: "assets/src/images/Icon-TC.png",
+            alt: "TC-Icon",
+            style: { width: "87%" },
+          },
+          serviceInfo: {
+            "Subscription Count": 2,
+          },
+          displayPermissions: {
+            displayCard: true,
+          },
+        },
+        {
+          serviceName: "ENTERPRISE CONNECT",
+          style: {
+            display: "block",
+          },
+          onClick: {
+            pageName: "EnterpriseConnect",
+            headerText: "MY ENTERPRISE CONNECT SERVICE",
+            subHeaderText: this.props.persona,
+          },
+          img: {
+            src: "assets/src/images/Icon-EC.svg",
+            alt: "EC-Icon",
+            style: { width: "75%" },
+          },
+          serviceInfo: {
+            "Subscription Count": 2,
+          },
+          displayPermissions: {
+            displayCard: true,
+          },
+        },
+        {
+          serviceName: "DIVE",
+          style: {
+            display: "block",
+          },
+          onClick: {
+            pageName: "Dive",
+            headerText: "MY DIVE SERVICE",
+            subHeaderText: this.props.persona,
+          },
+          img: {
+            src: "assets/src/images/Icon-Dive.svg",
+            alt: "Dive-Icon",
+            style: "",
+          },
+          serviceInfo: {
+            "Subscription Count": 8,
+          },
+          displayPermissions: {
+            displayCard: true,
+          },
+        },
+        {
+          serviceName: "GLOBALSCAPE",
+          style: {
+            display: "block",
+          },
+          onClick: {
+            pageName: "Globalscape",
+            headerText: "MY GLOBALSCAPE SERVICE",
+            subHeaderText: this.props.persona,
+          },
+          img: {
+            src: "assets/src/images/Icon-Globalscape.svg",
+            alt: "Globalscape Fav",
+            style: "",
+          },
+          serviceInfo: {
+            "Subscription Count": 1,
+          },
+          displayPermissions: {
+            displayCard: true,
+          },
+        },
+      ],
+    };
   }
 
   componentDidMount() {
-    $(".carousel").flickity({
-      cellAlign: "left",
-      contain: true,
-      freeScroll: true,
-      prevNextButtons: false,
-      groupCells: 3,
-      autoPlay: 3000,
+    var serviceNames = [];
+    this.state.serviceCards.map((service) => {
+      serviceNames.push(service.serviceName);
     });
+
+    this.props.setPersonaHandler(serviceNames);
+    let serviceArray = Object.assign([], this.state.serviceCards);
+    let tempArr = [];
+    let modeRan = serviceArray.length / 3;
+    let arrMode =
+      serviceArray.length <= 3
+        ? serviceArray.length == 3
+          ? Math.floor(modeRan) - 1
+          : Math.floor(modeRan)
+        : Math.ceil(modeRan) - 1;
+    console.log("ArrMode: ", arrMode);
+    for (var i = 0; i <= arrMode; i++) {
+      tempArr[i] = [];
+      for (var j = 0; j < 3; j++) {
+        if (serviceArray.length > 0) {
+          tempArr[i].push(serviceArray[0]);
+          serviceArray.splice(0, 1);
+        }
+      }
+    }
+    console.log("Temp: ", tempArr);
+
+    setTimeout(() => {
+      this.setState({
+        serviceCardDisplay: tempArr,
+        firstTimeLoad: tempArr,
+      });
+      console.log("Onmount SrCr: ", this.state.serviceCardDisplay);
+      let carouselNode = document.querySelector(".carousel-indicators");
+      if (carouselNode != null) {
+        carouselNode.classList.add("col-12");
+        console.log("FC: ", carouselNode);
+      }
+    }, 100);
+    /*  if(this.state.serviceCardDisplay.length == 1){
+      let carouselNode = document.querySelector(".carousel-indicators");
+      carouselNode.setAttribute("style","display:none")
+    } */
+  }
+
+  componentDidUpdate(prevprops, prevstate) {
+    if (prevprops.persona != this.props.persona) {
+      console.log("prev: ", prevprops.persona, "...this: ", this.props.persona);
+      let updateServiceCards = Object.assign([], this.state.serviceCards);
+      console.log("FirstTimeload: ", this.state.firstTimeLoad);
+      let tempCard = [[]];
+      updateServiceCards.map((service, index) => {
+        if (this.props.persona == service.serviceName) {
+          tempCard[0].push(service);
+        }
+      });
+      console.log("TempCard: ", tempCard);
+      if (this.props.persona == "GLOBAL") {
+        this.setState({
+          serviceCardDisplay: this.state.firstTimeLoad,
+        });
+      } else {
+        this.setState({
+          serviceCardDisplay: tempCard,
+        });
+      }
+
+      /* this.setState({
+        serviceCardDisplay: tempCard,
+      }); */
+
+      console.log(
+        "Updated serviceCardDisplay: ",
+        this.state.serviceCardDisplay
+      );
+      /* if(this.state.serviceCardDisplay.length == 1 ){
+        let carouselNode = document.querySelector(".carousel-indicators");
+        carouselNode.setAttribute("style","display:none")
+      }else{
+        let carouselNode = document.querySelector(".carousel-indicators");
+        carouselNode.setAttribute("style","display:block")
+      } */
+    }
   }
 
   render() {
@@ -21,158 +192,10 @@ export default class Dashboard extends React.Component {
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-4">
           <div className="text-center titles mb-3">MY SERVICES</div>
-          <div className="carousel">
-            <div className="carousel-cell borderStyle p-2">
-              <a
-                className="service-text"
-                href="#"
-                onClick={this.props.clickEvent.bind(this, {
-                  pageName: "ThreadConnect",
-                  headerText: "MY THREAD CONNECT SERVICE",
-                  subHeaderText: "GLOBAL",
-                })}
-              >
-                <div className="row mb-2">
-                  <div className="col titles service-tile-content">
-                    THREAD CONNECT
-                  </div>
-                  <div className="col-3 text-center service-tile-content">
-                    <img
-                      className="img-fluid"
-                      src="assets/src/images/Icon-TC.svg"
-                      alt="TC-Icon"
-                    ></img>
-                  </div>
-                </div>
-              </a>
-              <div className="row service-details">
-                <div className="col service-tile-content">
-                  Connector Count: 8
-                </div>
-                <div className="col service-tile-content">
-                  Connector Status:<span className="redDot"></span>
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Count: 4
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Status:<span className="greenDot"></span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-cell borderStyle p-2">
-              <a
-                className="service-text"
-                href="#"
-                onClick={this.props.clickEvent.bind(this, {
-                  pageName: "EnterpriseConnect",
-                  headerText: "MY ENTERPRISE CONNECT SERVICE",
-                  subHeaderText: "GLOBAL",
-                })}
-              >
-                <div className="row mb-2">
-                  <div className="col titles service-tile-content">
-                    ENTERPRISE CONNECT
-                  </div>
-                  <div className="col-3 text-center service-tile-content">
-                    <img
-                      className="img-fluid"
-                      src="assets/src/images/Icon-EC.svg"
-                      alt="EC-Icon"
-                      style={{ width: "75%" }}
-                    ></img>
-                  </div>
-                </div>
-              </a>
-              <div className="row service-details">
-                <div className="col service-tile-content">
-                  Connector Count: 8
-                </div>
-                <div className="col service-tile-content">
-                  Connector Status:<span className="yellowDot"></span>
-                </div>
-                <div className="col service-tile-content">Gateway Count: 2</div>
-                <div className="col service-tile-content">
-                  Gateway Status:<span className="redDot"></span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-cell borderStyle p-2">
-              <a
-                className="service-text"
-                href="#"
-                onClick={this.props.clickEvent.bind(this, {
-                  pageName: "Dive",
-                  headerText: "MY DIVE SERVICE",
-                  subHeaderText: "GLOBAL-DIVE",
-                })}
-              >
-                <div className="row mb-2">
-                  <div className="col titles service-tile-content">DIVE</div>
-                  <div className="col-3 text-center service-tile-content">
-                    <img
-                      className="img-fluid"
-                      src="assets/src/images/Icon-Dive.svg"
-                      alt="Dive-Icon"
-                    ></img>
-                  </div>
-                </div>
-              </a>
-              <div className="row service-details">
-                <div className="col service-tile-content">
-                  Dashboard Count: 8
-                </div>
-                <div className="col service-tile-content">
-                  Dashboard Status:<span className="greenDot"></span>
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Count: 4
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Status:<span className="yellowDot"></span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-cell borderStyle p-2">
-              <a
-                className="service-text"
-                href="#"
-                onClick={this.props.clickEvent.bind(this, {
-                  pageName: "Globalscape",
-                  headerText: "MY GLOBALSCAPE SERVICE",
-                  subHeaderText: "GLOBAL-GLOBALSCAPE",
-                })}
-              >
-                <div className="row mb-2">
-                  <div className="col titles service-tile-content">
-                    GLOBALSCAPE
-                  </div>
-                  <div className="col-3 text-center service-tile-content">
-                    <img
-                      className="img-fluid"
-                      src="assets/src/images/Icon-Globalscape.svg"
-                      alt=""
-                      style={{ width: "75%" }}
-                    ></img>
-                  </div>
-                </div>
-              </a>
-              <div className="row service-details">
-                <div className="col service-tile-content">
-                  Dashboard Count: 8
-                </div>
-                <div className="col service-tile-content">
-                  Dashboard Status:<span className="yellowDot"></span>
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Count: 4
-                </div>
-                <div className="col service-tile-content">
-                  Subscription Status:<span className="greenDot"></span>
-                </div>
-              </div>
-            </div>
-          </div>
+          <CustomCarousel
+            serviceCardDisplay={this.state.serviceCardDisplay}
+            clickEvent={this.props.clickEvent}
+          />
         </div>
         <div className="container-lg w-100 p-3 borderStyle">
           <div className="text-center mb-2">

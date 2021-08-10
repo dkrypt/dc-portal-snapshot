@@ -87,9 +87,13 @@ export default class EnterpriseConnect extends React.Component {
               <div className="titles">SUMMARY</div>
               <div className="row service-details">
                 <div className="col service-tile-content">Gateway Count: 8</div>
-                <div className="col service-tile-content">Gateway Status:</div>
+                <div className="col service-tile-content">
+                  Gateway Status: <span className="greenDot"></span>
+                </div>
                 <div className="col service-tile-content">Agent Count: 4</div>
-                <div className="col service-tile-content">Agent Status:</div>
+                <div className="col service-tile-content">
+                  Agent Status: <span className="redDot"></span>
+                </div>
               </div>
             </div>
             <div className="col service-tile-content m-1 borderStyle p-2 text-left">

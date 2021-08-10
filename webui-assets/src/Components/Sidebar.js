@@ -51,7 +51,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Dashboard",
                 headerText: "DASHBOARD",
-                subHeaderText: "GLOBAL",
+                // subHeaderText: "Persona 1",
               })}
             >
               <img
@@ -69,7 +69,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "ManageSubscriptions",
                 headerText: "MANAGE SUBSCRIPTIONS",
-                subHeaderText: "GLOBAL",
+                // subHeaderText: "Persona 1",
               })}
             >
               <img
@@ -91,7 +91,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "AnnouncementsAndEvents",
                 headerText: "ANNOUNCEMENTS & EVENTS",
-                subHeaderText: "GLOBAL",
+                // subHeaderText: "Persona 1",
               })}
             >
               <img
@@ -117,7 +117,7 @@ export default class Sidebar extends React.Component {
                 onClick={this.props.clickEvent.bind(this, {
                   pageName: "NewEngagementRequest",
                   headerText: "NEW ENGAGEMENT REQUEST",
-                  subHeaderText: "GLOBAL",
+                  // subHeaderText: "Persona 1",
                 })}
               >
                 NEW ENGAGEMENT REQUEST
@@ -132,7 +132,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Support",
                 headerText: "SUPPORT",
-                subHeaderText: "GLOBAL",
+                // subHeaderText: "Persona 1",
               })}
             >
               <img
@@ -150,7 +150,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Preferences",
                 headerText: "PREFERENCES",
-                subHeaderText: "GLOBAL",
+                // subHeaderText: "Persona 1",
               })}
             >
               <img
@@ -168,7 +168,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Administration",
                 headerText: "ADMINISTRATION",
-                subHeaderText: "GLOBAL",
+                // subHeaderText: "Persona 1",
               })}
             >
               <img
@@ -178,6 +178,18 @@ export default class Sidebar extends React.Component {
               />{" "}
               ADMINISTRATION
             </a>
+            <div className="dropdown-content">
+              <a
+                href="#"
+                onClick={this.props.clickEvent.bind(this, {
+                  pageName: "UserManagement",
+                  headerText: "USER MANAGEMENT",
+                  // subHeaderText: "Persona 1",
+                })}
+              >
+                USER MANAGEMENT
+              </a>
+            </div>
           </span>
         </div>
         <div className="col-3 footer">

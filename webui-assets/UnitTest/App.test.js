@@ -6,7 +6,7 @@ import fetchMock from 'fetch-mock';
 import App from '../src/App.js';
 // import Footer from '../src/Components/Footer.js';
 import Sidebar from '../src/Components/Sidebar.js';
-import { CenterHeader } from '../src/Components/CenterHeader.js';
+import CenterHeader from '../src/Components/CenterHeader.js';
 
 configure({adapter: new Adapter()});
 
