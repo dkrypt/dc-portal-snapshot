@@ -3,12 +3,15 @@ import React, { Fragment } from "react";
 import Sidebar from "./Components/Sidebar.js";
 import CenterHeader from "./Components/CenterHeader.js";
 import Footer from "./Components/Footer.js";
-import Dashboard from "./Container/Dashboard.js";
-import ThreadConnect from "./Container/ThreadConnect.js";
-import EnterpriseConnect from "./Container/EnterpriseConnect.js";
-import Dive from "./Container/Dive.js";
-import DivePower from "./Container/DivePower.js";
-import NewEngagementRequest from "./Container/NewEngagementRequest.js";
+import Dashboard from "./Container/mainDashboard/Dashboard.js";
+import ThreadConnect from "./Container/threadConnect/ThreadConnect.js";
+import EnterpriseConnect from "./Container/enterpriseConnect/EnterpriseConnect.js";
+import Dive from "./Container/dive/Dive.js";
+import DivePower from "./Container/dive/DivePower.js";
+import NewEngagementRequest from "./Container/engagementRequest/NewEngagementRequest.js";
+import TCDashboard from "./Container/threadConnect/Dashboard.js";
+
+const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
 export default class App extends React.Component {
   /*  componentDidMount(){
@@ -29,10 +32,17 @@ export default class App extends React.Component {
       headerText: "DASHBOARD",
       subHeaderText: "GLOBAL",
       subHeaderOpts: [],
+      authToken: "",
+      endPoint: API_ENDPOINT,
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    let authToken = this.getToken("ec-config");
+    this.setState({
+      authToken: authToken,
+    });
+  }
 
   componentDidUpdate(prevprops, prevstate) {}
 
@@ -58,6 +68,21 @@ export default class App extends React.Component {
     // console.log("List of headeropts: ", options);
   }
 
+  getToken(name) {
+    var cookieName = name + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(";");
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == " ") {
+        c = c.substring(1);
+      }
+      if (c.indexOf(cookieName) == 0) {
+        return c.substring(cookieName.length, c.length);
+      }
+    }
+  }
+
   servedView() {
     const currentPage = this.state.currentPage;
 
@@ -73,6 +98,14 @@ export default class App extends React.Component {
       case "ThreadConnect":
         return (
           <ThreadConnect
+            clickEvent={this.switchPage.bind(this)}
+            persona={this.state.subHeaderText}
+            setPersonaHandler={this.setPersonaOptions.bind(this)}
+          />
+        );
+      case "TCDashboard":
+        return (
+          <TCDashboard
             clickEvent={this.switchPage.bind(this)}
             persona={this.state.subHeaderText}
             setPersonaHandler={this.setPersonaOptions.bind(this)}
@@ -108,6 +141,8 @@ export default class App extends React.Component {
             clickEvent={this.switchPage.bind(this)}
             persona={this.state.subHeaderText}
             setPersonaHandler={this.setPersonaOptions.bind(this)}
+            baseUrl={this.state.endPoint}
+            authToken={this.state.authToken}
           />
         );
       default:

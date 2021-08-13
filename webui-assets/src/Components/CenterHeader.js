@@ -1,25 +1,12 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export default class CenterHeader extends React.Component {
   constructor(props) {
     super(props);
-    // console.log("Header: ",this.props.headerText,"...","Persona: ",this.props.subText)
-    /*  this.state = {
-      headerText: this.props.headerText,
-      persona: this.props.subText,
-    }; */
-
-    /* this.changePersona = this.changePersona.bind(this); */
   }
 
-  /* changePersona(value) {
-    this.setState({
-      persona: value.personaName,
-    });
-  } */
-
   render() {
-    console.log("Persona Options: ", this.props.subHeaderOpts);
+    // console.log("Persona Options: ", this.props.subHeaderOpts);
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="headers row">
@@ -48,19 +35,24 @@ export default class CenterHeader extends React.Component {
                 >
                   GLOBAL
                 </a>
+
                 {this.props.subHeaderOpts.map((option, index) => {
-                  console.log("Option: ", option);
+                  {
+                    /* console.log("Option: ", option); */
+                  }
                   return (
-                    <a
-                      className="dropdown-item"
-                      href="#"
-                      key={index}
-                      onClick={this.props.onPersonaChange.bind(this, {
-                        personaName: option,
-                      })}
-                    >
-                      {option}
-                    </a>
+                    <Fragment key={index}>
+                      <div className="dropdown-divider"></div>
+                      <a
+                        className="dropdown-item"
+                        href="#"
+                        onClick={this.props.onPersonaChange.bind(this, {
+                          personaName: option,
+                        })}
+                      >
+                        {option}
+                      </a>
+                    </Fragment>
                   );
                 })}
 

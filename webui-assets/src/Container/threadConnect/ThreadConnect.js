@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import CustomCarousel from "../Components/Carousal.js";
+import CustomCarousel from "../../Components/Carousal.js";
 
 export default class ThreadConnect extends React.Component {
   constructor(props) {
@@ -35,6 +35,38 @@ export default class ThreadConnect extends React.Component {
           displayPermissions: {
             displayCard: true,
           },
+          buttons: {
+            displayButtons: true,
+            buttonInfo: [
+              {
+                buttonName: "Open",
+                onClick: "",
+              },
+              {
+                buttonName: "Users",
+                onClick: "",
+              },
+              {
+                buttonName: "API's",
+                onClick: "",
+              },
+              {
+                buttonName: "Dashboard",
+                onClick: {
+                  pageName: "TCDashboard",
+                  headerText: "",
+                },
+              },
+              {
+                buttonName: "Remove",
+                onClick: "",
+              },
+              {
+                buttonName: "dots",
+                onClick: "",
+              },
+            ],
+          },
         },
         {
           serviceName: "GPAS-Lite",
@@ -59,13 +91,61 @@ export default class ThreadConnect extends React.Component {
           displayPermissions: {
             displayCard: true,
           },
+          buttons: {
+            displayButtons: true,
+            buttonInfo: [
+              {
+                buttonName: "Open",
+                onClick: "",
+              },
+              {
+                buttonName: "Users",
+                onClick: "",
+              },
+              {
+                buttonName: "API's",
+                onClick: "",
+              },
+              {
+                buttonName: "Dashboard",
+                onClick: {
+                  pageName: "TCDashboard",
+                  headerText: "",
+                },
+              },
+              {
+                buttonName: "Remove",
+                onClick: "",
+              },
+              {
+                buttonName: "dots",
+                onClick: "",
+              },
+            ],
+          },
         },
       ],
+      highChartData: [
+        ["Jan", 24.2],
+        ["Feb", 20.8],
+        ["Mar", 14.9],
+        ["Apr", 13.7],
+        ["May", 13.1],
+        ["Jun", 12.7],
+        ["Jul", 12.4],
+        ["Aug", 12.2],
+        ["Sep", 12.0],
+        ["Oct", 11.7],
+        ["Nov", 11.5],
+        ["Dec", 11.2],
+      ],
     };
+
+    this.handleHighChartFilter = this.handleHighChartFilter.bind(this);
   }
 
   componentDidMount() {
-    this.highChart();
+    // this.highChart();
     var serviceNames = [];
     this.state.serviceCards.map((service) => {
       serviceNames.push(service.serviceName);
@@ -146,8 +226,30 @@ export default class ThreadConnect extends React.Component {
     }
   }
 
+  handleHighChartFilter(event) {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+    const regex = /\d\d|\d/gm;
+    // console.log("Selected Value: ",value)
+    const currentHighChartData = Object.assign([], this.state.highChartData);
+    var newHighChartData = [];
+    var monthValue = parseInt(value.match(regex)[0]);
+    // console.log("Month Value: ",monthValue)
+
+    for (var i = 0; i < monthValue; i++) {
+      newHighChartData.push(currentHighChartData[i]);
+    }
+
+    Highcharts.charts[0].series[0].update({
+      data: newHighChartData,
+    });
+
+    // console.log("New Value: ",newHighChartData)
+  }
+
   // istanbul ignore next
-  highChart() {
+  /* highChart() {
     Highcharts.chart("container", {
       chart: {
         type: "column",
@@ -161,9 +263,9 @@ export default class ThreadConnect extends React.Component {
           fontSize: "1.5vw !important",
         },
       },
-      /* subtitle: {
+      subtitle: {
           text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
-      }, */
+      },
       xAxis: {
         type: "category",
         labels: {
@@ -177,35 +279,25 @@ export default class ThreadConnect extends React.Component {
       yAxis: {
         min: 0,
         title: {
-          /* text: 'Population (millions)' */
+          text: 'Population (millions)'
         },
       },
       legend: {
         enabled: false,
       },
-      /* tooltip: {
+      credits: {
+        enabled: false,
+      },
+      tooltip: {
           pointFormat: 'Population in 2017: <b>{point.y:.1f} millions</b>'
-      }, */
+      },
       series: [
         {
-          /* name: 'Population', */
-          data: [
-            ["Jan", 24.2],
-            ["Feb", 20.8],
-            ["Mar", 14.9],
-            ["Apr", 13.7],
-            ["May", 13.1],
-            ["Jun", 12.7],
-            ["Jul", 12.4],
-            ["Aug", 12.2],
-            ["Sep", 12.0],
-            ["Oct", 11.7],
-            ["Nov", 11.5],
-            ["Dec", 11.2],
-          ],
+          name: 'Population',
+          data: this.state.highChartData,
           color: "#1f78b4",
           dataLabels: {
-            /*  enabled: true, */
+             enabled: true,
             rotation: -90,
             color: "#FFFFFF",
             align: "right",
@@ -219,13 +311,13 @@ export default class ThreadConnect extends React.Component {
         },
       ],
     });
-  }
+  } */
 
   render() {
     return (
       <Fragment>
         <div
-          className="container-lg w-100 p-3 borderStyle mb-5"
+          className="container-lg w-100 p-3 borderStyle mb-3"
           id="carousel-container"
         >
           <div className="text-center titles mb-3">MY SUBSCRIPTIONS</div>
@@ -234,9 +326,9 @@ export default class ThreadConnect extends React.Component {
             clickEvent={this.props.clickEvent}
           />
         </div>
-        <div className="container-lg w-100 p-3 borderStyle">
+        {/* <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
-            {/* <div className="col-6 mt-2">
+            <div className="col-6 mt-2">
               <div className="titles">SUBSCRIPTION SUMMARY</div>
               <ul className="pl-3 text-success">
                 <li>Shared Sourcing Services(SSS): Healthy</li>
@@ -253,16 +345,30 @@ export default class ThreadConnect extends React.Component {
                   </ul>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div className="col-6">
               <div className="card border-0">
                 <div className="card-body p-0">
+                  <select
+                    className="col-sm-4 borderStyle service-details"
+                    name=""
+                    id="highChartFilter"
+                    onChange={this.handleHighChartFilter}
+                  >
+                    <option value="" disabled selected>
+                      filter
+                    </option>
+                    <option value="3 Months">3 Months</option>
+                    <option value="6 Months">6 Months</option>
+                    <option value="9 Months">9 Months</option>
+                    <option value="12 Months">12 Months</option>
+                  </select>
                   <div id="container" style={{ height: "15rem" }}></div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </Fragment>
     );
   }
