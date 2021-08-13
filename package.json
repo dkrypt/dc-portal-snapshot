@@ -19,6 +19,7 @@
         "react-bootstrap": "^1.6.1"
     },
     "scripts": {
+        "dev": "node run-dev-server.js",
         "preinstall": "npx npm-force-resolutions",
         "test": "nyc cross-env NODE_ENV=test jasmine",
         "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
@@ -35,6 +36,7 @@
         "jasmine": "^3.5.0",
         "jshint": "^2.11.1",
         "kind-of": "^6.0.3",
+        "live-server": "^1.2.1",
         "minimist": "^1.2.5",
         "react-test-renderer": "^16.9.0"
     },
