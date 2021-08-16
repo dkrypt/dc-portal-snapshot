@@ -505,3 +505,90 @@ a:hover {
 .carousel-buttons .dropdown-toggle:hover {
   color: white !important;
 }
+
+/*<!-------------- Global scape CSS start ------------> */
+
+#gs_event-table .btn-primary{
+  /* background-color: #0C2340; */
+  background-color: #005eb8;
+   /* 005eb8 #002e5d */
+  padding: 3px 12px;
+}
+#gs_event-table td, #gs_event-table th {
+  padding: 7px;
+}
+#gs_event-table td.gs_event-col {
+  width: 34%;
+}
+#gs_event-table button.btn.btn-primary:hover {
+  box-shadow: 1px 4px 8px black;
+  /* opacity: 0.8; */
+  /* background-color: #005eb8; */
+}
+.gs-container {
+  padding: 20px;
+}
+.gs-container form  { 
+  /* display: table;  */
+   width: 100%;    }
+.gs-container p     {
+   /* display: table-row;  */
+   position: relative; 
+  }
+.gs-container label { 
+  /* display: table-cell; */
+  padding-right: 30px;
+  /* padding-bottom: 16px; */
+ }
+ .gs-container input[type="text"]{
+  /* display: table-cell; */
+  width: 100%; 
+  /* padding: 10px; */
+  /* text-align: center; */
+}
+.gs-container i {
+  position: absolute;
+  right: 0px;
+  color: grey;
+
+}
+
+.gs-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.icon {
+  padding: 7px;
+  min-width: 40px;
+  position: absolute;
+  right: 4px;
+}
+.modal-dialog {
+  max-width: 60%;
+}
+/* p.form-group div{
+  display: inline-block;
+} */
+.gs-tabs{
+  cursor: pointer;
+  margin: 10px 20px!important;
+  box-shadow: 0px 0px 0px grey;
+  -webkit-transition:  box-shadow .6s ease-out;
+     /* box-shadow: .8px .9px 3px grey; */
+}
+.gs-tabs:hover {
+ 
+  box-shadow: 1px 4px 6px gainsboro;
+  -webkit-transition:  box-shadow .6s ease-in;
+}
+.titles{
+  line-height: 50px;
+
+} 
+.gs-tabs:hover .titles{
+  color: black;
+
+}
+
+/*<!-------------- Global scape CSS End ------------> */
