@@ -14,9 +14,9 @@
         "nyc": "^14.1.1",
         "protractor": "^5.4.2",
         "react": "^16.9.0",
+        "react-bootstrap": "^1.6.1",
         "react-dom": "^16.9.0",
-        "typescript": "^3.7.3",
-        "react-bootstrap": "^1.6.1"
+        "typescript": "^3.7.3"
     },
     "scripts": {
         "dev": "node run-dev-server.js",
