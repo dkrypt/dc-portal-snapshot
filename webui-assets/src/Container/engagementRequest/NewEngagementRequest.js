@@ -1,15 +1,6 @@
 import React, { Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-/* const TOKEN_REGEX = /window\.formToken = "(\w+)";/;
-const APP_VERSION = "1.96.0";
-const TOKEN_URL =
-  "https://app.smartsheet.com/b/form/***REMOVED***";
-const FORM_SUBMIT_BASE_URL = "https://forms.smartsheet.com/";
-const FORM_SUBMIT_PATH = "api/submit/***REMOVED***";
-
-const BASEURL = "https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io"; */
-
 export default class NewEngagementRequest extends React.Component {
   constructor(props) {
     super(props);
