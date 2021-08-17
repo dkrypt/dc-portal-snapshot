@@ -508,13 +508,14 @@ a:hover {
 
 /*<!-------------- Global scape CSS start ------------> */
 
-#gs_event-table .btn-primary{
+#gs_event-table .btn-primary {
   /* background-color: #0C2340; */
   background-color: #005eb8;
-   /* 005eb8 #002e5d */
+  /* 005eb8 #002e5d */
   padding: 3px 12px;
 }
-#gs_event-table td, #gs_event-table th {
+#gs_event-table td,
+#gs_event-table th {
   padding: 7px;
 }
 #gs_event-table td.gs_event-col {
@@ -528,21 +529,22 @@ a:hover {
 .gs-container {
   padding: 20px;
 }
-.gs-container form  { 
+.gs-container form {
   /* display: table;  */
-   width: 100%;    }
-.gs-container p     {
-   /* display: table-row;  */
-   position: relative; 
-  }
-.gs-container label { 
+  width: 100%;
+}
+.gs-container p {
+  /* display: table-row;  */
+  position: relative;
+}
+.gs-container label {
   /* display: table-cell; */
   padding-right: 30px;
   /* padding-bottom: 16px; */
- }
- .gs-container input[type="text"]{
+}
+.gs-container input[type="text"] {
   /* display: table-cell; */
-  width: 100%; 
+  width: 100%;
   /* padding: 10px; */
   /* text-align: center; */
 }
@@ -550,7 +552,6 @@ a:hover {
   position: absolute;
   right: 0px;
   color: grey;
-
 }
 
 .gs-container {
@@ -570,25 +571,201 @@ a:hover {
 /* p.form-group div{
   display: inline-block;
 } */
-.gs-tabs{
+.gs-tabs {
   cursor: pointer;
-  margin: 10px 20px!important;
+  margin: 10px 20px !important;
   box-shadow: 0px 0px 0px grey;
-  -webkit-transition:  box-shadow .6s ease-out;
-     /* box-shadow: .8px .9px 3px grey; */
+  -webkit-transition: box-shadow 0.6s ease-out;
+  /* box-shadow: .8px .9px 3px grey; */
 }
 .gs-tabs:hover {
- 
   box-shadow: 1px 4px 6px gainsboro;
-  -webkit-transition:  box-shadow .6s ease-in;
+  -webkit-transition: box-shadow 0.6s ease-in;
 }
-.titles{
+.titles {
   line-height: 50px;
-
-} 
-.gs-tabs:hover .titles{
+}
+.gs-tabs:hover .titles {
   color: black;
-
 }
 
 /*<!-------------- Global scape CSS End ------------> */
+
+/* <--------chittaranjan css ---> */
+.Card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+  height: "100px";
+}
+
+.Card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+  /* background-color: #1f78b4; */
+  /* color: white; */
+}
+
+.Card h3 {
+  font-weight: 200;
+}
+/* spam{
+
+} */
+/* 
+.card img {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+} */
+.card.card-1 {
+  width: "80%";
+}
+.card-1 {
+  /* background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png); */
+  /* background-repeat: no-repeat; */
+  /* background-position: right; */
+  /* background-size: 80px; */
+  /* height: 40%; */
+  /* width: "80%"; */
+}
+
+.card-2 {
+  /* background-image: url(https://ionicframework.com/img/getting-started/components-card.png); */
+  /* background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px; */
+}
+
+.card-3 {
+  /* background-image: url(https://ionicframework.com/img/getting-started/theming-card.png); */
+  /* background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px; */
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  color: #fff !important;
+  background-color: #1f78b4 !important;
+  /* border-radius: 30px !important; */
+}
+.form-check-input:checked {
+  background-color: #1f78b4 !important;
+  border-color: #1f78b4 !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1f78b4 !important;
+  border-color: #1f78b4 !important;
+}
+.form-label {
+  color: #1f78b4 !important;
+  font-weight: 400;
+}
+#checkbox-group {
+  color: #1f78b4;
+  font-weight: 400;
+}
+.middleItem {
+  margin-top: 10%;
+  margin-left: 30%;
+}
+.title-align {
+  margin-top: 5%;
+}
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.Card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 17px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.Card {
+  width: 20vw;
+  height: 33vh;
+}
+
+.Card:hover {
+  transform: scale(0.9, 0.9);
+  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+}
+
+.form-check {
+  /* position    : relative; */
+  /* display     : block; */
+  padding-left: 1.4rem !important;
+}
+
+select {
+  /* styling */
+  background-color: white;
+  border: thin solid blue;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+
+  /* reset */
+
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* arrows */
+
+select.classic {
+  background-image: linear-gradient(45deg, transparent 50%, blue 50%),
+    linear-gradient(135deg, blue 50%, transparent 50%),
+    linear-gradient(to right, skyblue, skyblue);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+
+select.classic:focus {
+  background-image: linear-gradient(45deg, white 50%, transparent 50%),
+    linear-gradient(135deg, transparent 50%, white 50%),
+    linear-gradient(to right, gray, gray);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+.select-label {
+  padding: 6px !important;
+}
+
+@media (max-width: 990px) {
+  .card {
+    margin: 20px;
+  }
+}
+
+/* <---- end of chittaranjan css ---> */
