@@ -10,6 +10,7 @@ import Dive from "./Container/dive/Dive.js";
 import DivePower from "./Container/dive/DivePower.js";
 import NewEngagementRequest from "./Container/engagementRequest/NewEngagementRequest.js";
 import TCDashboard from "./Container/threadConnect/Dashboard.js";
+import GlobalScape from "./Container/globalScape/GlobalScape.js";
 
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
@@ -143,6 +144,14 @@ export default class App extends React.Component {
             setPersonaHandler={this.setPersonaOptions.bind(this)}
             baseUrl={this.state.endPoint}
             authToken={this.state.authToken}
+          />
+        );
+        case "Globalscape":
+        return (
+          <GlobalScape
+            clickEvent={this.switchPage.bind(this)}
+            persona={this.state.subHeaderText}
+            setPersonaHandler={this.setPersonaOptions.bind(this)}
           />
         );
       default:
