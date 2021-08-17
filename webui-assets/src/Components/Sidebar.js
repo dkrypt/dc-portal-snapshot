@@ -67,8 +67,8 @@ export default class Sidebar extends React.Component {
               href="#"
               className="list-group-item list-group-item-action"
               onClick={this.props.clickEvent.bind(this, {
-                pageName: "ManageSubscriptions",
-                headerText: "MANAGE SUBSCRIPTIONS",
+                pageName: "Manage",
+                headerText: "MANAGE",
                 // subHeaderText: "Persona 1",
               })}
             >
@@ -77,7 +77,7 @@ export default class Sidebar extends React.Component {
                 alt=""
                 src="assets/src/images/Icon-Subscriptions.svg"
               />{" "}
-              MANAGE SUBSCRIPTIONS
+              MANAGE
             </a>
           </span>
           {/* <span className="sidebarMenu" >

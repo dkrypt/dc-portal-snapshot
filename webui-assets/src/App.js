@@ -11,6 +11,10 @@ import DivePower from "./Container/dive/DivePower.js";
 import NewEngagementRequest from "./Container/engagementRequest/NewEngagementRequest.js";
 import TCDashboard from "./Container/threadConnect/Dashboard.js";
 import GlobalScape from "./Container/globalScape/GlobalScape.js";
+import Manage from "./Container/manage/Manage.js";
+import ManageTC from "./Container/manage/threadConnect/ManageTC.js";
+import ManageSubscription from "./Container/manage/subscription/ManageSubscription.js";
+import ManageUser from "./Container/manage/user/ManageUser.js";
 
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
@@ -146,9 +150,41 @@ export default class App extends React.Component {
             authToken={this.state.authToken}
           />
         );
-        case "Globalscape":
+      case "Globalscape":
         return (
           <GlobalScape
+            clickEvent={this.switchPage.bind(this)}
+            persona={this.state.subHeaderText}
+            setPersonaHandler={this.setPersonaOptions.bind(this)}
+          />
+        );
+      case "Manage":
+        return (
+          <Manage
+            clickEvent={this.switchPage.bind(this)}
+            persona={this.state.subHeaderText}
+            setPersonaHandler={this.setPersonaOptions.bind(this)}
+          />
+        );
+      case "ManageTC":
+        return (
+          <ManageTC
+            clickEvent={this.switchPage.bind(this)}
+            persona={this.state.subHeaderText}
+            setPersonaHandler={this.setPersonaOptions.bind(this)}
+          />
+        );
+      case "Subscription":
+        return (
+          <ManageSubscription
+            clickEvent={this.switchPage.bind(this)}
+            persona={this.state.subHeaderText}
+            setPersonaHandler={this.setPersonaOptions.bind(this)}
+          />
+        );
+      case "User":
+        return (
+          <ManageUser
             clickEvent={this.switchPage.bind(this)}
             persona={this.state.subHeaderText}
             setPersonaHandler={this.setPersonaOptions.bind(this)}
