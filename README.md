@@ -5,7 +5,7 @@ The repo hosts the development of the Digital Connect Self-Service Portal. The p
 
 ### Development
 
-This repository hosts all the content for DC Service Cloud Portal. Frontend code uses React JS, Bootstrap and JQuery as primary libraries used. Actual code is in the `webui-assets/` directory.
+This repository hosts all the content for DC Service Cloud Portal. Frontend code uses React JS, Bootstrap and JQuery as primary libraries used. Actual code is in the `src/` directory.
 
 We use Node JS and npm for Testing, Development and Linting.
 
@@ -15,9 +15,9 @@ To start a local Web Development Server, run the following commands:
 $ git clone git@github.build.ge.com:DC-Admin-Portal/dc-portal-mirror.git
 $ cd dc-portal-mirror
 $ npm install
-$ npm run dev
+$ npm start
 ```
-Afer successful run of above commands, a new tab will open in your **default** browser pointing to `http://localhost:3001`.
+Afer successful run of above commands, a new tab will open in your **default** browser pointing to `http://localhost:8080`.
 
 This is a live server to assist your development, by hot reloading the UI everytime you make a change to the concerned files.
 
