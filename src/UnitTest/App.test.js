@@ -3,10 +3,9 @@ import { configure, shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import fetchMock from 'fetch-mock';
 
-import App from '../src/App.js';
-// import Footer from '../src/Components/Footer.js';
-import Sidebar from '../src/Components/Sidebar.js';
-import CenterHeader from '../src/Components/CenterHeader.js';
+import App from '../app.js';
+import Sidebar from '../components/Sidebar.js';
+import CenterHeader from '../components/CenterHeader.js';
 
 configure({adapter: new Adapter()});
 
