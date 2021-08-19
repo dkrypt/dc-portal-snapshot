@@ -13,11 +13,11 @@ To start a local Web Development Server, run the following commands:
 
 ```shell
 $ git clone git@github.build.ge.com:DC-Admin-Portal/dc-portal-mirror.git
-$ cd dc-portal-missor
+$ cd dc-portal-mirror
 $ npm install
 $ npm run dev
 ```
-Afer successul run of above commands, a new tab will open in your **default** browser pointing to `http://localhost:3001`.
+Afer successful run of above commands, a new tab will open in your **default** browser pointing to `http://localhost:3001`.
 
 This is a live server to assist your development, by hot reloading the UI everytime you make a change to the concerned files.
 
