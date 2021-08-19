@@ -1,5 +1,5 @@
 {
-  "spec_dir": "webui-assets",
+  "spec_dir": "src",
   "spec_files": [
     "**/*.test.*"
   ],
