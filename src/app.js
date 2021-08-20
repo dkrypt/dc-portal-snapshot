@@ -124,7 +124,7 @@ export default class App extends React.Component {
             persona={this.state.subHeaderText}
             setPersonaHandler={this.setPersonaOptions.bind(this)}
           />
-        );
+        );            
       case "Dive":
         return (
           <Dive

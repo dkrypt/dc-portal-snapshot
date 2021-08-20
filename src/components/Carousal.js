@@ -18,6 +18,10 @@ export default class CarouselItem extends React.Component {
 
   componentDidMount() {}
 
+  handleExternalLink(url){
+    window.open(url,"_blank")
+  }
+
   render() {
     return (
       <Carousel interval={3000}>
@@ -88,7 +92,7 @@ export default class CarouselItem extends React.Component {
                         </div>
                         {service.buttons.displayButtons ? (
                           <div className="row carousel-buttons px-3 py-1">
-                            {console.log("buttons: ", service.buttons)}
+                            {/* {console.log("buttons: ", service.buttons)} */}
                             {service.buttons.buttonInfo.map(
                               (buttonData, index) => {
                                 return buttonData.buttonName == "dots" ? (
@@ -127,14 +131,29 @@ export default class CarouselItem extends React.Component {
                                     type="button"
                                     className="btn btn-secondary btn-sm"
                                     onClick={
-                                      buttonData.onClick != ""
+                                      buttonData.type == "internal"
+                                      ?
+                                      (buttonData.onClick != ""
                                         ? this.props.clickEvent.bind(this, {
                                             pageName:
                                               buttonData.onClick.pageName,
                                             headerText: service.serviceName,
                                             // subHeaderText: this.props.persona,
+                                          })                                          
+                                        : "#")
+                                        :
+                                          buttonData.type == "popup"
+                                          ?
+                                          buttonData.onClick.showPopUpModal.bind(this,{
+                                            show: true,
+                                            buttonName: buttonData.buttonName
                                           })
-                                        : "#"
+                                          :
+                                          buttonData.type == "external"
+                                          ?
+                                          this.handleExternalLink.bind(buttonData.onClick.url)
+                                          :
+                                          ""
                                     }
                                   >
                                     {buttonData.buttonName == "Open" ? (

@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
-import moment from "moment"
+import moment from "moment";
 import Highcharts from "highcharts";
 
 import CustomCarousel from "../../Components/Carousal.js";
+import PopUpModal from "../../components/PopUpModal";
 
 import Icon_TC from "../../assets/images/Icon-TC.png";
 
@@ -15,6 +16,8 @@ export default class ThreadConnect extends React.Component {
       month: moment().format("MMMM"),
       serviceCardDisplay: [],
       firstTimeLoad: [],
+      showPopUpModal: false,
+      modalName:"",
       serviceCards: [
         {
           serviceName: "IBS",
@@ -44,26 +47,40 @@ export default class ThreadConnect extends React.Component {
             buttonInfo: [
               {
                 buttonName: "Open",
-                onClick: "",
+                type: "external",
+                onClick: {                  
+                  url: "#",
+                },
               },
               {
                 buttonName: "Users",
-                onClick: "",
+                type: "popup",
+                onClick: {                  
+                  showPopUpModal: this.showPopUpModal.bind(this),
+                },
               },
               {
-                buttonName: "API's",
-                onClick: "",
+                buttonName: "APIs",
+                type: "popup",
+                onClick: {                  
+                  showPopUpModal: this.showPopUpModal.bind(this),
+                },
               },
               {
                 buttonName: "Dashboard",
-                onClick: {
+                type: "internal",
+                onClick: {                  
                   pageName: "TCDashboard",
                   headerText: "",
                 },
               },
               {
                 buttonName: "Remove",
-                onClick: "",
+                type: "internal",
+                onClick: {                  
+                  pageName: "TCDashboard",
+                  headerText: "",
+                },
               },
               {
                 buttonName: "dots",
@@ -99,27 +116,41 @@ export default class ThreadConnect extends React.Component {
             displayButtons: true,
             buttonInfo: [
               {
-                buttonName: "Open",
-                onClick: "",
+                buttonName: "Open",                
+                type: "external",
+                onClick: {
+                  url: "#",
+                },
               },
               {
-                buttonName: "Users",
-                onClick: "",
+                buttonName: "Users",                
+                type: "popup",
+                onClick: {
+                  showPopUpModal: this.showPopUpModal.bind(this),
+                },
               },
               {
-                buttonName: "API's",
-                onClick: "",
+                buttonName: "APIs",                
+                type: "popup",
+                onClick: {
+                  showPopUpModal: this.showPopUpModal.bind(this),
+                },
               },
               {
-                buttonName: "Dashboard",
+                buttonName: "Dashboard",                
+                type: "internal",
                 onClick: {
                   pageName: "TCDashboard",
                   headerText: "",
                 },
               },
               {
-                buttonName: "Remove",
-                onClick: "",
+                buttonName: "Remove",                
+                type: "internal",
+                onClick: {
+                  pageName: "TCDashboard",
+                  headerText: "",
+                },
               },
               {
                 buttonName: "dots",
@@ -230,6 +261,14 @@ export default class ThreadConnect extends React.Component {
     }
   }
 
+  showPopUpModal(clickValue) {
+    console.log("modal: ",clickValue)
+    this.setState({
+      showPopUpModal: clickValue.show,
+      modalName: clickValue.buttonName
+    });
+  }
+
   handleHighChartFilter(event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
@@ -329,6 +368,7 @@ export default class ThreadConnect extends React.Component {
             serviceCardDisplay={this.state.serviceCardDisplay}
             clickEvent={this.props.clickEvent}
           />
+          <PopUpModal showModal={this.state.showPopUpModal} onClose={this.showPopUpModal.bind(this)} modalName={this.state.modalName}/>
         </div>
         {/* <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">
