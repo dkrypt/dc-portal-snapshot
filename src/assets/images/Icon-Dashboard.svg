@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 18 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        opacity: 0.3;
+      }
+    </style>
+  </defs>
+  <path id="Icon_Dashboard" data-name="Icon Dashboard" class="cls-1" d="M4.5,13.389h8V4.5h-8Zm0,7.111h8V15.167h-8Zm10,0h8V11.611h-8Zm0-16V9.833h8V4.5Z" transform="translate(-4.5 -4.5)"/>
+</svg>
