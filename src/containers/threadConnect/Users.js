@@ -86,10 +86,7 @@ export default function Users() {
                         alt=""
                       />
                     </div>
-                    <div
-                      className="col-10 p-0"
-                      style={{ lineHeight: "12px", fontSize: "1vw" }}
-                    >
+                    <div className="col-10 p-0 tc-user-table">
                       <p className="m-0 p-0">{data.userName}</p>
                       <br />
                       <p className="m-0 p-0">{data.userId}</p>

@@ -17,7 +17,7 @@ $ cd dc-portal-mirror
 $ npm install
 $ npm start
 ```
-Afer successful run of above commands, a new tab will open in your **default** browser pointing to `http://localhost:8080`.
+Afer successful run of above commands, a new tab will open in your **default** browser pointing to `http://localhost:3011`.
 
 This is a live server to assist your development, by hot reloading the UI everytime you make a change to the concerned files.
 
