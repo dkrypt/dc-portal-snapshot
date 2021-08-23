@@ -8,9 +8,11 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/webui-assets"),
     filename: "index_bundle.js",
+    publicPath: '/'
   },
   devServer: {
-    port: 3011
+    port: 3011,
+    historyApiFallback: true,
   },
   module: {
     rules: [
