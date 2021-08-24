@@ -493,6 +493,10 @@ a:hover {
   color: #333f48;
 }
 
+.carousel-buttons a {
+  color: #333f48 !important;
+}
+
 .tc-dashboard button {
   height: 1.7rem;
   white-space: nowrap;

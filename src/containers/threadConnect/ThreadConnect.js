@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import moment from "moment";
 import Highcharts from "highcharts";
 
-import CustomCarousel from "../../Components/Carousal.js";
+import CustomCarousel from "../../components/Carousal.js";
 import PopUpModal from "../../components/PopUpModal";
 
 import Icon_TC from "../../assets/images/Icon-TC.png";
@@ -17,13 +17,14 @@ export default class ThreadConnect extends React.Component {
       serviceCardDisplay: [],
       firstTimeLoad: [],
       showPopUpModal: false,
-      modalName:"",
+      modalName: "",
       serviceCards: [
         {
           serviceName: "IBS",
           style: {
             display: "block",
           },
+          from: "/threadconnect",
           onClick: {
             pageName: "IBS",
             headerText: "IBS",
@@ -48,28 +49,29 @@ export default class ThreadConnect extends React.Component {
               {
                 buttonName: "Open",
                 type: "external",
-                onClick: {                  
+                onClick: {
                   url: "#",
                 },
               },
               {
                 buttonName: "Users",
                 type: "popup",
-                onClick: {                  
+                onClick: {
                   showPopUpModal: this.showPopUpModal.bind(this),
                 },
               },
               {
                 buttonName: "APIs",
                 type: "popup",
-                onClick: {                  
+                onClick: {
                   showPopUpModal: this.showPopUpModal.bind(this),
                 },
               },
               {
                 buttonName: "Dashboard",
                 type: "internal",
-                onClick: {                  
+                path: "/threadconnect/dashboard",
+                onClick: {
                   pageName: "TCDashboard",
                   headerText: "",
                 },
@@ -77,7 +79,8 @@ export default class ThreadConnect extends React.Component {
               {
                 buttonName: "Remove",
                 type: "internal",
-                onClick: {                  
+                path: "/threadconnect/dashboard",
+                onClick: {
                   pageName: "TCDashboard",
                   headerText: "",
                 },
@@ -94,6 +97,7 @@ export default class ThreadConnect extends React.Component {
           style: {
             display: "block",
           },
+          from: "/threadconnect",
           onClick: {
             pageName: "GPAS-Lite",
             headerText: "GPAS-LITE",
@@ -116,37 +120,39 @@ export default class ThreadConnect extends React.Component {
             displayButtons: true,
             buttonInfo: [
               {
-                buttonName: "Open",                
+                buttonName: "Open",
                 type: "external",
                 onClick: {
                   url: "#",
                 },
               },
               {
-                buttonName: "Users",                
+                buttonName: "Users",
                 type: "popup",
                 onClick: {
                   showPopUpModal: this.showPopUpModal.bind(this),
                 },
               },
               {
-                buttonName: "APIs",                
+                buttonName: "APIs",
                 type: "popup",
                 onClick: {
                   showPopUpModal: this.showPopUpModal.bind(this),
                 },
               },
               {
-                buttonName: "Dashboard",                
+                buttonName: "Dashboard",
                 type: "internal",
+                path: "/tcdashboard",
                 onClick: {
                   pageName: "TCDashboard",
                   headerText: "",
                 },
               },
               {
-                buttonName: "Remove",                
+                buttonName: "Remove",
                 type: "internal",
+                path: "/tcdashboard",
                 onClick: {
                   pageName: "TCDashboard",
                   headerText: "",
@@ -262,10 +268,10 @@ export default class ThreadConnect extends React.Component {
   }
 
   showPopUpModal(clickValue) {
-    console.log("modal: ",clickValue)
+    console.log("modal: ", clickValue);
     this.setState({
       showPopUpModal: clickValue.show,
-      modalName: clickValue.buttonName
+      modalName: clickValue.buttonName,
     });
   }
 
@@ -368,7 +374,11 @@ export default class ThreadConnect extends React.Component {
             serviceCardDisplay={this.state.serviceCardDisplay}
             clickEvent={this.props.clickEvent}
           />
-          <PopUpModal showModal={this.state.showPopUpModal} onClose={this.showPopUpModal.bind(this)} modalName={this.state.modalName}/>
+          <PopUpModal
+            showModal={this.state.showPopUpModal}
+            onClose={this.showPopUpModal.bind(this)}
+            modalName={this.state.modalName}
+          />
         </div>
         {/* <div className="container-lg w-100 p-3 borderStyle">
           <div className="row service-text">

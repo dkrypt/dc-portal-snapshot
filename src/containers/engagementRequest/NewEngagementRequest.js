@@ -50,7 +50,7 @@ export default class NewEngagementRequest extends React.Component {
   }
 
   componentDidMount() {
-    var multipleCancelButton = new Choices("#choices-multiple-remove-button", {
+    var multipleCancelButton = new window.Choices("#choices-multiple-remove-button", {
       removeItemButton: true,
       maxItemCount: 10,
       searchResultLimit: 5,
@@ -84,7 +84,7 @@ export default class NewEngagementRequest extends React.Component {
     }); */
 
     // disable past dates
-    $(function () {
+    window.Jquery(function () {
       var dtToday = new Date();
 
       var month = dtToday.getMonth() + 1;
@@ -95,7 +95,7 @@ export default class NewEngagementRequest extends React.Component {
 
       var minDate = year + "-" + month + "-" + day;
 
-      $("#inputDate").attr("min", minDate);
+      window.Jquery("#inputDate").attr("min", minDate);
     });
   }
 
