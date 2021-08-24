@@ -43,7 +43,6 @@ export default class CarouselItem extends React.Component {
                           onClick={this.props.clickEvent.bind(this, {
                             pageName: service.onClick.pageName,
                             headerText: service.onClick.headerText,
-                            // subHeaderText: this.props.persona,
                           })}
                         >
                           <div className="row mb-2">
@@ -64,33 +63,6 @@ export default class CarouselItem extends React.Component {
                             </div>
                           </div>
                         </Link>
-                        {/* <a
-                          className="service-text"
-                          href="#"
-                          onClick={this.props.clickEvent.bind(this, {
-                            pageName: service.onClick.pageName,
-                            headerText: service.onClick.headerText,
-                            // subHeaderText: this.props.persona,
-                          })}
-                        >
-                          <div className="row mb-2">
-                            <div className="col ml-1 titles service-tile-content">
-                              {service.serviceName}
-                            </div>
-                            <div className="col-3 text-center service-tile-content">
-                              <img
-                                className="img-fluid"
-                                src={service.img.src}
-                                alt={service.img.alt}
-                                style={
-                                  typeof service.img.style == "object"
-                                    ? service.img.style
-                                    : {}
-                                }
-                              />
-                            </div>
-                          </div>
-                        </a> */}
                         <div className="row service-details">
                           {Object.entries(service.serviceInfo).map(
                             ([key, value], index) => {
@@ -122,7 +94,6 @@ export default class CarouselItem extends React.Component {
                         </div>
                         {service.buttons.displayButtons ? (
                           <div className="row carousel-buttons px-3 py-1">
-                            {/* {console.log("buttons: ", service.buttons)} */}
                             {service.buttons.buttonInfo.map(
                               (buttonData, index) => {
                                 return buttonData.buttonName == "dots" ? (
@@ -200,7 +171,6 @@ export default class CarouselItem extends React.Component {
                                             pageName:
                                               buttonData.onClick.pageName,
                                             headerText: service.serviceName,
-                                            // subHeaderText: this.props.persona,
                                           }
                                         )}
                                       >

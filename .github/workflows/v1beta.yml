@@ -4,8 +4,6 @@
 name: v1beta-ci
 
 on:
-  push:
-    branches: [ v1beta ]
   pull_request:
     branches: [ v1beta ]
     types: [opened, synchronize]
@@ -21,7 +19,16 @@ jobs:
     - uses: actions/checkout@v2
     - name: uitest
       id: uitest
-      run: npm install && npm test
+      run: npm install && npm test && npm run build && tree .
+
+    - name: Push Build Artifacts
+      if: github.event_name == 'push'
+      run: |
+          git config user.name "Shubham Paskanti"
+          git config user.email "<spaskanti1@gmail.com>"
+          git add webui-assets
+          git commit -m "Build Commit"
+          git push origin v1beta
     - name: prmerged
       if: github.event_name == 'push'
       id: prmerged

@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-// import { Breadcrumb } from "react-bootstrap";
 import { BrowserRouter } from "react-router-dom";
 import "./app.css";
 
@@ -11,17 +10,6 @@ import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
 export default class App extends React.Component {
-  /*  componentDidMount(){
-
-    // Sidebar Toggle Menu Click
-    $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-     });
-
-
-  }
- */
   constructor(props) {
     super(props);
     this.state = {
@@ -55,7 +43,6 @@ export default class App extends React.Component {
       },
       currentPage: changePageTo.pageName,
       headerText: changePageTo.headerText,
-      // subHeaderText: changePageTo.subHeaderText,
     });
   }
 
@@ -69,8 +56,6 @@ export default class App extends React.Component {
     this.setState({
       subHeaderOpts: options,
     });
-
-    // console.log("List of headeropts: ", options);
   }
 
   getToken(name) {
@@ -87,112 +72,6 @@ export default class App extends React.Component {
       }
     }
   }
-
-  /* servedView() {
-    const currentPage = this.state.currentPage;
-    switch (currentPage) {
-      case "Dashboard":
-        return (
-          <Dashboard
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "ThreadConnect":
-        return (
-          <ThreadConnect
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "TCDashboard":
-        return (
-          <TCDashboard
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "Dive":
-        return (
-          <Dive
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "DivePower":
-        return (
-          <DivePower
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "EnterpriseConnect":
-        return (
-          <EnterpriseConnect
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "NewEngagementRequest":
-        return (
-          <NewEngagementRequest
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-            baseUrl={this.state.endPoint}
-            authToken={this.state.authToken}
-          />
-        );
-      case "Globalscape":
-        return (
-          <GlobalScape
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "Manage":
-        return (
-          <Manage
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "ManageTC":
-        return (
-          <ManageTC
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "Subscription":
-        return (
-          <ManageSubscription
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      case "User":
-        return (
-          <ManageUser
-            clickEvent={this.switchPage.bind(this)}
-            persona={this.state.subHeaderText}
-            setPersonaHandler={this.setPersonaOptions.bind(this)}
-          />
-        );
-      default:
-        return null;
-    }
-  } */
 
   render() {
     return (
@@ -215,7 +94,6 @@ export default class App extends React.Component {
                 />
 
                 <div className="container-fluid center-container d-grid mb-2">
-                  {/* {this.servedView()} */}
                   {/* <Breadcrumb /> */}
                   <Router
                     clickEvent={this.switchPage.bind(this)}

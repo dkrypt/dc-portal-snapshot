@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import moment from "moment";
 import Highcharts from "highcharts";
 
-import CustomCarousel from "../../Components/Carousal.js";
+import CustomCarousel from "../../components/Carousal.js";
 import PopUpModal from "../../components/PopUpModal";
 
 import Icon_TC from "../../assets/images/Icon-TC.png";

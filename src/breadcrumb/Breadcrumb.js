@@ -11,9 +11,6 @@ export default function SimpleBreadcrumbs() {
         const pathnames = location.pathname.split("/").filter((x) => x);
         return (
           <Breadcrumb aria-label="Breadcrumb" style={{ color: "grey" }}>
-            {/* <RouterLink color="inherit" to="/">
-              Home
-            </RouterLink> */}
             {pathnames.map((value, index) => {
                 console.log("pathnames.length: ",pathnames.length)
               const last = index === pathnames.length - 1;

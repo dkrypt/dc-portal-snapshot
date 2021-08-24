@@ -56,28 +56,11 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Dashboard",
                 headerText: "DASHBOARD",
-                // subHeaderText: "Persona 1",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Dashboard} />
               DASHBOARD
-            </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "Dashboard",
-                headerText: "DASHBOARD",
-                // subHeaderText: "Persona 1",
-              })}
-            >
-              <img
-                className="img-fluid"
-                alt=""
-                src={Icon_Dashboard}
-              />{" "}
-              DASHBOARD
-            </a> */}
+            </Link>            
           </span>
           <span className="sidebarMenu">
             <Link
@@ -85,25 +68,12 @@ export default class Sidebar extends React.Component {
               to="/manage"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Manage",
-                headerText: "MANAGE",
-                // subHeaderText: "Persona 1",
+                headerText: "MANAGE",                
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Subscriptions} />{" "}
               MANAGE
-            </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "Manage",
-                headerText: "MANAGE",
-                // subHeaderText: "Persona 1",
-              })}
-            >
-              <img className="img-fluid" alt="" src={Icon_Subscriptions} />{" "}
-              MANAGE
-            </a> */}
+            </Link>           
           </span>
           <span className="sidebarMenu">
           <Link
@@ -112,24 +82,11 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "AnnouncementsAndEvents",
                 headerText: "ANNOUNCEMENTS & EVENTS",
-                // subHeaderText: "Persona 1",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Announcements} />{" "}
               ANNOUNCEMENTS & EVENTS
-            </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "AnnouncementsAndEvents",
-                headerText: "ANNOUNCEMENTS & EVENTS",
-                // subHeaderText: "Persona 1",
-              })}
-            >
-              <img className="img-fluid" alt="" src={Icon_Announcements} />{" "}
-              ANNOUNCEMENTS & EVENTS
-            </a> */}
+            </Link>           
           </span>
           <span className="sidebarMenu">
           <Link
@@ -146,44 +103,17 @@ export default class Sidebar extends React.Component {
                 src={Icon_Engagement_Requests}
               />
               ENGAGEMENT REQUESTS
-            </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action dropdown-toggle"
-              role="button"
-              id="dropdownMenuLink"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <img
-                className="img-fluid"
-                alt=""
-                src={Icon_Engagement_Requests}
-              />{" "}
-              ENGAGEMENT REQUESTS
-            </a> */}
+            </Link>            
             <div className="dropdown-content">
             <Link
               to="/newengagementrequest"
               onClick={this.props.clickEvent.bind(this, {
                   pageName: "NewEngagementRequest",
                   headerText: "NEW ENGAGEMENT REQUEST",
-                  // subHeaderText: "Persona 1",
                 })}
             >
               NEW ENGAGEMENT REQUEST
-            </Link>
-              {/* <a
-                href="#"
-                onClick={this.props.clickEvent.bind(this, {
-                  pageName: "NewEngagementRequest",
-                  headerText: "NEW ENGAGEMENT REQUEST",
-                  // subHeaderText: "Persona 1",
-                })}
-              >
-                NEW ENGAGEMENT REQUEST
-              </a>
-              <a href="#">ENHANCEMENT REQUEST</a> */}
+            </Link>              
             </div>
           </span>
           <span className="sidebarMenu">
@@ -193,23 +123,11 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Support",
                 headerText: "SUPPORT",
-                // subHeaderText: "Persona 1",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Support} />
               SUPPORT
-            </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "Support",
-                headerText: "SUPPORT",
-                // subHeaderText: "Persona 1",
-              })}
-            >
-              <img className="img-fluid" alt="" src={Icon_Support} /> SUPPORT
-            </a> */}
+            </Link>            
           </span>
           <span className="sidebarMenu">
           <Link
@@ -218,24 +136,11 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Preferences",
                 headerText: "PREFERENCES",
-                // subHeaderText: "Persona 1",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Settings} />{" "}
               PREFERENCES
-            </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "Preferences",
-                headerText: "PREFERENCES",
-                // subHeaderText: "Persona 1",
-              })}
-            >
-              <img className="img-fluid" alt="" src={Icon_Settings} />{" "}
-              PREFERENCES
-            </a> */}
+            </Link>            
           </span>
           <span className="sidebarMenu">
           <Link
@@ -244,25 +149,13 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Administration",
                 headerText: "ADMINISTRATION",
-                // subHeaderText: "Persona 1",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Administration} />{" "}
               ADMINISTRATION
             </Link>
-            {/* <a
-              href="#"
-              className="list-group-item list-group-item-action"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "Administration",
-                headerText: "ADMINISTRATION",
-                // subHeaderText: "Persona 1",
-              })}
-            >
-              <img className="img-fluid" alt="" src={Icon_Administration} />{" "}
-              ADMINISTRATION
-            </a> */}
-            {/* <div className="dropdown-content">
+            {/* Might need in future
+             <div className="dropdown-content">
               <a
                 href="#"
                 onClick={this.props.clickEvent.bind(this, {
