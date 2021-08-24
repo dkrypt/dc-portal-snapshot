@@ -1,7 +1,4 @@
 import React, { Fragment } from "react";
-import { Breadcrumb } from "react-bootstrap";
-
-import Icon_Back_Button from "../assets/images/Icon-Back-Button.png"
 
 export default class CenterHeader extends React.Component {
   constructor(props) {
@@ -9,7 +6,6 @@ export default class CenterHeader extends React.Component {
   }
 
   render() {
-    // console.log("Persona Options: ", this.props.subHeaderOpts);
     return (
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="headers row">
@@ -40,9 +36,6 @@ export default class CenterHeader extends React.Component {
                 </a>
 
                 {this.props.subHeaderOpts.map((option, index) => {
-                  {
-                    /* console.log("Option: ", option); */
-                  }
                   return (
                     <Fragment key={index}>
                       <div className="dropdown-divider"></div>
@@ -58,35 +51,9 @@ export default class CenterHeader extends React.Component {
                     </Fragment>
                   );
                 })}
-
-                {/* <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={this.props.onPersonaChange.bind(this, {
-                    personaName: "Persona 2",
-                  })}
-                >
-                  Persona 2
-                </a> */}
               </div>
             </span>
-          </div>          
-          {/* <div className="navigator">
-          {this.props.headerText == "DASHBOARD"? "" : <Breadcrumb>
-              <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-              <Breadcrumb.Item href="#" onClick={this.props.clickEvent}                
-                >
-                <img
-                  className="img-fluid"
-                  alt=""
-                  src={Icon_Back_Button}
-                />
-                back
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>Data</Breadcrumb.Item>
-            </Breadcrumb>}
-            
-          </div> */}
+          </div>
         </div>
         <div className="col-sm"></div>
         <div className="search-bar">

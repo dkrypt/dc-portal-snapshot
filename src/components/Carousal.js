@@ -1,10 +1,9 @@
 import React from "react";
-import moment from "moment"
-
+import moment from "moment";
+import { Link } from "react-router-dom";
 import { Carousel, Dropdown } from "react-bootstrap";
 
-
-import Icon_Open from "../assets/images/Icon-Open.svg"
+import Icon_Open from "../assets/images/Icon-Open.svg";
 
 export default class CarouselItem extends React.Component {
   constructor(props) {
@@ -18,8 +17,8 @@ export default class CarouselItem extends React.Component {
 
   componentDidMount() {}
 
-  handleExternalLink(url){
-    window.open(url,"_blank")
+  handleExternalLink(url) {
+    window.open(url, "_blank");
   }
 
   render() {
@@ -34,13 +33,16 @@ export default class CarouselItem extends React.Component {
                   return (
                     <div className="col-sm-4" key={index}>
                       <div className="thumb-wrapper borderStyle p-1">
-                        <a
+                        <Link
                           className="service-text"
-                          href="#"
+                          to={
+                            service.from +
+                            "/" +
+                            service.onClick.pageName.toLowerCase()
+                          }
                           onClick={this.props.clickEvent.bind(this, {
                             pageName: service.onClick.pageName,
                             headerText: service.onClick.headerText,
-                            // subHeaderText: this.props.persona,
                           })}
                         >
                           <div className="row mb-2">
@@ -60,7 +62,7 @@ export default class CarouselItem extends React.Component {
                               />
                             </div>
                           </div>
-                        </a>
+                        </Link>
                         <div className="row service-details">
                           {Object.entries(service.serviceInfo).map(
                             ([key, value], index) => {
@@ -92,7 +94,6 @@ export default class CarouselItem extends React.Component {
                         </div>
                         {service.buttons.displayButtons ? (
                           <div className="row carousel-buttons px-3 py-1">
-                            {/* {console.log("buttons: ", service.buttons)} */}
                             {service.buttons.buttonInfo.map(
                               (buttonData, index) => {
                                 return buttonData.buttonName == "dots" ? (
@@ -131,29 +132,19 @@ export default class CarouselItem extends React.Component {
                                     type="button"
                                     className="btn btn-secondary btn-sm"
                                     onClick={
-                                      buttonData.type == "internal"
-                                      ?
-                                      (buttonData.onClick != ""
-                                        ? this.props.clickEvent.bind(this, {
-                                            pageName:
-                                              buttonData.onClick.pageName,
-                                            headerText: service.serviceName,
-                                            // subHeaderText: this.props.persona,
-                                          })                                          
-                                        : "#")
-                                        :
-                                          buttonData.type == "popup"
-                                          ?
-                                          buttonData.onClick.showPopUpModal.bind(this,{
-                                            show: true,
-                                            buttonName: buttonData.buttonName
-                                          })
-                                          :
-                                          buttonData.type == "external"
-                                          ?
-                                          this.handleExternalLink.bind(buttonData.onClick.url)
-                                          :
-                                          ""
+                                      buttonData.type == "popup"
+                                        ? buttonData.onClick.showPopUpModal.bind(
+                                            this,
+                                            {
+                                              show: true,
+                                              buttonName: buttonData.buttonName,
+                                            }
+                                          )
+                                        : buttonData.type == "external"
+                                        ? this.handleExternalLink.bind(
+                                            buttonData.onClick.url
+                                          )
+                                        : ""
                                     }
                                   >
                                     {buttonData.buttonName == "Open" ? (
@@ -166,7 +157,16 @@ export default class CarouselItem extends React.Component {
                                     ) : (
                                       ""
                                     )}
-                                    {buttonData.buttonName}
+                                    {buttonData.type == "internal" ? (
+                                      <Link
+                                        className=""
+                                        to={buttonData.path}
+                                      >
+                                        {buttonData.buttonName}
+                                      </Link>
+                                    ) : (
+                                      buttonData.buttonName
+                                    )}
                                   </button>
                                 );
                               }

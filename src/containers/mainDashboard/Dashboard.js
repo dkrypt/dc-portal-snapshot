@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import CustomCarousel from "../../Components/Carousal.js";
+import CustomCarousel from "../../components/Carousal.js";
 
 import Icon_TC from "../../assets/images/Icon-TC.png";
 import Icon_EC from "../../assets/images/Icon-EC.svg";
@@ -19,10 +19,10 @@ export default class Dashboard extends React.Component {
           style: {
             display: "block",
           },
+          from:"",
           onClick: {
             pageName: "ThreadConnect",
             headerText: "MY THREAD CONNECT SERVICE",
-            subHeaderText: this.props.persona,
           },
           img: {
             src: Icon_TC,
@@ -70,10 +70,10 @@ export default class Dashboard extends React.Component {
           style: {
             display: "block",
           },
+          from:"",
           onClick: {
             pageName: "EnterpriseConnect",
             headerText: "MY ENTERPRISE CONNECT SERVICE",
-            subHeaderText: this.props.persona,
           },
           img: {
             src: Icon_EC,
@@ -121,10 +121,10 @@ export default class Dashboard extends React.Component {
           style: {
             display: "block",
           },
+          from:"",
           onClick: {
             pageName: "Dive",
             headerText: "MY DIVE SERVICE",
-            subHeaderText: this.props.persona,
           },
           img: {
             src: Icon_Dive,
@@ -172,10 +172,10 @@ export default class Dashboard extends React.Component {
           style: {
             display: "block",
           },
+          from:"",
           onClick: {
             pageName: "Globalscape",
             headerText: "MY GLOBALSCAPE SERVICE",
-            subHeaderText: this.props.persona,
           },
           img: {
             src: Icon_Globalscape,
