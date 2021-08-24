@@ -209,7 +209,7 @@ export default class Dashboard extends React.Component {
                     id="highChartFilter"
                     onChange={this.handleHighChartFilter}
                   >
-                    <option value="" disabled selected>
+                    <option value="" defaultValue>
                       filter
                     </option>
                     <option value="3 Months">3 Months</option>
@@ -230,7 +230,7 @@ export default class Dashboard extends React.Component {
                     id="highChartFilter"
                     onChange={this.handleHighChartFilter}
                   >
-                    <option value="" disabled selected>
+                    <option value="" defaultValue>
                       filter
                     </option>
                     <option value="3 Months">3 Months</option>

@@ -70,7 +70,7 @@ export default class ThreadConnect extends React.Component {
               {
                 buttonName: "Dashboard",
                 type: "internal",
-                path: "/tcdashboard",
+                path: "/threadconnect/dashboard",
                 onClick: {
                   pageName: "TCDashboard",
                   headerText: "",
@@ -79,7 +79,7 @@ export default class ThreadConnect extends React.Component {
               {
                 buttonName: "Remove",
                 type: "internal",
-                path: "/tcdashboard",
+                path: "/threadconnect/dashboard",
                 onClick: {
                   pageName: "TCDashboard",
                   headerText: "",

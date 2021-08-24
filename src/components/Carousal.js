@@ -132,11 +132,7 @@ export default class CarouselItem extends React.Component {
                                     type="button"
                                     className="btn btn-secondary btn-sm"
                                     onClick={
-                                      buttonData.type == "internal"
-                                        ? buttonData.onClick != ""
-                                          ? "#"
-                                          : "#"
-                                        : buttonData.type == "popup"
+                                      buttonData.type == "popup"
                                         ? buttonData.onClick.showPopUpModal.bind(
                                             this,
                                             {
@@ -165,14 +161,6 @@ export default class CarouselItem extends React.Component {
                                       <Link
                                         className=""
                                         to={buttonData.path}
-                                        onClick={this.props.clickEvent.bind(
-                                          this,
-                                          {
-                                            pageName:
-                                              buttonData.onClick.pageName,
-                                            headerText: service.serviceName,
-                                          }
-                                        )}
                                       >
                                         {buttonData.buttonName}
                                       </Link>

@@ -15,6 +15,7 @@ import ManageSubscription from "../containers/manage/subscription/ManageSubscrip
 import ManageUser from "../containers/manage/user/ManageUser.js";
 
 export default function Router(props) {
+  console.log("Location: ",window.location);
   return (
     <Switch>
       <Route exact path="/">
@@ -26,7 +27,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/threadconnect">
+      <Route exact path="/threadconnect">
         <ThreadConnect
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -35,7 +36,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/enterpriseconnect">
+      <Route exact path="/enterpriseconnect">
         <EnterpriseConnect
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -44,7 +45,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/dive">
+      <Route exact path="/dive">
         <Dive
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -53,7 +54,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/divepower">
+      <Route exact path="/divepower">
         <DivePower
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -62,7 +63,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/newengagementrequest">
+      <Route exact path="/newengagementrequest">
         <NewEngagementRequest
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -71,7 +72,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/tcdashboard">
+      <Route exact path="/threadconnect/dashboard">
         <TCDashboard
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -80,7 +81,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/globalscape">
+      <Route exact path="/globalscape">
         <GlobalScape
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -89,7 +90,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/manage">
+      <Route exact path="/manage">
         <Manage
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -98,7 +99,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/managetc">
+      <Route exact path="/managetc">
         <ManageTC
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -107,7 +108,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/managesubscription">
+      <Route exact path="/managesubscription">
         <ManageSubscription
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -116,7 +117,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route path="/manageuser">
+      <Route exact path="/manageuser">
         <ManageUser
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
