@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import EventList from "./EventManagement/EventList.js";
+import EventList from "./eventManagement/EventList.js";
 import DelegatePriToSso from "./DelegatePriToSso.js";
 import RevokeSso from "./RevokeSso.js";
 import EnableAccount from "./EnableAccount.js";
