@@ -26,8 +26,11 @@ const UpdateSubscription = (props) => {
         <Row className="mb-3">
           <Form.Group as={Col} md="4" controlId="validationFormik01">
             <Form.Label className="select-label">Org</Form.Label>
-            <select class="form-select classic" style={{ height: "40px" }}>
-              <option selected> Select Org </option>
+            <select
+              className="form-select classic form-height"
+              // style={{ height: "40px" }}
+            >
+              <option defaultValue> Select Org </option>
               <option value="Org1">Org1</option>
               <option value="Org2">Org2</option>
               <option value="Org3">Org3</option>
@@ -36,8 +39,11 @@ const UpdateSubscription = (props) => {
           </Form.Group>
           <Form.Group as={Col} md="4" controlId="validationFormik03">
             <Form.Label className="select-label">Space</Form.Label>
-            <select class="form-select classic" style={{ height: "40px" }}>
-              <option selected> Select Space </option>
+            <select
+              className="form-select classic form-height"
+              // style={{ height: "40px" }}
+            >
+              <option defaultValue> Select Space </option>
               <option value="Space1">Space1</option>
               <option value="Space2">Space2</option>
               <option value="Space3">Space3</option>
@@ -61,7 +67,10 @@ const UpdateSubscription = (props) => {
                 </div> */}
           {/* </Form.Group> */}
         </Row>
-        <Row className="mb-3" style={{ marginLeft: "40px" }}>
+        <Row
+          className="mb-3 bucAdnComNew"
+          // style={{ marginLeft: "40px" }}
+        >
           <BucAdnComponent />
         </Row>
         <Row>
@@ -69,14 +78,16 @@ const UpdateSubscription = (props) => {
             as={Col}
             md="6"
             controlId="validationFormik03"
-            style={{ display: "flex", marginTop: "30px" }}
+            className="product-CheckBoxGroup"
+            // style={{ display: "flex", marginTop: "30px" }}
           >
-            <div id="checkbox-group">Products :</div>
+            <div id="checkbox-group">Products </div>
             <div
-              style={{
-                display: "flex",
-                marginLeft: " 20px",
-              }}
+              className="product-checkBox"
+              // style={{
+              //   display: "flex",
+              //   marginLeft: " 20px",
+              // }}
             >
               <Form.Check
                 label="ThreadConnect"
@@ -91,7 +102,8 @@ const UpdateSubscription = (props) => {
                 name="Products"
                 value="EnterpriseConnect"
                 id="Products"
-                style={{ marginLeft: " 10px" }}
+                className="form-check"
+                // style={{ marginLeft: " 10px" }}
               />
               <Form.Check
                 label="DIVE"
@@ -99,19 +111,15 @@ const UpdateSubscription = (props) => {
                 name="Products"
                 id="Products"
                 value="DIVE"
-                style={{ marginLeft: " 10px" }}
+                className="form-check"
+                // style={{ marginLeft: " 10px" }}
               />
             </div>
           </Form.Group>
         </Row>
-        <div className="mb-3 row">
-          <div
-            classsName="d-flex justify-content-between"
-            style={{ margin: " 0% 30%" }}
-          >
-            <Button type="submit">Submit</Button>
-          </div>
-        </div>
+        <Row className="mb-3 UpdateSubmit">
+          <Button type="submit">Submit</Button>
+        </Row>
       </Form>
     </div>
   );

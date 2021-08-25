@@ -5,22 +5,24 @@ import UpdateSubscription from "./UpdateSubscription.js";
 function ManageSubscription(props) {
   return (
     <Fragment>
-      <div class="container">
-        <div class="row">
-          <div class="card">
-            <div class="card-header">
+      <div className="container">
+        <div className="row">
+          <div className="card">
+            <div className="card-header">
               <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                 <Row>
                   <Col sm={12}>
                     <Nav variant="pills" className="flex-row">
                       <Col sm={4}>
-                        <Nav.Item className="card" style={{ textAlign: "center" }}>
+                        <Nav.Item className="card aligncenter">
                           <Nav.Link eventKey="first">New Subscription</Nav.Link>
                         </Nav.Item>
                       </Col>
                       <Col sm={4}>
-                        <Nav.Item className="card" style={{ textAlign: "center" }}>
-                          <Nav.Link eventKey="second">Update Subscription</Nav.Link>
+                        <Nav.Item className="card aligncenter">
+                          <Nav.Link eventKey="second">
+                            Update Subscription
+                          </Nav.Link>
                         </Nav.Item>
                       </Col>
                     </Nav>

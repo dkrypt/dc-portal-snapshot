@@ -57,7 +57,10 @@ const NewSubscription = (props) => {
           </Form.Group>
         </Row>
 
-        <Row className="mb-3" style={{ marginLeft: "30px" }}>
+        <Row
+          className="mb-3 bucAdnComNew"
+          // style={{ marginLeft: "30px" }}
+        >
           <BucAdnComponent />
         </Row>
         <Row className="mb-3">
@@ -82,15 +85,11 @@ const NewSubscription = (props) => {
             as={Col}
             md="6"
             controlId="validationFormik03"
-            style={{ display: "flex" }}
+            className="product-CheckBoxGroup"
+            // style={{ display: "flex" }}
           >
-            <div id="checkbox-group">Products :</div>
-            <div
-              style={{
-                display: "flex",
-                marginLeft: " 20px",
-              }}
-            >
+            <div id="checkbox-group">Products </div>
+            <div className="product-checkBox">
               <Form.Check
                 label="ThreadConnect"
                 type="checkbox"
@@ -104,7 +103,8 @@ const NewSubscription = (props) => {
                 name="Products"
                 value="EnterpriseConnect"
                 id="Products"
-                style={{ marginLeft: " 10px" }}
+                className="form-check"
+                // style={{ marginLeft: " 10px" }}
               />
               <Form.Check
                 label="DIVE"
@@ -112,19 +112,15 @@ const NewSubscription = (props) => {
                 name="Products"
                 id="Products"
                 value="DIVE"
-                style={{ marginLeft: " 10px" }}
+                className="form-check"
+                // style={{ marginLeft: " 10px" }}
               />
             </div>
           </Form.Group>
         </Row>
-        <div className="mb-3 row">
-          <div
-            classsName="d-flex justify-content-between"
-            style={{ margin: " 0% 30%" }}
-          >
-            <Button type="submit">Submit</Button>
-          </div>
-        </div>
+        <Row className="mb-3 subscription-submit">
+          <Button type="submit">Submit</Button>
+        </Row>
       </Form>
     </div>
   );

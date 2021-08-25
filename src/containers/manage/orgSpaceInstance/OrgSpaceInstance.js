@@ -1,17 +1,20 @@
 import React from "react";
-import { Grid } from "react-bootstrap";
+// import { Grid } from "react-bootstrap";
 // import { makeStyles } from "@material-ui/core/styles";
 // import InputLabel from "@material-ui/core/InputLabel";
 // import FormHelperText from "@material-ui/core/FormHelperText";
 // import FormControl from "@material-ui/core/FormControl";
 // import Select from "@material-ui/core/Select";
 // import NativeSelect from "@material-ui/core/NativeSelect";
-import Category from "./Category.js";
+import { Form, Row, Col } from "react-bootstrap";
+// import Category from "./Category.js";
 
 const Orgspaceinstance = (props) => {
   const [org, setorg] = React.useState("");
   const [space, setspace] = React.useState("");
   const [instance, setinstance] = React.useState("");
+  console.log("org", org);
+  console.log("space", space);
   console.log("instance", instance);
   //HandleChange
   const handleChanges = (event) => {
@@ -28,7 +31,7 @@ const Orgspaceinstance = (props) => {
       default:
     }
   };
-  /* 
+  /*
   //Handle Org
   const handleChange = (event) => {
     setorg(event.target.value);
@@ -46,82 +49,83 @@ const Orgspaceinstance = (props) => {
   //   console.log("org", org); */
   return (
     <div>
-      <Grid container spacing={2}>
-        <Category innerText={org} heading="org" handleChange={handleChanges} />
-        <Category
-          innerText={space}
-          heading="space"
-          handleChange={handleChanges}
-        />
+      <Row className="mb-3">
+        <Form.Group as={Col} md="4" controlId="validationFormik03">
+          <Form.Label className="select-label">Org</Form.Label>
 
-        {/*  <Grid item md={4} xs={6}>
-          <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel htmlFor="outlined-age-native-simple">Org</InputLabel>
-            <Select
-              native
-              value={org}
-              onChange={handleChange}
-              label="Org"
-              //   inputProps={{
-              //     name: "age",
-              //     id: "outlined-age-native-simple",
-              //   }}
-            >
-              <option aria-label="None" value="" />
-              <option value={"org1"}>org1</option>
-              <option value={"org2"}>org2</option>
-              <option value={"org3"}>org3</option>
-            </Select>
-          </FormControl>
-        </Grid>
-
-        <Grid item md={4} xs={6} style={{ height: "45px" }}>
-          <FormControl variant="outlined" className={classes.formControl}>
-            <InputLabel htmlFor="outlined-age-native-simple">Space</InputLabel>
-            <Select
-              native
-              value={space}
-              onChange={handleChangeSpace}
-              label="Space"
-              //   inputProps={{
-              //     name: "age",
-              //     id: "outlined-age-native-simple",
-              //   }}
-
-            >
-              <option aria-label="None" value="" />
-              <option value={"space1"}>space1</option>
-              <option value={"space2"}>space2</option>
-              <option value={"space3"}>space3</option>
-            </Select>
-          </FormControl>
-        </Grid>
-
-        <Grid item md={4} xs={6}>
-          <FormControl
-            variant="outlined"
-            className={classes.formControl}
-            style={{ height: "45px" }}
+          <select
+            className="form-select classic select-height"
+            // value={values.InstanceName}
+            // onChange={InstanceHandleChange}
+            // onchange={handleChange}
+            // style={{ height: "40px" }}
+            // isInvalid={!!errors.InstanceName}
+            // defaultValue=""
+            // onChange={formik.handleChange}
+            // onBlur={formik.handleBlur}
+            // value={formik.values.InstanceName}
           >
-            <InputLabel htmlFor="outlined-age-native-simple">
-              Instance
-            </InputLabel>
-            <Select
-              native
-              value={instance}
-              onChange={handleChangeInstane}
-              label="instance"
-            
-            >
-              <option aria-label="None" value="" />
-              <option value={"instance1"}>instance1</option>
-              <option value={"instance2"}>instance2</option>
-              <option value={"instance3"}>instance3</option>
-            </Select>
-          </FormControl>
-        </Grid>
-       */}
-      </Grid>
+            <option defaultValue> select org </option>
+            <option value="org1">org1</option>
+            <option value="org2">org2</option>
+            <option value="org3">org3</option>
+          </select>
+          <Form.Control.Feedback type="invalid">
+            {/* {errors.InstanceName} */}
+          </Form.Control.Feedback>
+          {/* </FloatingLabel> */}
+        </Form.Group>
+        <Form.Group as={Col} md="4" controlId="validationFormik03">
+          <Form.Label className="select-label">Space</Form.Label>
+
+          <select
+            className="form-select classic select-height"
+            // value={values.InstanceName}
+            // onChange={InstanceHandleChange}
+            // onchange={handleChange}
+            // style={{ height: "40px" }}
+            // isInvalid={!!errors.InstanceName}
+            // defaultValue=""
+            // onChange={formik.handleChange}
+            // onBlur={formik.handleBlur}
+            // value={formik.values.InstanceName}
+          >
+            <option defaultValue> select Space </option>
+            <option value="Space1">Space1</option>
+            <option value="Space2">Space2</option>
+            <option value="Space3">Space3</option>
+          </select>
+          <Form.Control.Feedback type="invalid">
+            {/* {errors.Space} */}
+          </Form.Control.Feedback>
+          {/* </FloatingLabel> */}
+        </Form.Group>
+        <Form.Group as={Col} md="4" controlId="validationFormik03">
+          <Form.Label className="select-label">Instance</Form.Label>
+
+          <select
+            className="form-select classic select-height"
+            // value={values.InstanceName}
+            // onChange={InstanceHandleChange}
+            // onchange={handleChange}
+            // style={{ height: "40px" }}
+            // isInvalid={!!errors.InstanceName}
+            // defaultValue=""
+            // onChange={formik.handleChange}
+            // onBlur={formik.handleBlur}
+            // value={formik.values.InstanceName}
+          >
+            <option defaultValue> select InstanceName </option>
+            <option value="InstanceName1">InstanceName1</option>
+            <option value="InstanceName2">InstanceName2</option>
+            <option value="InstanceName3">InstanceName3</option>
+          </select>
+          <Form.Control.Feedback type="invalid">
+            {/* {errors.InstanceName} */}
+          </Form.Control.Feedback>
+          {/* </FloatingLabel> */}
+        </Form.Group>
+      </Row>
     </div>
   );
 };

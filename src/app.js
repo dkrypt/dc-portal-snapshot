@@ -5,7 +5,7 @@ import "./app.css";
 import Sidebar from "./components/Sidebar.js";
 import CenterHeader from "./components/CenterHeader.js";
 import Router from "./router/Router.js";
-import Breadcrumb from "./breadcrumb/Breadcrumb.js";
+// import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
