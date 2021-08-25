@@ -132,7 +132,9 @@ export default class Dashboard extends React.Component {
             style: "",
           },
           serviceInfo: {
-            "Subscription Count": 8,
+            "Number of Orgs": `${9} $open`,
+            "Open Incidents": `${2}`,
+            "What's New": "$open"
           },
           displayPermissions: {
             displayCard: true,
