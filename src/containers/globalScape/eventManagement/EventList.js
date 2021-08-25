@@ -21,7 +21,7 @@ export default class EventList extends React.Component {
       showToastM: false,
       selectedEventName: "",
       toastMessage:"",
-      // eventsData: [], //commented for demo purpose
+      eventsData: [],
       eventsData: [{
         EVENT_NAME: "lg790231sd==ID%1100620141==CI%neeyamo eu pay_n_comp multi pr==Desc%LATAM_VEN_GPAS==ToGE_from==EP Domain%NEEYAMO==TEST",
         ssoID: "122344",
