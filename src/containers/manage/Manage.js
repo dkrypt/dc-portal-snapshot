@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Tab, Row, Col } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 import Icon_TC from "../../assets/images/Icon-TC.png";
 import Icon_EC from "../../assets/images/Icon-EC.png";
 import Icon_Dive from "../../assets/images/Icon-Dive.png";
@@ -17,6 +17,16 @@ function Manage(props) {
     },
     image: { maxHeight: "150px" },
   };
+  // <Link
+  //   className="list-group-item list-group-item-action"
+  //   to="/manage"
+  //   onClick={this.props.clickEvent.bind(this, {
+  //     pageName: "Manage",
+  //     headerText: "MANAGE",
+  //   })}
+  // >
+  //   <img className="img-fluid" alt="" src={Icon_Subscriptions} /> MANAGE
+  // </Link>;
 
   return (
     <div
@@ -28,14 +38,24 @@ function Manage(props) {
     >
       <Tab.Container id="left-tabs-example" defaultActiveKey="first">
         <div style={CardCss.card}>
-          <a
+          <Link
+            // className="list-group-item list-group-item-action"
+            to="/managesubscription"
+            onClick={props.clickEvent.bind(this, {
+              pageName: "Subscription",
+              headerText: "SUBSCRIPTION",
+            })}
+          >
+            {/* <img className="img-fluid" alt="" src={Icon_Subscriptions} /> MANAGE */}
+
+            {/* <a
             href="#"
             onClick={props.clickEvent.bind(this, {
               pageName: "Subscription",
               headerText: "SUBSCRIPTION",
               // subHeaderText: "Persona 1",
             })}
-          >
+          > */}
             <div
               className="Card card-1"
               style={CardCss.content}
@@ -63,15 +83,24 @@ function Manage(props) {
                 </span>
               </div>
             </div>
-          </a>
+            {/* </a> */}
+          </Link>
         </div>
         <div style={CardCss.card}>
-          <a
+          {/* <a
             href="#"
             onClick={props.clickEvent.bind(this, {
               pageName: "User",
               headerText: "Manage User",
               // subHeaderText: "Persona 1",
+            })}
+          > */}
+          <Link
+            // className="list-group-item list-group-item-action"
+            to="/manageuser"
+            onClick={props.clickEvent.bind(this, {
+              pageName: "User",
+              headerText: "Manage User",
             })}
           >
             <div className="Card card-1" style={CardCss.content}>
@@ -90,15 +119,23 @@ function Manage(props) {
                 </span>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div style={CardCss.card}>
-          <a
+          {/* <a
             href="#"
             onClick={props.clickEvent.bind(this, {
               pageName: "ManageTC",
               headerText: "MANAGE THREAD CONNECT",
               // subHeaderText: "Persona 1",
+            })}
+          > */}
+          <Link
+            // className="list-group-item list-group-item-action"
+            to="/managetc"
+            onClick={props.clickEvent.bind(this, {
+              pageName: "ManageTC",
+              headerText: "MANAGE THREAD CONNECT",
             })}
           >
             <div
@@ -121,15 +158,23 @@ function Manage(props) {
                 </span>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div style={CardCss.card}>
-          <a
+          {/* <a
             href="#"
             onClick={props.clickEvent.bind(this, {
               pageName: "Enterpriseconnect",
               headerText: "ENTERPRISECONNECT",
               // subHeaderText: "Persona 1",
+            })}
+          > */}
+          <Link
+            // className="list-group-item list-group-item-action"
+            to="/managetc"
+            onClick={props.clickEvent.bind(this, {
+              pageName: "Enterpriseconnect",
+              headerText: "ENTERPRISECONNECT",
             })}
           >
             <div
@@ -151,37 +196,28 @@ function Manage(props) {
                 </span>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div style={CardCss.card}>
-          <a
-            href="#"
-            /* onClick={props.clickEvent.bind(this, {
-              pageName: "Enterpriseconnect",
-              headerText: "ENTERPRISECONNECT", 
-              // subHeaderText: "Persona 1",
-            })}*/
+          <div
+            className="Card card-1"
+            style={CardCss.content}
+            // style={{ width: "20vw", height: "30vh" }}
           >
-            <div
-              className="Card card-1"
-              style={CardCss.content}
-              // style={{ width: "20vw", height: "30vh" }}
-            >
-              <div>
-                <img
-                  className="img-fluid"
-                  src={Icon_Dive}
-                  alt="Dive-Icon"
-                  style={CardCss.image}
-                ></img>
-              </div>
-              <div>
-                <span style={{ width: "158px" }} className="card_title">
-                  DIVE{" "}
-                </span>
-              </div>
+            <div>
+              <img
+                className="img-fluid"
+                src={Icon_Dive}
+                alt="Dive-Icon"
+                style={CardCss.image}
+              ></img>
             </div>
-          </a>
+            <div>
+              <span style={{ width: "158px" }} className="card_title">
+                DIVE{" "}
+              </span>
+            </div>
+          </div>
         </div>
       </Tab.Container>
     </div>

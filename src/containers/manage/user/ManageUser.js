@@ -4,10 +4,10 @@ import UserManagement from "./UserManagement.js";
 function ManageUser(props) {
   return (
     <Fragment>
-      <div class="container">
-        <div class="row">
-          <div class="card">
-            <div class="card-header">
+      <div className="container">
+        <div className="row">
+          <div className="card">
+            <div className="card-header">
               <Tab.Container id="left-tabs-example" defaultActiveKey="first">
                 <Row>
                   <Col sm={12}>

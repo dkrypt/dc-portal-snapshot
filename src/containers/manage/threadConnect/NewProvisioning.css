@@ -1,0 +1,13 @@
+.form-mar {
+  margin-left: 6px;
+}
+.form-wid {
+  width: 45px;
+}
+.col-radio {
+  display: flex;
+  margin-top: 8px;
+}
+.select-height {
+  height: 40px;
+}

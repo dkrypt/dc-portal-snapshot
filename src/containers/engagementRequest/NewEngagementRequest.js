@@ -50,15 +50,18 @@ export default class NewEngagementRequest extends React.Component {
   }
 
   componentDidMount() {
-    var multipleCancelButton = new window.Choices("#choices-multiple-remove-button", {
-      removeItemButton: true,
-      maxItemCount: 10,
-      searchResultLimit: 5,
-      renderChoiceLimit: 10,
-      itemSelectText: "",
-      // placeholder: true,
-      // placeholderValue: "Select",
-    });
+    var multipleCancelButton = new window.Choices(
+      "#choices-multiple-remove-button",
+      {
+        removeItemButton: true,
+        maxItemCount: 10,
+        searchResultLimit: 5,
+        renderChoiceLimit: 10,
+        itemSelectText: "",
+        // placeholder: true,
+        // placeholderValue: "Select",
+      }
+    );
 
     var serviceNames = [];
 
