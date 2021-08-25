@@ -22,26 +22,26 @@ export default class EventList extends React.Component {
       selectedEventName: "",
       toastMessage:"",
       eventsData: [],
-      // eventsData: [{
-      //   eventname: "ABC_123",
-      //   ssoID: "122344",
-      // },
-      // {
-      //   eventname: "Event_GHI_789_",
-      //   ssoID: "122344",
-      // },
-      // {
-      //   eventname: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
-      //   ssoID: "122344",
-      // },
-      // {
-      //   eventname: "Event_ABC_123_",
-      //   ssoID: "122344",
-      // },
-      // {
-      //   eventname: "Event_GHI_789_",
-      //   ssoID: "122344",
-      // }]
+      eventsData: [{
+        EVENT_NAME: "lg790231sd==ID%1100620141==CI%neeyamo eu pay_n_comp multi pr==Desc%LATAM_VEN_GPAS==ToGE_from==EP Domain%NEEYAMO==TEST",
+        ssoID: "122344",
+      },
+      {
+        EVENT_NAME: "lg817262sd==ID%1001459552==CI%quality-erp-etq-internalvault==Desc%LYNN_SmartOrder_Data==ToGE_from==IP Name%CAS==QA",
+        ssoID: "122344",
+      },
+      {
+        EVENT_NAME: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
+        ssoID: "122344",
+      },
+      {
+        EVENT_NAME: "lg790231sd==ID%1100620332==CI%GPIT==Desc%EMEA_MULTI_GPIT==FromGE_to==EP Domain%ADP==PROD",
+        ssoID: "122344",
+      },
+      {
+        EVENT_NAME: "lg790231sd==ID%1000614959==CI%swisspost eu sap multi pr==Desc%EMEA_CH_PROJECTACC [POWER]==ToGE_from==EP Domain%SPS==PROD",
+        ssoID: "122344",
+      }]
     }
     this.closeModal = this.closeModal.bind(this);
     this.updatedToastMessage = this.updatedToastMessage.bind(this);
@@ -49,19 +49,19 @@ export default class EventList extends React.Component {
 
   }
 
-componentDidMount(){
-  AxiosInstance.post('/02/SelfServicePortal/DISP_DISPLAY_EVENT_LIST?UserID=502663088')
+// componentDidMount(){
+//   AxiosInstance.post('/02/SelfServicePortal/DISP_DISPLAY_EVENT_LIST?UserID=502663088')
  
-  .then((response)=>{
-// Handle response after CORS resolution
-this.setState({ eventsData: response.data })
-console.log("Event data :", this.state.eventsData);
-  })
-  .catch((e)=>{
-    console.error(e);
-  })
+//   .then((response)=>{
+// // Handle response after CORS resolution
+// this.setState({ eventsData: response.data })
+// console.log("Event data :", this.state.eventsData);
+//   })
+//   .catch((e)=>{
+//     console.error(e);
+//   })
   
-}
+// }
 updatedToastMessage(value,msg){
   this.setState({showToastM: value,
   toastMessage:msg

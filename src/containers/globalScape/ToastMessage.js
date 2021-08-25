@@ -15,7 +15,7 @@ const ToastMessage = ({showToast,updateToast,toastMessage}) => {
       //   className="d-inline-block m-1 gs-toast"
       //   bg="success"
       // >
-      <Toast className="d-inline-block m-1 gs-toast" onClose={() => updateToast(false,'')} show={showToast} delay={3000} >
+      <Toast className="d-inline-block m-1 gs-toast" onClose={() => updateToast(false,'')} show={showToast} delay={3000} autohide>
          {/* <Toast onClose={() => this.setState({showToast:false})} show={this.state.showToast} delay={3000} autohide>  */}
         {/* <Toast.Header> */}
       {/* <img
