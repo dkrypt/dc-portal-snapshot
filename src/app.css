@@ -745,7 +745,7 @@ a:hover {
   padding-left: 1.4rem !important;
 }
 
-select {
+.form-select {
   /* styling */
   background-color: white;
   border: thin solid blue;
@@ -790,6 +790,70 @@ select.classic:focus {
 .select-label {
   padding: 6px !important;
 }
+/* <----- new provisioning css ---> */
+.form-mar {
+  margin-left: 6px;
+}
+.form-wid {
+  width: 45px;
+}
+.col-radio {
+  display: flex;
+  margin-top: 8px;
+}
+.select-height {
+  height: 40px;
+}
+
+.mb-3.bucAdnCom .row {
+  margin-left: 18px !important;
+}
+
+.form-switch {
+  margin-left: 8px;
+}
+/* <----- new provisioning css End ---> */
+
+/* <------ new subscription --------> */
+.mb-3.bucAdnComNew.row {
+  margin-left: 30px !important;
+}
+.product-CheckBoxGroup {
+  display: flex;
+}
+.product-checkBox {
+  display: flex;
+  margin-left: 20px;
+}
+.form-check {
+  margin-left: 10px;
+}
+.form-height {
+  height: 40px;
+}
+.mb-3.subscription-submit.row {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+.mb-3.UpdateSubmit.row {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* <------ new subscription End -----> */
+
+/* <----- user manage -----> */
+.mb-3.submit-button.row {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+/* <------- user manage end -------> */
+
+/* <-------- manage component ---------> */
+.aligncenter {
+  text-align: center;
+}
+/* <--------- manage component end --------> */
 
 @media (max-width: 990px) {
   .card {
