@@ -11,9 +11,9 @@ export default class RunNow extends React.Component {
   render() {
     return (  
         <Modal show={this.props.openModal} onHide={this.props.closeModal}>
-          <Modal.Header closeBut ton>
+          {/* <Modal.Header closeBut ton>
             <Modal.Title>Event Execution confirmation page?</Modal.Title>
-          </Modal.Header>
+          </Modal.Header> */}
           <Modal.Body>
             <p className="form-group row">
               <label className="col-sm-4 col-form-label" htmlFor="gs_eve-name">Event Name*</label>

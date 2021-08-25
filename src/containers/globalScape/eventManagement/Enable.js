@@ -5,15 +5,19 @@ import { Modal, Button } from 'react-bootstrap';
 export default class Enable extends React.Component {
   constructor(props) {
     super(props);
-
+    this.onEnablebuttonClick = this.onEnablebuttonClick.bind(this);
+  }
+  onEnablebuttonClick(){
+    this.props.closeModal();
+    this.props.toastMessage(true,'Enable saved');
   }
 
   render() {
     return (
       <Modal show={this.props.openModal} onHide={this.props.closeModal}>
-        <Modal.Header closeBut ton>
+        {/* <Modal.Header closeBut ton>
           <Modal.Title>Enable</Modal.Title>
-        </Modal.Header>
+        </Modal.Header> */}
         <Modal.Body>
           <p className="form-group row">
             <label className="col-sm-4 col-form-label" htmlFor="gs_eve-name">Event Name*</label>
@@ -26,7 +30,7 @@ export default class Enable extends React.Component {
           <Button variant="secondary" onClick={this.props.closeModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={this.props.closeModal}>
+          <Button variant="primary" onClick={this.onEnablebuttonClick}>
             Enable
           </Button>
         </Modal.Footer>
