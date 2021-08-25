@@ -35,7 +35,7 @@ export default class ThreadConnect extends React.Component {
             style: "",
           },
           serviceInfo: {
-            Status: "Healthy $status",
+            "Status": "Healthy $status",
             "Connector Count for $month": 5,
             "Transaction Count for $date": 1250,
             "TC Release": "1.11.4.3.2.41",
@@ -108,7 +108,7 @@ export default class ThreadConnect extends React.Component {
             style: "",
           },
           serviceInfo: {
-            Status: "Restarting $status",
+            "Status": "Restarting $status",
             "Connector Count for $month": 8,
             "Transaction Count for $date": 2250,
             "TC Release": "1.11.4.3.2.41",
@@ -188,7 +188,7 @@ export default class ThreadConnect extends React.Component {
   componentDidMount() {
     // this.highChart();
     var serviceNames = [];
-    this.state.serviceCards.map((service) => {
+    this.state.serviceCards.forEach((service) => {
       serviceNames.push(service.serviceName);
     });
     this.props.setPersonaHandler(serviceNames);
@@ -220,18 +220,9 @@ export default class ThreadConnect extends React.Component {
         firstTimeLoad: tempArr,
       });
       console.log("Onmount SrCr: ", this.state.serviceCardDisplay);
-      let carouselNode = document.querySelector(".carousel-indicators");
-
-      if (carouselNode != null) {
-        carouselNode.classList.add("col-12");
-        console.log("FC: ", carouselNode);
-      }
+     
     }, 100);
 
-    /* if(this.state.serviceCards.length < 3){
-      let carouselNode = document.querySelector(".carousel-indicators");
-      carouselNode.setAttribute("style","display:none")
-    } */
   }
 
   componentDidUpdate(prevprops, prevstate) {
@@ -240,7 +231,7 @@ export default class ThreadConnect extends React.Component {
       let updateServiceCards = Object.assign([], this.state.serviceCards);
       console.log("FirstTimeload: ", this.state.firstTimeLoad);
       let tempCard = [[]];
-      updateServiceCards.map((service, index) => {
+      updateServiceCards.forEach((service, index) => {
         if (this.props.persona == service.serviceName) {
           tempCard[0].push(service);
         }
@@ -259,11 +250,6 @@ export default class ThreadConnect extends React.Component {
         "Updated serviceCardDisplay: ",
         this.state.serviceCardDisplay
       );
-
-      /* if(this.state.serviceCardDisplay.length < 3){
-        let carouselNode = document.querySelector(".carousel-indicators");
-        carouselNode.setAttribute("style","display:none")
-      } */
     }
   }
 
@@ -278,7 +264,7 @@ export default class ThreadConnect extends React.Component {
   handleHighChartFilter(event) {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
+    // const name = target.name;
     const regex = /\d\d|\d/gm;
     // console.log("Selected Value: ",value)
     const currentHighChartData = Object.assign([], this.state.highChartData);

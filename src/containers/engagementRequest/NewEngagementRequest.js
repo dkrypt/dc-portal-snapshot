@@ -121,25 +121,13 @@ export default class NewEngagementRequest extends React.Component {
     currentFormData[name].value =
       valueOptions.length > 0 ? valueOptions : value;
 
-    console.log(
-      "Name: ",
-      name + "..." + "Value: ",
-      value + "...",
-      "Options: ",
-      valueOptions
-    );
-
     this.setState({
       formData: currentFormData,
     });
-
-    console.log("Form-Data: ", this.state.formData);
   }
 
   handleEmailCheckbox(event) {
     const target = event.target;
-
-    console.log("checked: ", target.checked);
 
     if (target.checked) {
       this.setState({
@@ -223,7 +211,6 @@ export default class NewEngagementRequest extends React.Component {
       this.setState({
         formSuccessMsg: "Successful",
       });
-      console.log("Successful Post: ", response);
     });
   }
 
@@ -234,7 +221,7 @@ export default class NewEngagementRequest extends React.Component {
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle">
           {/* <iframe
-            src="https://app.smartsheet.com/b/form/***REMOVED***"
+            src="https://app.smartsheet.com/b/form/74f7e5c706d04aca841df70661a5631b"
             title="SmartSheet for New Engagement Request"
             style={{ height: "75vh", width: "100%" }}
           ></iframe> */}

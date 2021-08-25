@@ -2,8 +2,12 @@ import React from "react";
 import moment from "moment";
 import { Link } from "react-router-dom";
 import { Carousel, Dropdown } from "react-bootstrap";
+import LaunchIcon from "@material-ui/icons/Launch";
 
 import Icon_Open from "../assets/images/Icon-Open.svg";
+import Icon_Snow from "../assets/images/Icon-Snow.png";
+
+const DOLLARREGEX = /[$].+/gm;
 
 export default class CarouselItem extends React.Component {
   constructor(props) {
@@ -15,7 +19,17 @@ export default class CarouselItem extends React.Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+        setTimeout(() => {
+     
+      let carouselNode = document.querySelector(".carousel-indicators");
+
+      if (carouselNode != null) {
+        carouselNode.classList.add("col-12","p-0");
+        // console.log("FC: ", carouselNode);
+      }
+    }, 100);
+  }
 
   handleExternalLink(url) {
     window.open(url, "_blank");
@@ -25,13 +39,15 @@ export default class CarouselItem extends React.Component {
     return (
       <Carousel interval={3000}>
         {console.log("Carousel called")}
-        {this.props.serviceCardDisplay.map((serviceCard, index) => {
+        {this.props.serviceCardDisplay.map((serviceCard, indexArr) => {
           return (
-            <Carousel.Item key={index}>
+            <Carousel.Item key={indexArr}>
               <div className="row">
                 {serviceCard.map((service, index) => {
                   return (
-                    <div className="col-sm-4" key={index}>
+                    
+                    <div className={serviceCard.length < 2 ? "col-sm-4" : "col"} key={index}>
+                    {console.log("Carousel Index: ",index)}
                       <div className="thumb-wrapper borderStyle p-1">
                         <Link
                           className="service-text"
@@ -75,15 +91,26 @@ export default class CarouselItem extends React.Component {
                                     .replace("$date", this.state.date)
                                     .replace("$month", this.state.month)}
                                   :{" "}
-                                  {value == "Healthy $status"
-                                    ? "Healthy "
-                                    : value == "Restarting $status"
-                                    ? "Restarting "
-                                    : value}{" "}
+                                  {DOLLARREGEX.exec(value) !== null
+                                    ? value.replace(/[$].+/gm, " ")
+                                    : value}
                                   {value == "Healthy $status" ? (
                                     <span className="greenDot"></span>
                                   ) : value == "Restarting $status" ? (
                                     <span className="yellowDot"></span>
+                                  ) : typeof value == "string" && value.includes("$open") ? (
+                                    <a href="#">
+                                      <LaunchIcon className="m-1" />
+                                    </a>
+                                  ) : typeof value == "string" && value.includes("$snowimg") ? (
+                                    <a href="#">
+                                      <img
+                                        className="img-fluid m-1"
+                                        src={Icon_Snow}
+                                        alt="Open-Icon"
+                                        style={{ width: "5%" }}
+                                      />
+                                    </a>
                                   ) : (
                                     ""
                                   )}
@@ -158,10 +185,7 @@ export default class CarouselItem extends React.Component {
                                       ""
                                     )}
                                     {buttonData.type == "internal" ? (
-                                      <Link
-                                        className=""
-                                        to={buttonData.path}
-                                      >
+                                      <Link className="" to={buttonData.path}>
                                         {buttonData.buttonName}
                                       </Link>
                                     ) : (
