@@ -470,13 +470,14 @@ a:hover {
 
 .carousel-indicators li {
   display: inline-block;
-  width: 12px;
-  height: 0px;
+  width: 13px;
+  height: 4px;
   margin: 0 8px;
   background: #333;
   border-radius: 50%;
   opacity: 0.25;
   cursor: pointer;
+  border-bottom: 0px;
 }
 
 .carousel-indicators button .active {
@@ -517,7 +518,7 @@ a:hover {
 }
 
 .main-dashboard .thumb-wrapper {
-  height: 7.5rem;
+  height: 13rem;
 }
 
 .breadcrumb {

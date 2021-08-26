@@ -1,5 +1,5 @@
-import React, { Fragment } from "react";
-import { Modal, Button } from 'react-bootstrap';
+import React from "react";
+import { Button } from 'react-bootstrap';
 
 
 export default class DelegatePriToSso extends React.Component {

@@ -4,6 +4,8 @@
 name: v1beta-ci
 
 on:
+  push:
+    branches: [ v1beta ]
   pull_request:
     branches: [ v1beta ]
     types: [opened, synchronize]
@@ -26,9 +28,12 @@ jobs:
       run: |
           git config user.name "Shubham Paskanti"
           git config user.email "<spaskanti1@gmail.com>"
-          git mv build webui-assets
-          git add webui-assets
+          git add -f build
           git commit -m "Build Commit"
+          git push origin v1beta
+          git mv build webui-assets
+          git add -f webui-assets
+          git commit -m "webui-assets Commit"
           git push origin v1beta
           tree webui-assets
     - name: prmerged

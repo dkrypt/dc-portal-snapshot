@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Modal, Button, Table } from "react-bootstrap";
+import React from "react";
+import { Table } from "react-bootstrap";
 
 import defaultLogo from "../../assets/images/Logo-UserProfile.jpg";
 

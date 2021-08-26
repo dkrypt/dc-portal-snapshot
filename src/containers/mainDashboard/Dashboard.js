@@ -132,7 +132,9 @@ export default class Dashboard extends React.Component {
             style: "",
           },
           serviceInfo: {
-            "Subscription Count": 8,
+            "Number of Orgs": `${9} $open`,
+            "Open Incidents": `${2}`,
+            "What's New": "$open"
           },
           displayPermissions: {
             displayCard: true,
@@ -224,8 +226,8 @@ export default class Dashboard extends React.Component {
 
   componentDidMount() {
     var serviceNames = [];
-    this.state.serviceCards.map((service) => {
-      serviceNames.push(service.serviceName);
+    this.state.serviceCards.forEach((service) => {
+      serviceNames.push(service.serviceName)
     });
 
     this.props.setPersonaHandler(serviceNames);
@@ -255,17 +257,9 @@ export default class Dashboard extends React.Component {
         serviceCardDisplay: tempArr,
         firstTimeLoad: tempArr,
       });
-      console.log("Onmount SrCr: ", this.state.serviceCardDisplay);
-      let carouselNode = document.querySelector(".carousel-indicators");
-      if (carouselNode != null) {
-        carouselNode.classList.add("col-12");
-        console.log("FC: ", carouselNode);
-      }
+     
     }, 100);
-    /*  if(this.state.serviceCardDisplay.length == 1){
-      let carouselNode = document.querySelector(".carousel-indicators");
-      carouselNode.setAttribute("style","display:none")
-    } */
+   
   }
 
   componentDidUpdate(prevprops, prevstate) {
@@ -274,7 +268,7 @@ export default class Dashboard extends React.Component {
       let updateServiceCards = Object.assign([], this.state.serviceCards);
       console.log("FirstTimeload: ", this.state.firstTimeLoad);
       let tempCard = [[]];
-      updateServiceCards.map((service, index) => {
+      updateServiceCards.forEach((service, index) => {
         if (this.props.persona == service.serviceName) {
           tempCard[0].push(service);
         }
@@ -288,23 +282,7 @@ export default class Dashboard extends React.Component {
         this.setState({
           serviceCardDisplay: tempCard,
         });
-      }
-
-      /* this.setState({
-        serviceCardDisplay: tempCard,
-      }); */
-
-      console.log(
-        "Updated serviceCardDisplay: ",
-        this.state.serviceCardDisplay
-      );
-      /* if(this.state.serviceCardDisplay.length == 1 ){
-        let carouselNode = document.querySelector(".carousel-indicators");
-        carouselNode.setAttribute("style","display:none")
-      }else{
-        let carouselNode = document.querySelector(".carousel-indicators");
-        carouselNode.setAttribute("style","display:block")
-      } */
+      }      
     }
   }
 
