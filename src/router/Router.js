@@ -15,7 +15,6 @@ import ManageSubscription from "../containers/manage/subscription/ManageSubscrip
 import ManageUser from "../containers/manage/user/ManageUser.js";
 
 export default function Router(props) {
-  console.log("Location: ", window.location);
   return (
     <Switch>
       <Route exact path="/">

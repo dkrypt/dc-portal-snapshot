@@ -240,7 +240,6 @@ export default class Dashboard extends React.Component {
           ? Math.floor(modeRan) - 1
           : Math.floor(modeRan)
         : Math.ceil(modeRan) - 1;
-    console.log("ArrMode: ", arrMode);
     for (var i = 0; i <= arrMode; i++) {
       tempArr[i] = [];
       for (var j = 0; j < 3; j++) {
@@ -250,7 +249,6 @@ export default class Dashboard extends React.Component {
         }
       }
     }
-    console.log("Temp: ", tempArr);
 
     setTimeout(() => {
       this.setState({
@@ -264,16 +262,13 @@ export default class Dashboard extends React.Component {
 
   componentDidUpdate(prevprops, prevstate) {
     if (prevprops.persona != this.props.persona) {
-      console.log("prev: ", prevprops.persona, "...this: ", this.props.persona);
       let updateServiceCards = Object.assign([], this.state.serviceCards);
-      console.log("FirstTimeload: ", this.state.firstTimeLoad);
       let tempCard = [[]];
       updateServiceCards.forEach((service, index) => {
         if (this.props.persona == service.serviceName) {
           tempCard[0].push(service);
         }
       });
-      console.log("TempCard: ", tempCard);
       if (this.props.persona == "GLOBAL") {
         this.setState({
           serviceCardDisplay: this.state.firstTimeLoad,

@@ -202,7 +202,6 @@ export default class ThreadConnect extends React.Component {
           ? Math.floor(modeRan) - 1
           : Math.floor(modeRan)
         : Math.ceil(modeRan) - 1;
-    console.log("ArrMode: ", arrMode);
     for (var i = 0; i <= arrMode; i++) {
       tempArr[i] = [];
       for (var j = 0; j < 3; j++) {
@@ -212,14 +211,12 @@ export default class ThreadConnect extends React.Component {
         }
       }
     }
-    console.log("Temp: ", tempArr);
 
     setTimeout(() => {
       this.setState({
         serviceCardDisplay: tempArr,
         firstTimeLoad: tempArr,
       });
-      console.log("Onmount SrCr: ", this.state.serviceCardDisplay);
      
     }, 100);
 
@@ -227,16 +224,13 @@ export default class ThreadConnect extends React.Component {
 
   componentDidUpdate(prevprops, prevstate) {
     if (prevprops.persona != this.props.persona) {
-      console.log("prev: ", prevprops.persona, "...this: ", this.props.persona);
       let updateServiceCards = Object.assign([], this.state.serviceCards);
-      console.log("FirstTimeload: ", this.state.firstTimeLoad);
       let tempCard = [[]];
       updateServiceCards.forEach((service, index) => {
         if (this.props.persona == service.serviceName) {
           tempCard[0].push(service);
         }
       });
-      console.log("TempCard: ", tempCard);
       if (this.props.persona == "GLOBAL") {
         this.setState({
           serviceCardDisplay: this.state.firstTimeLoad,
@@ -246,15 +240,10 @@ export default class ThreadConnect extends React.Component {
           serviceCardDisplay: tempCard,
         });
       }
-      console.log(
-        "Updated serviceCardDisplay: ",
-        this.state.serviceCardDisplay
-      );
     }
   }
 
   showPopUpModal(clickValue) {
-    console.log("modal: ", clickValue);
     this.setState({
       showPopUpModal: clickValue.show,
       modalName: clickValue.buttonName,
