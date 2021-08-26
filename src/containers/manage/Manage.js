@@ -1,6 +1,7 @@
-import React, { Fragment } from "react";
-import { Tab, Row, Col } from "react-bootstrap";
+import React from "react";
+import { Tab } from "react-bootstrap";
 import { Link } from "react-router-dom";
+
 import Icon_TC from "../../assets/images/Icon-TC.png";
 import Icon_EC from "../../assets/images/Icon-EC.png";
 import Icon_Dive from "../../assets/images/Icon-Dive.png";
