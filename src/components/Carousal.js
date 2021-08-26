@@ -26,7 +26,6 @@ export default class CarouselItem extends React.Component {
 
       if (carouselNode != null) {
         carouselNode.classList.add("col-12","p-0");
-        // console.log("FC: ", carouselNode);
       }
     }, 100);
   }
@@ -38,7 +37,6 @@ export default class CarouselItem extends React.Component {
   render() {
     return (
       <Carousel interval={3000}>
-        {console.log("Carousel called")}
         {this.props.serviceCardDisplay.map((serviceCard, indexArr) => {
           return (
             <Carousel.Item key={indexArr}>
@@ -46,8 +44,7 @@ export default class CarouselItem extends React.Component {
                 {serviceCard.map((service, index) => {
                   return (
                     
-                    <div className={serviceCard.length < 2 ? "col-sm-4" : "col"} key={index}>
-                    {console.log("Carousel Index: ",index)}
+                    <div className={serviceCard.length < 2 ? "col-sm-4 service-tile-content" : "col service-tile-content"} key={index}>
                       <div className="thumb-wrapper borderStyle p-1">
                         <Link
                           className="service-text"
