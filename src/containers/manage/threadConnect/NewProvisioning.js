@@ -140,7 +140,7 @@ const NewProvisioning = (props) => {
               <Form.Control
                 type="text"
                 name="Project Name"
-                placeholder="ProjectName"
+                placeholder="Project Name"
                 // isValid={validate.BusinessName && validate.BusinessName}
                 // isInvalid={validate.BusinessName}
                 // onChange={formik.handleChange}
@@ -152,10 +152,10 @@ const NewProvisioning = (props) => {
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="validationFormik03">
-              <Form.Label>ShortDescription</Form.Label>
+              <Form.Label>Short Description</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="ShortDescription"
+                placeholder="Short Description"
                 name="ShortDescription"
                 // value={values.ShortDescription}
                 // onChange={handleChange}
@@ -173,7 +173,7 @@ const NewProvisioning = (props) => {
               <Form.Label>Short Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="ShortName"
+                placeholder="Short Name"
                 name="ShortName"
                 // value={values.ShortDescription}
                 // onChange={handleChange}
@@ -187,27 +187,12 @@ const NewProvisioning = (props) => {
                 {/* {errors.ShortName} */}
               </Form.Control.Feedback>
             </Form.Group>
-            <Form.Group as={Col} md="4" controlId="validationFormik01">
-              <Form.Label>Git Repositary</Form.Label>
-              <Form.Control
-                type="text"
-                name="Git Repositary"
-                placeholder="GitRepositary"
-                // isValid={validate.BusinessName && validate.BusinessName}
-                // isInvalid={validate.BusinessName}
-                // onChange={formik.handleChange}
-                // onBlur={formik.handleBlur}
-                // value={formik.values.ProjectName}
-              />
-              <Form.Control.Feedback type="invalid">
-                {/* {errors.GitRepositary} */}
-              </Form.Control.Feedback>
-            </Form.Group>
+
             <Form.Group as={Col} md="4" controlId="validationFormik03">
-              <Form.Label>Ci Name</Form.Label>
+              <Form.Label>CI Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ci Name"
+                placeholder="CI Name"
                 name="Ci_Name"
                 // value={values.ShortDescription}
                 // onChange={handleChange}
@@ -222,10 +207,10 @@ const NewProvisioning = (props) => {
               </Form.Control.Feedback>
             </Form.Group>
             <Form.Group as={Col} md="4" controlId="validationFormik03">
-              <Form.Label>VLan</Form.Label>
+              <Form.Label>VLAN</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="VLan"
+                placeholder="VLAN"
                 name="VLan"
                 // value={values.ShortDescription}
                 // onChange={handleChange}

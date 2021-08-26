@@ -65,10 +65,10 @@ const Orgspaceinstance = (props) => {
             // onBlur={formik.handleBlur}
             // value={formik.values.InstanceName}
           >
-            <option defaultValue> select org </option>
-            <option value="org1">org1</option>
-            <option value="org2">org2</option>
-            <option value="org3">org3</option>
+            <option defaultValue> Select org </option>
+            <option value="org1">Org1</option>
+            <option value="org2">Org2</option>
+            <option value="org3">Org3</option>
           </select>
           <Form.Control.Feedback type="invalid">
             {/* {errors.InstanceName} */}
@@ -90,7 +90,7 @@ const Orgspaceinstance = (props) => {
             // onBlur={formik.handleBlur}
             // value={formik.values.InstanceName}
           >
-            <option defaultValue> select Space </option>
+            <option defaultValue> Select Space </option>
             <option value="Space1">Space1</option>
             <option value="Space2">Space2</option>
             <option value="Space3">Space3</option>
@@ -115,7 +115,7 @@ const Orgspaceinstance = (props) => {
             // onBlur={formik.handleBlur}
             // value={formik.values.InstanceName}
           >
-            <option defaultValue> select InstanceName </option>
+            <option defaultValue> Select InstanceName </option>
             <option value="InstanceName1">InstanceName1</option>
             <option value="InstanceName2">InstanceName2</option>
             <option value="InstanceName3">InstanceName3</option>

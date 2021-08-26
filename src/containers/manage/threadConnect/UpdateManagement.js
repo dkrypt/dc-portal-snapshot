@@ -137,7 +137,7 @@ const UpdateManagement = (props) => {
                 // onBlur={formik.handleBlur}
                 // value={formik.values.ProjectName}
               >
-                <option defaultValue> select ProjectName </option>
+                <option defaultValue> Select ProjectName </option>
                 <option value="ProjectName1">ProjectName1</option>
                 <option value="ProjectName2">ProjectName2</option>
                 <option value="ProjectName3">ProjectName3</option>
@@ -165,7 +165,7 @@ const UpdateManagement = (props) => {
                 // onBlur={formik.handleBlur}
                 // value={formik.values.ShortDescription}
               >
-                <option defaultValue> select ShortDescription </option>
+                <option defaultValue> Select ShortDescription </option>
                 <option value="ShortDescription1">ShortDescription1</option>
                 <option value="ShortDescription2">ShortDescription2</option>
                 <option value="ShortDescription3">ShortDescription3</option>
@@ -190,7 +190,7 @@ const UpdateManagement = (props) => {
                 // onBlur={formik.handleBlur}
                 // value={formik.values.ShortDescription}
               >
-                <option defaultValue> select ShortName </option>
+                <option defaultValue> Select ShortName </option>
                 <option value="ShortName1">ShortName1</option>
                 <option value="ShortName2">ShortName2</option>
                 <option value="ShortName3">ShortName3</option>
@@ -219,7 +219,7 @@ const UpdateManagement = (props) => {
                 // onBlur={formik.handleBlur}
                 // value={formik.values.InstanceName}
               >
-                <option defaultValue> select InstanceName </option>
+                <option defaultValue> Select InstanceName </option>
                 <option value="InstanceName1">InstanceName1</option>
                 <option value="InstanceName2">InstanceName2</option>
                 <option value="InstanceName3">InstanceName3</option>
