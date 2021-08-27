@@ -6,7 +6,7 @@
   "homepage": "v1.2beta/assets",
   "scripts": {
     "start": "set PORT=3011 && set REACT_APP_BASEURL=/&& set PUBLIC_URL=/&& react-scripts start",
-    "build": "set REACT_APP_BASEURL=/v1.2beta/dcsc&& react-scripts build",
+    "build": "REACT_APP_BASEURL=/v1.2beta/dcsc react-scripts build",
     "preinstall": "npx npm-force-resolutions",
     "test": "nyc cross-env NODE_ENV=test jasmine",
     "coverage": "nyc --reporter=lcov --reporter=text-lcov npm test",
