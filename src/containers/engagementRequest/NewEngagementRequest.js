@@ -78,7 +78,7 @@ export default class NewEngagementRequest extends React.Component {
     }); */
 
     // disable past dates
-    window.Jquery(function () {
+    /* window.Jquery(function () {
       var dtToday = new Date();
 
       var month = dtToday.getMonth() + 1;
@@ -90,7 +90,7 @@ export default class NewEngagementRequest extends React.Component {
       var minDate = year + "-" + month + "-" + day;
 
       window.Jquery("#inputDate").attr("min", minDate);
-    });
+    }); */
   }
 
   handleInputChange(event) {
