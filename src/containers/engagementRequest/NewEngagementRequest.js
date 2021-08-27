@@ -41,18 +41,37 @@ export default class NewEngagementRequest extends React.Component {
   }
 
   componentDidMount() {
-    var multipleCancelButton = new window.Choices(
-      "#choices-multiple-remove-button",
-      {
-        removeItemButton: true,
-        maxItemCount: 10,
-        searchResultLimit: 5,
-        renderChoiceLimit: 10,
-        itemSelectText: "",
-        // placeholder: true,
-        // placeholderValue: "Select",
-      }
-    );
+    setTimeout(()=>{
+      var multipleCancelButton = new window.Choices(
+        "#choices-multiple-remove-button",
+        {
+          removeItemButton: true,
+          maxItemCount: 10,
+          searchResultLimit: 5,
+          renderChoiceLimit: 10,
+          itemSelectText: "",
+          // placeholder: true,
+          // placeholderValue: "Select",
+        }
+      );
+
+      // disable past dates
+   
+      window.jQuery(function () {
+        var dtToday = new Date();
+  
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if (month < 10) month = "0" + month.toString();
+        if (day < 10) day = "0" + day.toString();
+  
+        var minDate = year + "-" + month + "-" + day;
+  
+        window.jQuery("#inputDate").attr("min", minDate);
+      });
+    },50)   
+    
 
     var serviceNames = [];
 
@@ -77,20 +96,9 @@ export default class NewEngagementRequest extends React.Component {
       },
     }); */
 
-    // disable past dates
-    /* window.Jquery(function () {
-      var dtToday = new Date();
-
-      var month = dtToday.getMonth() + 1;
-      var day = dtToday.getDate();
-      var year = dtToday.getFullYear();
-      if (month < 10) month = "0" + month.toString();
-      if (day < 10) day = "0" + day.toString();
-
-      var minDate = year + "-" + month + "-" + day;
-
-      window.Jquery("#inputDate").attr("min", minDate);
-    }); */
+    
+    
+    
   }
 
   handleInputChange(event) {
