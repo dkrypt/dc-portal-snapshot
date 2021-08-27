@@ -95,9 +95,6 @@ export default class NewEngagementRequest extends React.Component {
         console.log("SubToken: ", this.state.submissionToken);
       },
     }); */
-
-    
-    
     
   }
 
