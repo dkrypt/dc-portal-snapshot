@@ -20,27 +20,27 @@ export default class EventList extends React.Component {
       eventsData: [
         {
           EVENT_NAME:
-            "lg790231sd==ID%1100620141==CI%neeyamo eu pay_n_comp multi pr==Desc%LATAM_VEN_GPAS==ToGE_from==EP Domain%NEEYAMO==TEST",
+            "ABC_123_GHI",
           ssoID: "122344",
         },
         {
           EVENT_NAME:
-            "lg817262sd==ID%1001459552==CI%quality-erp-etq-internalvault==Desc%LYNN_SmartOrder_Data==ToGE_from==IP Name%CAS==QA",
+            "DEF-234_PQR",
           ssoID: "122344",
         },
         {
           EVENT_NAME:
-            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
+            "GHI_456_ABC",
           ssoID: "122344",
         },
         {
           EVENT_NAME:
-            "lg790231sd==ID%1100620332==CI%GPIT==Desc%EMEA_MULTI_GPIT==FromGE_to==EP Domain%ADP==PROD",
+            "LMN_678_IJK",
           ssoID: "122344",
         },
         {
           EVENT_NAME:
-            "lg790231sd==ID%1000614959==CI%swisspost eu sap multi pr==Desc%EMEA_CH_PROJECTACC [POWER]==ToGE_from==EP Domain%SPS==PROD",
+            "MNO_890_XYZ",
           ssoID: "122344",
         },
       ],
@@ -215,16 +215,16 @@ export default class EventList extends React.Component {
                 {this.state.eventsData.map(({ EVENT_NAME }, index) => {
                   return (
                     <tr key={index}>
-                      <td>
-                        <input
+                      
+                      <td className="gs_event-col">
+                      <input
                           type="checkbox"                          
                           name={EVENT_NAME}                       
                           value={EVENT_NAME}
                           onChange={ this.handleChecked }
                           checked={this.state.checkedItems.indexOf(EVENT_NAME) > -1}                         
                         />
-                      </td>
-                      <td className="gs_event-col">{EVENT_NAME}</td>
+                        <span>{EVENT_NAME}</span></td>
 
                       <td>
                         <button
