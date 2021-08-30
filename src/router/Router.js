@@ -13,6 +13,12 @@ import Manage from "../containers/manage/Manage.js";
 import ManageTC from "../containers/manage/threadConnect/ManageTC.js";
 import ManageSubscription from "../containers/manage/subscription/ManageSubscription.js";
 import ManageUser from "../containers/manage/user/ManageUser.js";
+import EventList from "../containers/globalScape/eventManagement/EventList.js";
+import EnableAccount from "../containers/globalScape/EnableAccount.js";
+import DelegatePriToSso from "../containers/globalScape/DelegatePriToSso.js";
+import RevokeSso from "../containers/globalScape/RevokeSso.js";
+import ModifyEventNsg from "../containers/globalScape/ModifyEventNsg.js";
+import RemoveIP from "../containers/globalScape/RemoveIP.js";
 
 export default function Router(props) {
   return (
@@ -118,6 +124,60 @@ export default function Router(props) {
       </Route>
       <Route exact path="/manageuser">
         <ManageUser
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/globalscape/eventmanagement">
+        <EventList
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/globalscape/delegatepriviledgestosso">
+        <DelegatePriToSso
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/globalscape/revokesso">
+        <RevokeSso
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/globalscape/enableaccount">
+        <EnableAccount
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/globalscape/modifyeventfornsg">
+        <ModifyEventNsg
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/globalscape/removeip">
+        <RemoveIP
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
           setPersonaHandler={props.setPersonaHandler.bind(this)}

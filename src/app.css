@@ -268,6 +268,7 @@ a:hover {
   height: 6.2rem;
   width: 75%;
   background-color: white;
+  z-index: 9;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -539,6 +540,7 @@ a:hover {
 
 /*<!-------------- Global scape CSS start ------------> */
 
+
 #gs_event-table .btn-primary {
   /* background-color: #0C2340; */
   background-color: #005eb8;
@@ -547,10 +549,16 @@ a:hover {
 }
 #gs_event-table td,
 #gs_event-table th {
-  padding: 7px;
+  border: 1px solid #ddd;
+  padding: 8px;
 }
+/* #gs_event-table tr:nth-child(even){background-color: #f2f2f2;} */
+
+#gs_event-table tr:hover {box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  z-index: 2;}
+
 #gs_event-table td.gs_event-col {
-  width: 34%;
+  width: 70%;
   word-break: break-word;
 }
 #gs_event-table button.btn.btn-primary:hover {
@@ -580,6 +588,11 @@ a:hover {
   /* padding: 10px; */
   /* text-align: center; */
 }
+td.gs_event-col input {
+  margin-right: 12px;
+}
+
+
 .gs-container i {
   position: absolute;
   right: 0px;
@@ -624,35 +637,65 @@ a:hover {
 .gs_event-header {
   margin: 0px !important; 
   padding-bottom: 20px;
-  float: right;
+  float: left;
+  width: 100%;
 }
+/* new css */
+.gs_event-header ul{
+  margin: 0px;
+  padding: 0px;
+}
+.gs_event-header ul li {
+  list-style: none;
+  display: inline;
+  float: left;
+  padding: 0 10px;
+}
+
+.gs_event-header ul li:last-child {
+ 
+  padding-right: 0px;
+  }
 .gs_event-header .titles{
   line-height: 33px;
   float: left;
 }
-.gs_event-header .search{
+/* .gs_event-header .search{
   float: right;
+} */
+/* .gs-toast .toast-header{
+  background-color: transparent;
+  height: 15px;
+} */
+.toast-header{
+  padding: .25rem .1rem;
+}
+.toast-header img{
+  width: 24px;
+  height: 24px;
+}
+.gs-toast .toast-header button{
+  position: absolute;
+  top: 11px;
+  right: 14px;
 }
 .gs-toast{
   height: 100px;
   position: fixed;
-  right: 10px;
- 
-  /* transform: translate(-50%, -50%); */
+  left: 50%;
+  transform: translateX(-50%);
   top: 10px;
   margin-left: -100px;
   bottom: 10px;
   background-color: #07bc0c;
-  /* // #35bc7a; */
   color: #F0F0F0;
   font-family: Calibri;
   font-size: 16px;
   padding: 10px;
   text-align: center;
-  border-radius: 7px;
-  -webkit-box-shadow: 0px 0px 24px -1px rgb(56 56 56);
-  -moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);
+  border-radius: 0px;
   box-shadow: 0px 0px 24px -1px rgb(56 56 56);
+  z-index: 99;
 }
 
 .Toastify__progress-bar.Toastify__progress-bar--animated.Toastify__progress-bar--success {
@@ -717,6 +760,81 @@ a:hover {
   left: auto;
   transform-origin: right
 }
+.gs-loader {
+  position: absolute;
+  left: 46%;
+  top: 48%;
+}
+.gs-container {
+  position: relative;
+  min-height: 75vh;
+}
+.gs-btn{
+  /* padding: 1.5rem; */
+  padding: 12px 14px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #32325d;
+  background-color: #f6f9fc;
+  border-radius: .375rem;
+  border: 0;
+  text-align: left;
+  /* font-family: sans-serif; */
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  width: 100%;
+ 
+}
+.gs-btn:hover{
+  color: rgb(255, 255, 255);
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 4px 16px rgb(0 0 0 / 10%);
+}
+.green:hover{
+  background: linear-gradient(to right, rgb(91, 144, 39), rgb(78, 124, 34));  
+}
+.orange:hover{
+  background: linear-gradient(to right, rgb(221, 157, 18), rgb(197, 140, 16));  
+}
+.purple:hover{
+  background: linear-gradient(to right, rgb(170, 102, 204), rgb(159, 83, 198));
+}
+.maroon:hover{
+  background: linear-gradient(to right, rgb(211, 42, 14), rgb(187, 37, 12));
+}
+.grey:hover{
+  background: linear-gradient(to right, rgb(68, 67, 64), rgb(55, 54, 52));
+}
+button.gs-btn span {
+  margin-left: 10px;
+}
+.gs-search.search {
+  margin-top: 3px;
+}
+
+.fix-btn {
+  width: 170px;
+  background-color: #005eb8;
+  color: white;
+}
+
+.gs-row a {
+  padding: 19px;
+  text-align: center;
+  /* vertical-align: middle; */
+  display: table;
+  color: #005eb8;
+}
+.Card.gs-card {
+  padding: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  height: 150px;
+}
+
 
 /*<!-------------- Global scape CSS End ------------> */
 
