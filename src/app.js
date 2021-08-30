@@ -7,6 +7,9 @@ import CenterHeader from "./components/CenterHeader.js";
 import Router from "./router/Router.js";
 // import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 
+const BASE_ENDPOINT = process.env.REACT_APP_BASEURL;
+console.log("Baseurl: ", BASE_ENDPOINT)
+
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
 export default class App extends React.Component {
@@ -33,7 +36,14 @@ export default class App extends React.Component {
     });
   }
 
-  componentDidUpdate(prevprops, prevstate) {}
+  componentDidUpdate(prevprops, prevstate) {
+    if(prevstate.headerText != this.state.headerText){
+      /* this.setState({        
+        currentPage: this.state.previousPageDetails.previousPage,
+        headerText: this.state.previousPageDetails.headerText,
+      }); */
+    }
+  }
 
   switchPage(changePageTo) {
     this.setState({
@@ -75,7 +85,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={BASE_ENDPOINT}>
         <Fragment>
           <div className="MainDiv">
             <div className="row m-0">
