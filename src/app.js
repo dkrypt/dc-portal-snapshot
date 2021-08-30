@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import { BrowserRouter } from "react-router-dom";
+import Loader from "react-loader-spinner";
 import "./app.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import Sidebar from "./components/Sidebar.js";
 import CenterHeader from "./components/CenterHeader.js";
@@ -8,7 +10,7 @@ import Router from "./router/Router.js";
 // import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 
 const BASE_ENDPOINT = process.env.REACT_APP_BASEURL;
-console.log("Baseurl: ", BASE_ENDPOINT)
+console.log("Baseurl: ", BASE_ENDPOINT);
 
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
@@ -26,6 +28,7 @@ export default class App extends React.Component {
         previousPage: "",
         headerText: "",
       },
+      isloading: "block",
     };
   }
 
@@ -37,7 +40,7 @@ export default class App extends React.Component {
   }
 
   componentDidUpdate(prevprops, prevstate) {
-    if(prevstate.headerText != this.state.headerText){
+    if (prevstate.headerText != this.state.headerText) {
       /* this.setState({        
         currentPage: this.state.previousPageDetails.previousPage,
         headerText: this.state.previousPageDetails.headerText,
@@ -88,6 +91,16 @@ export default class App extends React.Component {
       <BrowserRouter basename={BASE_ENDPOINT}>
         <Fragment>
           <div className="MainDiv">
+            {/* <div className="loader" style={{ display: this.state.isloading }}>
+              <Loader
+                type="Puff"
+                color="#00BFFF"
+                height={100}
+                width={100}
+                timeout={''} //3 secs
+              />
+            </div>z */}
+
             <div className="row m-0">
               <Sidebar clickEvent={this.switchPage.bind(this)} />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Row, Col, Table } from "react-bootstrap";
 
 import defaultLogo from "../../assets/images/Logo-UserProfile.jpg";
 
@@ -64,6 +64,11 @@ export default function Users() {
 
   return (
     <>
+      <div className="row">
+        <div className="col">
+          <input type="search" placeholder="Enter Email"></input>
+        </div>
+      </div>
       <Table striped bordered hover size="sm">
         <thead>
           <tr>
