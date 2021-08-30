@@ -1,10 +1,36 @@
 import React, { Fragment } from "react";
 import { Modal, Button } from 'react-bootstrap';
-
+import AxiosInstance from "../api/api.js";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 export default class Disable extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      runNowData: "",
+      loaded: false,
+    }
+    this.onEnablebuttonClick = this.onEnablebuttonClick.bind(this);
+  }
+  // onEnablebuttonClick(){
+  //   this.props.closeModal();
+  //   this.props.toastMessage(true,'Disabled saved');
+  // }
+  onEnablebuttonClick() {
+    this.setState({ loaded: true });
+    axios
+      .post(
+        "/02/SelfServicePortal/ASYNCExecuteEvent?EventRuleName=MFT_Admin_TestTransfer&ID=12345"
+      )
+      .then((response) => {
+        this.setState({ runNowData: response.data });       
+        this.props.closeModal();
+        this.props.toastMessage(true, this.state.runNowData);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   }
 
   render() {
@@ -25,9 +51,22 @@ export default class Disable extends React.Component {
             <Button variant="secondary" onClick={this.props.closeModal}>
               Close
             </Button>
-            <Button variant="primary" onClick={this.props.closeModal}>
-            Disable
-            </Button>
+            <Button variant="primary" onClick={this.onEnablebuttonClick}>            
+            {!this.state.loaded ? (
+              "Disable"
+            ) : (
+              <>
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Loading...
+              </>
+            )}
+          </Button>
           </Modal.Footer>
         </Modal>
     );

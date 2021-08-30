@@ -1,11 +1,37 @@
 import React from "react";
 import { Modal, Button } from 'react-bootstrap';
-
+import AxiosInstance from "../api/api.js";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 export default class AssignEventToSso extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      runNowData: "",
+      loaded: false,
+    }
+    this.onEnablebuttonClick = this.onEnablebuttonClick.bind(this);
+  }
+  // https://tc-eng-portal-aws.digitalconnect.apps.ge.com/api/02/SelfServicePortal/ADD_REMOVE_EVENTS_NSG_GROUPS?EventRuleName=MFT_Admin_TestTransfer&NSG=APP_GE016000000_GE_Read&Request_Mode=ADD
+  // onEnablebuttonClick(){
+  //   this.props.closeModal();
+  //   this.props.toastMessage(true,'Assign Event to sso saved');
+  // }
+  onEnablebuttonClick() {
+    this.setState({ loaded: true });
+    axios
+      .post(
+        "/02/SelfServicePortal/ADD_REMOVE_EVENTS_NSG_GROUPS?EventRuleName=MFT_Admin_TestTransfer&NSG=APP_GE016000000_GE_Read&Request_Mode=ADD"
+      )
+      .then((response) => {
+        this.setState({ runNowData: response.data });       
+        this.props.closeModal();
+        this.props.toastMessage(true, this.state.runNowData);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   }
 
   render() {
@@ -30,9 +56,22 @@ export default class AssignEventToSso extends React.Component {
             <Button variant="secondary" onClick={this.props.closeModal}>
               Close
             </Button>
-            <Button variant="primary" onClick={this.props.closeModal}>
-              Save Changes
-            </Button>
+            <Button variant="primary" onClick={this.onEnablebuttonClick}>            
+            {!this.state.loaded ? (
+              "Assign"
+            ) : (
+              <>
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Loading...
+              </>
+            )}
+          </Button>
           </Modal.Footer>
         </Modal>
     );
