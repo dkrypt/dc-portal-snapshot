@@ -1,15 +1,33 @@
 import React from "react";
 import { Modal, Button } from 'react-bootstrap';
-
+import AxiosInstance from "../api/api.js";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 export default class Enable extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      runNowData: "",
+      loaded: false,
+    }
     this.onEnablebuttonClick = this.onEnablebuttonClick.bind(this);
   }
-  onEnablebuttonClick(){
-    this.props.closeModal();
-    this.props.toastMessage(true,'Enable saved');
+ 
+  onEnablebuttonClick() {
+    this.setState({ loaded: true });
+    axios
+      .post(
+        "/02/SelfServicePortal/ENE_SYNC_ENABLE_EVENT?EventRuleName=MFT_Admin_TestTransfer&event_Enabled=true"
+      )
+      .then((response) => {
+        this.setState({ runNowData: response.data });       
+        this.props.closeModal();
+        this.props.toastMessage(true, this.state.runNowData);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   }
 
   render() {
@@ -30,8 +48,21 @@ export default class Enable extends React.Component {
           <Button variant="secondary" onClick={this.props.closeModal}>
             Close
           </Button>
-          <Button variant="primary" onClick={this.onEnablebuttonClick}>
-            Enable
+          <Button variant="primary" onClick={this.onEnablebuttonClick}>            
+            {!this.state.loaded ? (
+              "Enable"
+            ) : (
+              <>
+                <Spinner
+                  as="span"
+                  animation="grow"
+                  size="sm"
+                  role="status"
+                  aria-hidden="true"
+                />
+                Loading...
+              </>
+            )}
           </Button>
         </Modal.Footer>
       </Modal>

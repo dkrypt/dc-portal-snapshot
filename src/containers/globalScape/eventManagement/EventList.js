@@ -1,160 +1,273 @@
 import React, { Fragment } from "react";
 import ViewSchedule from "./ViewSchedule.js";
-import AssignEventToSso from "./AssignEventToSso.js";
-import Enable from "./Enable.js";
-import Disable from "./Disable.js";
-import RunNow from "./RunNow.js";
-import ToastMessage from "../ToastMessage.js"
-import AxiosInstance  from "../api/api.js";
-// import axios from 'axios';
-
+import ToastMessage from "../ToastMessage.js";
+import AxiosInstance from "../api/api.js";
+import axios from "axios";
+import { Spinner } from "react-bootstrap";
 
 export default class EventList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      showSso: false,
-      showEnable: false,
-      showDisable: false,
-      showRunNow: false,
       showToastM: false,
       selectedEventName: "",
-      toastMessage:"",
-      // eventsData: [], //commented for demo purpose
-      eventsData: [{
-        EVENT_NAME: "lg790231sd==ID%1100620141==CI%neeyamo eu pay_n_comp multi pr==Desc%LATAM_VEN_GPAS==ToGE_from==EP Domain%NEEYAMO==TEST",
-        ssoID: "122344",
-      },
-      {
-        EVENT_NAME: "lg817262sd==ID%1001459552==CI%quality-erp-etq-internalvault==Desc%LYNN_SmartOrder_Data==ToGE_from==IP Name%CAS==QA",
-        ssoID: "122344",
-      },
-      {
-        EVENT_NAME: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
-        ssoID: "122344",
-      },
-      {
-        EVENT_NAME: "lg790231sd==ID%1100620332==CI%GPIT==Desc%EMEA_MULTI_GPIT==FromGE_to==EP Domain%ADP==PROD",
-        ssoID: "122344",
-      },
-      {
-        EVENT_NAME: "lg790231sd==ID%1000614959==CI%swisspost eu sap multi pr==Desc%EMEA_CH_PROJECTACC [POWER]==ToGE_from==EP Domain%SPS==PROD",
-        ssoID: "122344",
-      }]
-    }
+      toastMessage: "",
+      // eventsData: [],
+      loading: true,
+      checkedItems: [],
+      
+      eventsData: [
+        {
+          EVENT_NAME:
+            "lg790231sd==ID%1100620141==CI%neeyamo eu pay_n_comp multi pr==Desc%LATAM_VEN_GPAS==ToGE_from==EP Domain%NEEYAMO==TEST",
+          ssoID: "122344",
+        },
+        {
+          EVENT_NAME:
+            "lg817262sd==ID%1001459552==CI%quality-erp-etq-internalvault==Desc%LYNN_SmartOrder_Data==ToGE_from==IP Name%CAS==QA",
+          ssoID: "122344",
+        },
+        {
+          EVENT_NAME:
+            "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m",
+          ssoID: "122344",
+        },
+        {
+          EVENT_NAME:
+            "lg790231sd==ID%1100620332==CI%GPIT==Desc%EMEA_MULTI_GPIT==FromGE_to==EP Domain%ADP==PROD",
+          ssoID: "122344",
+        },
+        {
+          EVENT_NAME:
+            "lg790231sd==ID%1000614959==CI%swisspost eu sap multi pr==Desc%EMEA_CH_PROJECTACC [POWER]==ToGE_from==EP Domain%SPS==PROD",
+          ssoID: "122344",
+        },
+      ],
+    };
     this.closeModal = this.closeModal.bind(this);
     this.updatedToastMessage = this.updatedToastMessage.bind(this);
-    
-
+    this.handleChecked = this.handleChecked.bind(this); 
   }
 
-// componentDidMount(){
-//   AxiosInstance.post('/02/SelfServicePortal/DISP_DISPLAY_EVENT_LIST?UserID=502663088')
- 
-//   .then((response)=>{
-// // Handle response after CORS resolution
-// this.setState({ eventsData: response.data })
-// console.log("Event data :", this.state.eventsData);
-//   })
-//   .catch((e)=>{
-//     console.error(e);
-//   })
   
-// }
-updatedToastMessage(value,msg){
-  this.setState({showToastM: value,
-  toastMessage:msg
-  })
-}
+
+  handleChecked = e => {
+    const item = e.target.name;
+    const isChecked = e.target.checked;
+    const checkedItems = [...this.state.checkedItems];
+    if(isChecked){
+      checkedItems.push(item);
+    }else{
+      checkedItems.splice(checkedItems.indexOf(item),1);
+    }
+    this.setState({checkedItems:checkedItems},()=>{
+      console.log("Event list name:", this.state.checkedItems);
+    });
+    
+};
+
+  componentDidMount() {
+    this.setState({ loading: false });
+    // axios
+    //   .post("/02/SelfServicePortal/DISP_DISPLAY_EVENT_LIST?UserID=502663088")
+
+    //   .then((response) => {
+    //     // Handle response after CORS resolution
+    //     this.setState({ eventsData: response.data, loading: false });
+    //     console.log("Event data :", this.state.eventsData);
+    //   })
+    //   .catch((e) => {
+    //     console.error(e);
+    //   });
+  }
+  updatedToastMessage(value, msg) {
+    this.setState({ showToastM: value, toastMessage: msg });
+  }
 
   viewScheduleFun(eventname) {
     this.setState({
-      showModal: true,     
-      selectedEventName: eventname
-    })
+      showModal: true,
+      selectedEventName: eventname,
+    });
   }
 
   closeModal() {
-    console.log('in close modal', this);
+    console.log("in close modal", this);
     this.setState({
       showModal: false,
       showSso: false,
       showEnable: false,
       showDisable: false,
       showRunNow: false,
-    })
-  }
-  assignSsoFun(eventname) {
-    this.setState({
-      showSso: true,
-      selectedEventName: eventname
-    })
-  }
-  showEnableFun(eventname) {
-    this.setState({
-      showEnable: true,
-      selectedEventName: eventname
-    })
-  }
-  showDisableFun(eventname) {
-    this.setState({
-      showDisable: true,
-      selectedEventName: eventname
-    })
-  }
-  showRunNowFun(eventname) {
-    this.setState({
-      showRunNow: true,
-      selectedEventName: eventname
-    })
+    });
   }
 
+  runNow(){
+    this.updatedToastMessage(true,'Event is running')
+  }
 
   render() {
     return (
-      <Fragment>
-        <div className="container-lg w-100 p-3 borderStyle mb-5">
-          <div className="gs_event-header">
-            {/* <div className="text-left titles mb-3">Event Name ( 100+ Character long )</div> */}
-            <div className="search">
-              <input type="text" name="search" className="round borderStyle" placeholder="search"/><input type="submit" className="corner" value=""/></div>
-          </div>
-          <table id="gs_event-table" className="table">
-            <tbody>
-              {this.state.eventsData.map(({ EVENT_NAME }, index) => {
-                return (<tr key={index}>
-                  {/* <td><input type="checkbox" id="globalCheckCox" name="gsCheck" value="" /></td> */}
-                  <td className="gs_event-col">{EVENT_NAME}</td>
-                  <td><button className="btn btn-primary" onClick={() => this.showRunNowFun(EVENT_NAME)}>Run Now</button> </td>
-                  <td><button className="btn btn-primary" onClick={() => this.showEnableFun(EVENT_NAME)}>Enable</button> </td>
-                  <td><button className="btn btn-primary" onClick={() => this.showDisableFun(EVENT_NAME)}>Disable</button> </td>                  
-                  <td><button className="btn btn-primary" onClick={() => this.viewScheduleFun(EVENT_NAME)}>Modify Schedule</button></td>
-                  <td><button className="btn btn-primary" onClick={() => this.assignSsoFun(EVENT_NAME)}>Assign Group</button></td>
-                </tr>)
-              })}
-            </tbody>
-          </table>
-          {this.state.showModal && <ViewSchedule openModal={this.state.showModal} closeModal={this.closeModal} eventName={this.state.selectedEventName} toastMessage={this.updatedToastMessage}/>}
-          {this.state.showSso && <AssignEventToSso openModal={this.state.showSso} closeModal={this.closeModal} />}
+      <div className="container-lg w-100 p-3 borderStyle mb-5 gs-container">
+        {this.state.loading ? (
+          <Spinner className="gs-loader" animation="border" />
+        ) : (
+          <Fragment>
+            <div className="gs_event-header">
+              <ul>
+                <li>
+                  <div className="search gs-search">
+                    <input
+                      type="text"
+                      name="search"
+                      className="round borderStyle"
+                      placeholder="search"
+                    />
+                    <input type="submit" className="corner" value="" />
+                  </div>
+                </li>
+                <li>
+                  <button
+                    className="gs-btn green"
+                     onClick={() => this.runNow()}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person-lines-fill"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                    </svg>
+                    <span>Run Now</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="gs-btn orange"
+                    // onClick={() => this.showEnableFun(EVENT_NAME)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person-check"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M15.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L12.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"
+                      />
+                    </svg>
+                    <span>Enable</span>
+                  </button>
+                </li>
+                <li>
+                  <button className="gs-btn purple">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-person-x"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.146 5.146a.5.5 0 0 1 .708 0L14 6.293l1.146-1.147a.5.5 0 0 1 .708.708L14.707 7l1.147 1.146a.5.5 0 0 1-.708.708L14 7.707l-1.146 1.147a.5.5 0 0 1-.708-.708L13.293 7l-1.147-1.146a.5.5 0 0 1 0-.708z"
+                      />
+                    </svg>
+                    <span>Disable</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    className="gs-btn maroon"
+                    // onClick={() => this.assignSsoFun(EVENT_NAME)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="currentColor"
+                      class="bi bi-diagram-3"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5v-1zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5v-1zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"
+                      />
+                    </svg>
+                    <span>Assign Group</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
 
-          {this.state.showEnable && <Enable openModal={this.state.showEnable} closeModal={this.closeModal} eventName={this.state.selectedEventName} toastMessage={this.updatedToastMessage}/>}
-          {this.state.showDisable && <Disable openModal={this.state.showDisable} closeModal={this.closeModal} eventName={this.state.selectedEventName} />}
+            <table id="gs_event-table" className="table">
+              <tbody>
+                {this.state.eventsData.map(({ EVENT_NAME }, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>
+                        <input
+                          type="checkbox"                          
+                          name={EVENT_NAME}                       
+                          value={EVENT_NAME}
+                          onChange={ this.handleChecked }
+                          checked={this.state.checkedItems.indexOf(EVENT_NAME) > -1}                         
+                        />
+                      </td>
+                      <td className="gs_event-col">{EVENT_NAME}</td>
 
-          {this.state.showRunNow && <RunNow openModal={this.state.showRunNow} closeModal={this.closeModal} eventName={this.state.selectedEventName} />}
-          
-          {<ToastMessage showToast={this.state.showToastM} updateToast={this.updatedToastMessage} toastMessage={this.state.toastMessage}/>}
-        </div>
+                      <td>
+                        <button
+                          className="gs-btn grey fix-btn"
+                          onClick={() => this.showRunNowFun(EVENT_NAME)}
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-person-lines-fill"
+                            viewBox="0 0 16 16"
+                          >
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z" />
+                          </svg>
+                          <span>Modify Schedule</span>
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+            {this.state.showModal && (
+              <ViewSchedule
+                openModal={this.state.showModal}
+                closeModal={this.closeModal}
+                eventName={this.state.selectedEventName}
+                toastMessage={this.updatedToastMessage}
+              />
+            )}
 
-
-
-
-
-
-
-      </Fragment>
+            {this.state.toastMessage && (
+              <ToastMessage
+                showToast={this.state.showToastM}
+                updateToast={this.updatedToastMessage}
+                toastMessage={this.state.toastMessage}
+              />
+            )}
+          </Fragment>
+        )}
+      </div>
     );
   }
 }
-
-

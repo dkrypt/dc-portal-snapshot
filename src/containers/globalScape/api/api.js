@@ -5,3 +5,5 @@ import axios from "axios";
   });
 
   export default AxiosInstance;
+
+  // Run now   https://tc-eng-portal-aws.digitalconnect.apps.ge.com/api/02/SelfServicePortal/ASYNCExecuteEvent?EventRuleName=MFT_Admin_TestTransfer&ID=12345
