@@ -13,37 +13,37 @@ export default class EventList extends React.Component {
       showToastM: false,
       selectedEventName: "",
       toastMessage: "",
-      // eventsData: [],
+      eventsData: [],
       loading: true,
       checkedItems: [],
       
-      eventsData: [
-        {
-          EVENT_NAME:
-            "ABC_123_GHI",
-          ssoID: "122344",
-        },
-        {
-          EVENT_NAME:
-            "DEF-234_PQR",
-          ssoID: "122344",
-        },
-        {
-          EVENT_NAME:
-            "GHI_456_ABC",
-          ssoID: "122344",
-        },
-        {
-          EVENT_NAME:
-            "LMN_678_IJK",
-          ssoID: "122344",
-        },
-        {
-          EVENT_NAME:
-            "MNO_890_XYZ",
-          ssoID: "122344",
-        },
-      ],
+      // eventsData: [
+      //   {
+      //     EVENT_NAME:
+      //       "ABC_123_GHI",
+      //     ssoID: "122344",
+      //   },
+      //   {
+      //     EVENT_NAME:
+      //       "DEF-234_PQR",
+      //     ssoID: "122344",
+      //   },
+      //   {
+      //     EVENT_NAME:
+      //       "GHI_456_ABC",
+      //     ssoID: "122344",
+      //   },
+      //   {
+      //     EVENT_NAME:
+      //       "LMN_678_IJK",
+      //     ssoID: "122344",
+      //   },
+      //   {
+      //     EVENT_NAME:
+      //       "MNO_890_XYZ",
+      //     ssoID: "122344",
+      //   },
+      // ],
     };
     this.closeModal = this.closeModal.bind(this);
     this.updatedToastMessage = this.updatedToastMessage.bind(this);
@@ -68,18 +68,18 @@ export default class EventList extends React.Component {
 };
 
   componentDidMount() {
-    this.setState({ loading: false });
-    // axios
-    //   .post("/02/SelfServicePortal/DISP_DISPLAY_EVENT_LIST?UserID=502663088")
+    // this.setState({ loading: false });
+    AxiosInstance
+      .post("/DISP_DISPLAY_EVENT_LIST?UserID=502663088")
 
-    //   .then((response) => {
-    //     // Handle response after CORS resolution
-    //     this.setState({ eventsData: response.data, loading: false });
-    //     console.log("Event data :", this.state.eventsData);
-    //   })
-    //   .catch((e) => {
-    //     console.error(e);
-    //   });
+      .then((response) => {
+        // Handle response after CORS resolution
+        this.setState({ eventsData: response.data, loading: false });
+        console.log("Event data :", this.state.eventsData);
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   }
   updatedToastMessage(value, msg) {
     this.setState({ showToastM: value, toastMessage: msg });
@@ -104,6 +104,25 @@ export default class EventList extends React.Component {
   }
 
   runNow(){
+    if(this.state.checkedItems.length >0){
+      for(let checkedItem in this.state.checkedItems){  
+        const eventName = this.state.checkedItems[checkedItem];
+        AxiosInstance.post(
+          `/ASYNCExecuteEvent?EventRuleName=${eventName}`
+        )
+      }
+    }
+    this.updatedToastMessage(true,'Event is running')
+  }
+  enableNow(){
+    if(this.state.checkedItems.length >0){
+      for(let checkedItem in this.state.checkedItems){  
+        const eventName = this.state.checkedItems[checkedItem];
+        AxiosInstance.post(
+          `/ENE_SYNC_ENABLE_EVENT?EventRuleName=${eventName}`          
+        )
+      }
+    }
     this.updatedToastMessage(true,'Event is running')
   }
 
@@ -148,7 +167,7 @@ export default class EventList extends React.Component {
                 <li>
                   <button
                     className="gs-btn orange"
-                    // onClick={() => this.showEnableFun(EVENT_NAME)}
+                    onClick={() => this.enableNow()}
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
