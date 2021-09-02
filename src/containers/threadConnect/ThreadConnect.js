@@ -87,7 +87,9 @@ export default class ThreadConnect extends React.Component {
               },
               {
                 buttonName: "dots",
-                onClick: "",
+                onClick: {
+                  showPopUpModal: this.showPopUpModal.bind(this),
+                },
               },
             ],
           },
@@ -160,7 +162,9 @@ export default class ThreadConnect extends React.Component {
               },
               {
                 buttonName: "dots",
-                onClick: "",
+                onClick: {
+                  showPopUpModal: this.showPopUpModal.bind(this),
+                },
               },
             ],
           },
