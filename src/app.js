@@ -7,7 +7,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Sidebar from "./components/Sidebar.js";
 import CenterHeader from "./components/CenterHeader.js";
 import Router from "./router/Router.js";
-// import Breadcrumb from "./breadcrumb/Breadcrumb.js";
+import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 
 const BASE_ENDPOINT = process.env.REACT_APP_BASEURL;
 console.log("Baseurl: ", BASE_ENDPOINT);
@@ -41,6 +41,7 @@ export default class App extends React.Component {
 
   componentDidUpdate(prevprops, prevstate) {
     if (prevstate.headerText != this.state.headerText) {
+      // console.log("Location: ",pathnames)
       /* this.setState({        
         currentPage: this.state.previousPageDetails.previousPage,
         headerText: this.state.previousPageDetails.headerText,
@@ -49,6 +50,7 @@ export default class App extends React.Component {
   }
 
   switchPage(changePageTo) {
+    console.log("Headers: ",changePageTo)
     this.setState({
       previousPageDetails: {
         previousPage: this.state.currentPage,
@@ -117,7 +119,11 @@ export default class App extends React.Component {
                 />
 
                 <div className="container-fluid center-container d-grid mb-2">
-                  {/* <Breadcrumb /> */}
+                  <Breadcrumb
+                    clickEvent={this.switchPage.bind(this)}
+                    pageName= {this.state.previousPageDetails.previousPage}
+                    headerText= {this.state.previousPageDetails.headerText}
+                  />
                   <Router
                     clickEvent={this.switchPage.bind(this)}
                     persona={this.state.subHeaderText}

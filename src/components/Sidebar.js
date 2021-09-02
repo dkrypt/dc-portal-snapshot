@@ -65,7 +65,6 @@ export default class Sidebar extends React.Component {
                     >
                       <b>{this.state.currentPersona}</b>
                     </a>
-
                     <div
                       className="dropdown-menu"
                       aria-labelledby="dropdownMenuLink"

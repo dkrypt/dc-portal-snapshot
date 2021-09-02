@@ -1,31 +1,36 @@
 import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 // import Typography from "@material-ui/core/Typography";
-import { Link as RouterLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Route } from "react-router-dom";
- 
-export default function SimpleBreadcrumbs() {
+
+export default function SimpleBreadcrumbs(props) {
+  console.log("Breadcrumbs Header: ", props.headerText)
   return (
     <Route>
       {({ location }) => {
         const pathnames = location.pathname.split("/").filter((x) => x);
         return (
-          <Breadcrumb aria-label="Breadcrumb" style={{ color: "grey" }}>
+          <Breadcrumb  aria-label="Breadcrumb" style={{ color: "grey" }}>
             {pathnames.map((value, index) => {
-                console.log("pathnames.length: ",pathnames.length)
+              console.log("pathnames.length: ", pathnames.length);
               const last = index === pathnames.length - 1;
               const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-                console.log("Last: ",last)
+              console.log("Last: ", last, to);
               return last ? (
-                <span style={{textDecoration: "none" }}>
-                    {value}
-                  </span>                
+                <span key={index} style={{ textDecoration: "none" }}>{"/" + value}</span>
               ) : (
-                <RouterLink color="inherit" to={to} key={index}>
-                  <span style={{ color: "grey", textDecoration: "none" }}>
-                    {value}
-                  </span>
-                </RouterLink>
+                <Link
+                  color="inherit"
+                  to={to}
+                  key={index}
+                  onClick={props.clickEvent.bind(this, {
+                    pageName: props.pageName,
+                    headerText: props.headerText,
+                  })}
+                >
+                  <span>{value}</span>
+                </Link>
               );
             })}
           </Breadcrumb>
