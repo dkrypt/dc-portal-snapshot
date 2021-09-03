@@ -68,7 +68,6 @@ export default function Users() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    alert(`Submitting Name ${emailid} && ${role}`);
     var tempData = {
       userName: emailid,
       userId: emailid,
@@ -104,7 +103,7 @@ export default function Users() {
               required
             ></input>
             <select
-              className="col-4 borderStyle ml-1"
+              className="col-4 borderStyle ml-1 tc-user-role"
               name="role"
               onChange={(e) => setRole(e.target.value)}
               placeholder="Select a Role"

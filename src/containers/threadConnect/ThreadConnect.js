@@ -2,6 +2,8 @@ import React, { Fragment } from "react";
 import moment from "moment";
 import Highcharts from "highcharts";
 
+import "./ThreadConnect.css"
+
 import CustomCarousel from "../../components/Carousal.js";
 import PopUpModal from "../../components/PopUpModal";
 

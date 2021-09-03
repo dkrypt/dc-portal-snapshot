@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import { v4 as uuidv4 } from "uuid";
 
+import "./NewEngagementRequest.css";
+
 export default class NewEngagementRequest extends React.Component {
   constructor(props) {
     super(props);

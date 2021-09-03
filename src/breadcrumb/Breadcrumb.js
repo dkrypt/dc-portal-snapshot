@@ -4,6 +4,8 @@ import { Breadcrumb } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Route } from "react-router-dom";
 
+import "./breadcrumb.css"
+
 export default function SimpleBreadcrumbs(props) {
   console.log("Breadcrumbs Header: ", props.headerText)
   return (
