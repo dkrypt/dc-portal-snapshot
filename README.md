@@ -44,6 +44,8 @@ Instance | API | Branch | Description
 -- | --- | --- | ---
 [dc-portal](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/dc) | [swagger](https://dc-portal.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | [Repo](https://github.com/dc-release/dc-portal/tree/v1beta) | staging
 [dc-portal-1x](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/dcsc) | [swagger](https://dc-portal-1x.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | [Repo](https://github.com/paskantishubham/dc-portal/tree/v1beta) | dev
+[dc-portal-ext](https://dc-portal-ci-ext.digitalconnect.apps.ge.com/v1.2beta/dc) | [swagger](https://dc-portal-ci-ext.digitalconnect.apps.ge.com/v1.2beta/assets/swagger-ui/) | [Repo](https://github.com/dc-release/dc-portal/tree/v1beta) | EKS dev with external ingress
+[dc-portal-int](https://dc-portal-ci-int.digitalconnect.apps.ge.com/v1.2beta/dc) | [swagger](https://dc-portal-ci-int.digitalconnect.apps.ge.com/v1.2beta/assets/swagger-ui/) | [Repo](https://github.com/dc-release/dc-portal/tree/v1beta) | EKS dev with internal ingress
 sdc | [swagger](https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/v1.2beta/assets/swagger-ui/) | [Repo](https://github.com/EC-Release/web-ui-oa2) | security domain controller
 [system access](https://ng-portal-3.run.aws-usw02-dev.ice.predix.io/v1.2beta/ec) | N/A | [Repo](https://github.com/EC-Release/ng-portal/tree/v1.2beta) | seeder management. E.g. terminal access, logs, reboot, etc.
 
