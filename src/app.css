@@ -558,8 +558,13 @@ a:hover {
   z-index: 2;}
 
 #gs_event-table td.gs_event-col {
-  width: 70%;
-  word-break: break-word;
+  width: 658px;  
+  overflow-x: scroll;  
+  float: left;
+}
+td.gs_event-col div {
+  white-space: nowrap;
+  font-size: 12px;
 }
 #gs_event-table button.btn.btn-primary:hover {
   box-shadow: 1px 4px 8px black;
@@ -649,9 +654,12 @@ td.gs_event-col input {
   list-style: none;
   display: inline;
   float: left;
-  padding: 0 10px;
+  padding: 0 6px;
 }
-
+.gs_event-header ul li:first-child {
+ 
+  padding-left: 0px;
+  }
 .gs_event-header ul li:last-child {
  
   padding-right: 0px;
@@ -681,6 +689,7 @@ td.gs_event-col input {
 }
 .gs-toast{
   height: 100px;
+  max-width: fit-content;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -771,7 +780,7 @@ td.gs_event-col input {
 }
 .gs-btn{
   /* padding: 1.5rem; */
-  padding: 12px 14px;
+  padding: 7px 14px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
@@ -786,7 +795,7 @@ td.gs_event-col input {
   text-decoration: none;
   -moz-appearance: none;
   cursor: pointer;
-  width: 100%;
+  /* width: 100%; */
  
 }
 .gs-btn:hover{
@@ -809,16 +818,16 @@ td.gs_event-col input {
   background: linear-gradient(to right, rgb(68, 67, 64), rgb(55, 54, 52));
 }
 button.gs-btn span {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 .gs-search.search {
   margin-top: 3px;
 }
 
 .fix-btn {
-  width: 170px;
   background-color: #005eb8;
   color: white;
+  margin-right: 20px;
 }
 
 .gs-row a {
@@ -832,9 +841,58 @@ button.gs-btn span {
   padding: 20px;
   display: table-cell;
   vertical-align: middle;
-  height: 150px;
+  height: 110px;
 }
 
+/* .gs_event-header {
+  margin: 0px !important;
+  padding-bottom: 20px;
+  float: left;
+  width: 100%;
+  padding: 20px;
+  background-color: gray;
+  position: fixed;
+} */
+
+.gs-table-row {
+  width: 100%;
+  float: left;
+  /* background: aliceblue; */
+  margin-bottom: 10px;
+  padding: 20px;
+  color: black;
+}
+.gs-table-row:hover {
+ 
+  background: aliceblue;
+}
+.gs-bottom-row {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.gs_event-col {
+  font-size: 12px;
+  padding-bottom: 10px;  
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.gs-radio {
+  display: inline-block;
+}
+.gs-container {
+  position: relative;
+  min-height: 75vh;
+  /* height: 100%; */
+  float: left;
+}
+.gs-bottom-row input[type="radio"] {
+  margin-right: 6px;
+  margin-top: 6px;
+  float: left;
+}
+.gs-inner-row{
+  padding: 5px;
+}
 
 /*<!-------------- Global scape CSS End ------------> */
 
