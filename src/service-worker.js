@@ -66,8 +66,13 @@ registerRoute(
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => {
-    console.log("JS: ",url)
-    return url.origin === self.location.origin && (url.pathname === "/static/js/bootstrap.min.js" || url.pathname === "/static/js/jquery-3.3.1.min.js" || url.pathname === "/static/js/popper.min.js" || url.pathname === "/static/js/choices.min.js");
+    return (
+      url.origin === self.location.origin &&
+      (url.pathname === "/static/js/bootstrap.min.js" ||
+        url.pathname === "/static/js/jquery-3.3.1.min.js" ||
+        url.pathname === "/static/js/popper.min.js" ||
+        url.pathname === "/static/js/choices.min.js")
+    );
   }, // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new CacheFirst({
     cacheName: "js-cache",
@@ -85,8 +90,11 @@ registerRoute(
 registerRoute(
   // Add in any other file extensions or routing criteria as needed.
   ({ url }) => {
-    console.log("CSS: ",url)
-    return url.origin === self.location.origin && (url.pathname === "/static/css/bootstrap_v4.3.1.css" || url.pathname === "/static/css/choices_v1.1.6.css");
+    return (
+      url.origin === self.location.origin &&
+      (url.pathname === "/static/css/bootstrap_v4.3.1.css" ||
+        url.pathname === "/static/css/choices_v1.1.6.css")
+    );
   }, // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new CacheFirst({
     cacheName: "css-cache",

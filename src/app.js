@@ -10,7 +10,6 @@ import Router from "./router/Router.js";
 import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 
 const BASE_ENDPOINT = process.env.REACT_APP_BASEURL;
-console.log("Baseurl: ", BASE_ENDPOINT);
 
 const API_ENDPOINT = "/v1.2beta/dcsc/api/";
 
@@ -50,7 +49,6 @@ export default class App extends React.Component {
   }
 
   switchPage(changePageTo) {
-    console.log("Headers: ",changePageTo)
     this.setState({
       previousPageDetails: {
         previousPage: this.state.currentPage,

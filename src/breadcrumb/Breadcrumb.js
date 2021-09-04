@@ -7,7 +7,6 @@ import { Route } from "react-router-dom";
 import "./breadcrumb.css"
 
 export default function SimpleBreadcrumbs(props) {
-  console.log("Breadcrumbs Header: ", props.headerText)
   return (
     <Route>
       {({ location }) => {
@@ -15,10 +14,8 @@ export default function SimpleBreadcrumbs(props) {
         return (
           <Breadcrumb  aria-label="Breadcrumb" style={{ color: "grey" }}>
             {pathnames.map((value, index) => {
-              console.log("pathnames.length: ", pathnames.length);
               const last = index === pathnames.length - 1;
               const to = `/${pathnames.slice(0, index + 1).join("/")}`;
-              console.log("Last: ", last, to);
               return last ? (
                 <span key={index} style={{ textDecoration: "none" }}>{"/" + value}</span>
               ) : (

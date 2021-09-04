@@ -84,8 +84,6 @@ export default function Users() {
 
     currentData.push(tempData)
 
-    console.log("Table data: ",currentData);
-
     setData(currentData)
   };
 
