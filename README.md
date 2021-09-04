@@ -21,7 +21,7 @@ Afer successful run of above commands, a new tab will open in your **default** b
 
 This is a live server to assist your development, by hot reloading the UI everytime you make a change to the concerned files.
 
-To check if the BUILD is working fine on local development before pushing to production, run below commands:
+To check if the BUILD is working fine on local development before deploying to production, run below commands:
 
 ```shell
 $ npm run build:dev
