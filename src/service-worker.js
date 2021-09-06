@@ -71,7 +71,8 @@ registerRoute(
       (url.pathname === "/static/js/bootstrap.min.js" ||
         url.pathname === "/static/js/jquery-3.3.1.min.js" ||
         url.pathname === "/static/js/popper.min.js" ||
-        url.pathname === "/static/js/choices.min.js")
+        url.pathname === "/static/js/choices.min.js" ||
+        url.pathname === "/static/js/custom.js")
     );
   }, // Customize this strategy as needed, e.g., by changing to CacheFirst.
   new CacheFirst({

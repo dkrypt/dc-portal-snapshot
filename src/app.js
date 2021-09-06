@@ -6,6 +6,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import Sidebar from "./components/Sidebar.js";
 import CenterHeader from "./components/CenterHeader.js";
+import CookieNotification from "./components/CookieNotification";
 import Router from "./router/Router.js";
 import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 
@@ -131,6 +132,7 @@ export default class App extends React.Component {
                     baseUrl={this.state.endPoint}
                     authToken={this.state.authToken}
                   />
+                  <CookieNotification/>
                 </div>
               </div>
             </div>
