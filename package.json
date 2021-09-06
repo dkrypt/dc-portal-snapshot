@@ -88,7 +88,9 @@
       "no-useless-constructor": "off",
       "jsx-a11y/anchor-is-valid": "off",
       "jsx-a11y/role-supports-aria-props": "off",
-      "react/jsx-no-target-blank": "off"
+      "react/jsx-no-target-blank": "off",
+      "no-useless-concat":"off",
+      "react-hooks/exhaustive-deps":"off"
     }
   },
   "browserslist": {

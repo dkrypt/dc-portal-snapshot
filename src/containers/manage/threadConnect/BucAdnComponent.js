@@ -75,7 +75,6 @@ let BucAdnComponent = (props) => {
             placeholder="ADN"
             name="ADN"
             id="ADN"
-            name="ADN"
             onChange={handelInputChange}
             value={initialData.ADN}
             isInvalid={!initialData.ADN && error.ADN ? error.ADN : ""}
