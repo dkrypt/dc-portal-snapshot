@@ -33,9 +33,13 @@ export default class App extends React.Component {
 
   componentDidMount() {
     let authToken = this.getToken("ec-config");
-    this.setState({
-      authToken: authToken,
-    });
+    setTimeout(()=>{
+      this.setState({
+        authToken: authToken,
+        isloading: "none"
+      });
+    },4000)
+    
   }
 
   componentDidUpdate(prevprops, prevstate) {
@@ -92,17 +96,21 @@ export default class App extends React.Component {
     return (
       <BrowserRouter basename={BASE_ENDPOINT}>
         <Fragment>
-          <div className="MainDiv">
-            {/* <div className="loader" style={{ display: this.state.isloading }}>
-              <Loader
-                type="Puff"
+        
+        <div className="loader container-fluid" style={{ display: this.state.isloading }}>
+            <div className="row w-100 h-100 text-center" 
+                style={{alignContent: "center"}}>
+            <Loader
+                className="col-sm-12"
+                type="Rings"
                 color="#00BFFF"
-                height={100}
-                width={100}
-                timeout={''} //3 secs
+                height={80}
+                width={80}
+                timeout={4000} //3 secs
               />
-            </div>z */}
-
+            </div>
+            </div>
+          <div className="MainDiv">
             <div className="row m-0">
               <Sidebar clickEvent={this.switchPage.bind(this)} />
 
