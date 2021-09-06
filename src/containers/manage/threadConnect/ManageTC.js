@@ -23,7 +23,7 @@ function ThreadConnect(props) {
       headerText: "MANAGE THREAD CONNECT",
       subHeaderText: "GLOBAL",
     });
-  }, [props]);
+  }, []);
   return (
     <>
       <div className="container-fluid center-container d-grid mb-2 tc-manage">
