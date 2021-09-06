@@ -23,10 +23,6 @@ export default function SimpleBreadcrumbs(props) {
                   color="inherit"
                   to={to}
                   key={index}
-                  onClick={props.clickEvent.bind(this, {
-                    pageName: props.pageName,
-                    headerText: props.headerText,
-                  })}
                 >
                   <span>{value}</span>
                 </Link>

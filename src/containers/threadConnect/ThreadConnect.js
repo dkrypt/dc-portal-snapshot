@@ -193,6 +193,11 @@ export default class ThreadConnect extends React.Component {
 
   componentDidMount() {
     // this.highChart();
+    this.props.clickEvent({
+      pageName: "ThreadConnect",
+      headerText: "MY THREAD CONNECT SERVICE",
+      subHeaderText: "GLOBAL",
+    })
     var serviceNames = [];
     this.state.serviceCards.forEach((service) => {
       serviceNames.push(service.serviceName);

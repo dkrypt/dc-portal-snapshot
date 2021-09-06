@@ -17,9 +17,9 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: "Dashboard",
-      headerText: "DASHBOARD",
-      subHeaderText: "GLOBAL",
+      currentPage: "",
+      headerText: "",
+      subHeaderText: "",
       subHeaderOpts: [],
       authToken: "",
       endPoint: API_ENDPOINT,
@@ -52,10 +52,12 @@ export default class App extends React.Component {
     this.setState({
       previousPageDetails: {
         previousPage: this.state.currentPage,
-        headerText: this.state.headerText,
+        headerText: this.state.headerText,        
+        subHeaderText: this.state.subHeaderText,
       },
       currentPage: changePageTo.pageName,
       headerText: changePageTo.headerText,
+      subHeaderText: changePageTo.subHeaderText,
     });
   }
 
@@ -110,18 +112,10 @@ export default class App extends React.Component {
                   subText={this.state.subHeaderText}
                   subHeaderOpts={this.state.subHeaderOpts}
                   onPersonaChange={this.changePersona.bind(this)}
-                  clickEvent={this.switchPage.bind(this, {
-                    pageName: this.state.previousPageDetails.previousPage,
-                    headerText: this.state.previousPageDetails.headerText,
-                  })}
                 />
 
                 <div className="container-fluid center-container d-grid mb-2">
-                  <Breadcrumb
-                    clickEvent={this.switchPage.bind(this)}
-                    pageName= {this.state.previousPageDetails.previousPage}
-                    headerText= {this.state.previousPageDetails.headerText}
-                  />
+                  <Breadcrumb/>
                   <Router
                     clickEvent={this.switchPage.bind(this)}
                     persona={this.state.subHeaderText}

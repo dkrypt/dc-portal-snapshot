@@ -107,11 +107,7 @@ export default class Sidebar extends React.Component {
           <span className="sidebarMenu">
             <Link
               className="list-group-item list-group-item-action"
-              to="/"
-              onClick={this.props.clickEvent.bind(this, {
-                pageName: "Dashboard",
-                headerText: "DASHBOARD",
-              })}
+              to="/"              
             >
               <img className="img-fluid" alt="" src={Icon_Dashboard} />
               DASHBOARD
@@ -125,6 +121,7 @@ export default class Sidebar extends React.Component {
                 onClick={this.props.clickEvent.bind(this, {
                   pageName: "Manage",
                   headerText: "MANAGE",
+                  subHeaderText: "GLOBAL",
                 })}
               >
                 <img className="img-fluid" alt="" src={Icon_Subscriptions} />{" "}
@@ -141,6 +138,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "AnnouncementsAndEvents",
                 headerText: "ANNOUNCEMENTS & EVENTS",
+                subHeaderText: "GLOBAL",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Announcements} />{" "}
@@ -166,10 +164,6 @@ export default class Sidebar extends React.Component {
             <div className="dropdown-content">
               <Link
                 to="/newengagementrequest"
-                onClick={this.props.clickEvent.bind(this, {
-                  pageName: "NewEngagementRequest",
-                  headerText: "NEW ENGAGEMENT REQUEST",
-                })}
               >
                 NEW ENGAGEMENT REQUEST
               </Link>
@@ -181,7 +175,8 @@ export default class Sidebar extends React.Component {
               to="/support"
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Support",
-                headerText: "SUPPORT",
+                headerText: "SUPPORT",                
+                subHeaderText: "GLOBAL",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Support} />
@@ -195,6 +190,7 @@ export default class Sidebar extends React.Component {
               onClick={this.props.clickEvent.bind(this, {
                 pageName: "Preferences",
                 headerText: "PREFERENCES",
+                subHeaderText: "GLOBAL",
               })}
             >
               <img className="img-fluid" alt="" src={Icon_Settings} />{" "}
@@ -209,6 +205,7 @@ export default class Sidebar extends React.Component {
                 onClick={this.props.clickEvent.bind(this, {
                   pageName: "Administration",
                   headerText: "ADMINISTRATION",
+                  subHeaderText: "GLOBAL",
                 })}
               >
                 <img className="img-fluid" alt="" src={Icon_Administration} />{" "}
