@@ -149,7 +149,7 @@ const UpdateManagement = (props) => {
         }
         if (res.status === 200) {
           res.data.results &&
-            res.data.results.map((p) => {
+            res.data.results.forEach((p) => {
               projectList.push({ label: p.project_name, value: p.id });
             });
           setProjectList(projectList);
