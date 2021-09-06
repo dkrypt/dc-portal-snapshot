@@ -24,6 +24,11 @@ export default class EventList extends React.Component {
   
 
   componentDidMount() {   
+    this.props.clickEvent({
+      pageName: "EventManagement",
+      headerText: "EVENT MANAGEMENT",
+      subHeaderText: "GLOBAL",
+    })
     AxiosInstance.post("/DISP_DISPLAY_EVENT_LIST?UserID=502663088")
       .then((response) => {       
         this.setState({ eventsData: response.data, loading: false });

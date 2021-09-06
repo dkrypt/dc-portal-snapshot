@@ -7,6 +7,13 @@ export default class DisableAccount extends React.Component {
     super(props);
 
   }
+  componentDidMount(){
+    this.props.clickEvent({
+      pageName: "DisableAccount",
+      headerText: "DISABLE ACCOUNT",
+      subHeaderText: "GLOBAL",
+    })
+  }
 
   render() {
     return (
