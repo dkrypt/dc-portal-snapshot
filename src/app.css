@@ -537,9 +537,7 @@ a:hover {
   padding-left: 0.75rem;
 }
 
-
 /*<!-------------- Global scape CSS start ------------> */
-
 
 #gs_event-table .btn-primary {
   /* background-color: #0C2340; */
@@ -554,8 +552,11 @@ a:hover {
 }
 /* #gs_event-table tr:nth-child(even){background-color: #f2f2f2;} */
 
-#gs_event-table tr:hover {box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-  z-index: 2;}
+#gs_event-table tr:hover {
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
+    0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  z-index: 2;
+}
 
 #gs_event-table td.gs_event-col {
   width: 70%;
@@ -592,7 +593,6 @@ td.gs_event-col input {
   margin-right: 12px;
 }
 
-
 .gs-container i {
   position: absolute;
   right: 0px;
@@ -627,7 +627,7 @@ td.gs_event-col input {
   box-shadow: 1px 4px 6px gainsboro;
   -webkit-transition: box-shadow 0.6s ease-in;
 }
-.gs-tabs .titles{
+.gs-tabs .titles {
   line-height: 50px;
 }
 .gs-tabs:hover .titles {
@@ -635,13 +635,13 @@ td.gs_event-col input {
 }
 
 .gs_event-header {
-  margin: 0px !important; 
+  margin: 0px !important;
   padding-bottom: 20px;
   float: left;
   width: 100%;
 }
 /* new css */
-.gs_event-header ul{
+.gs_event-header ul {
   margin: 0px;
   padding: 0px;
 }
@@ -653,10 +653,9 @@ td.gs_event-col input {
 }
 
 .gs_event-header ul li:last-child {
- 
   padding-right: 0px;
-  }
-.gs_event-header .titles{
+}
+.gs_event-header .titles {
   line-height: 33px;
   float: left;
 }
@@ -667,19 +666,19 @@ td.gs_event-col input {
   background-color: transparent;
   height: 15px;
 } */
-.toast-header{
-  padding: .25rem .1rem;
+.toast-header {
+  padding: 0.25rem 0.1rem;
 }
-.toast-header img{
+.toast-header img {
   width: 24px;
   height: 24px;
 }
-.gs-toast .toast-header button{
+.gs-toast .toast-header button {
   position: absolute;
   top: 11px;
   right: 14px;
 }
-.gs-toast{
+.gs-toast {
   height: 100px;
   position: fixed;
   left: 50%;
@@ -688,7 +687,7 @@ td.gs_event-col input {
   margin-left: -100px;
   bottom: 10px;
   background-color: #07bc0c;
-  color: #F0F0F0;
+  color: #f0f0f0;
   font-family: Calibri;
   font-size: 16px;
   padding: 10px;
@@ -705,8 +704,8 @@ td.gs_event-col input {
   width: 100%;
   height: 5px;
   z-index: 9999;
-  opacity: .7;
-  background-color: hsla(0,0%,100%,.7);
+  opacity: 0.7;
+  background-color: hsla(0, 0%, 100%, 0.7);
   transform-origin: left;
 }
 .Toastify__progress-bar--animated {
@@ -715,21 +714,21 @@ td.gs_event-col input {
 }
 @-webkit-keyframes Toastify__trackProgress {
   0% {
-      transform: scaleX(1)
+    transform: scaleX(1);
   }
 
   to {
-      transform: scaleX(0)
+    transform: scaleX(0);
   }
 }
 
 @keyframes Toastify__trackProgress {
   0% {
-      transform: scaleX(1)
+    transform: scaleX(1);
   }
 
   to {
-      transform: scaleX(0)
+    transform: scaleX(0);
   }
 }
 
@@ -740,25 +739,25 @@ td.gs_event-col input {
   width: 100%;
   height: 5px;
   z-index: 9999;
-  opacity: .7;
-  background-color: hsla(0,0%,100%,.7);
+  opacity: 0.7;
+  background-color: hsla(0, 0%, 100%, 0.7);
   transform-origin: left;
   animation-duration: 2000ms;
 }
 
 .Toastify__progress-bar--animated {
   -webkit-animation: Toastify__trackProgress linear 1 forwards;
-  animation: Toastify__trackProgress linear 1 forwards
+  animation: Toastify__trackProgress linear 1 forwards;
 }
 
 .Toastify__progress-bar--controlled {
-  transition: transform .2s
+  transition: transform 0.2s;
 }
 
 .Toastify__progress-bar--rtl {
   right: 0;
   left: auto;
-  transform-origin: right
+  transform-origin: right;
 }
 .gs-loader {
   position: absolute;
@@ -769,7 +768,7 @@ td.gs_event-col input {
   position: relative;
   min-height: 75vh;
 }
-.gs-btn{
+.gs-btn {
   /* padding: 1.5rem; */
   padding: 12px 14px;
   font-size: 1rem;
@@ -777,7 +776,7 @@ td.gs_event-col input {
   line-height: 1.25;
   color: #32325d;
   background-color: #f6f9fc;
-  border-radius: .375rem;
+  border-radius: 0.375rem;
   border: 0;
   text-align: left;
   /* font-family: sans-serif; */
@@ -787,25 +786,24 @@ td.gs_event-col input {
   -moz-appearance: none;
   cursor: pointer;
   width: 100%;
- 
 }
-.gs-btn:hover{
+.gs-btn:hover {
   color: rgb(255, 255, 255);
   box-shadow: 0 0 0 1px rgb(0 0 0 / 10%), 0 4px 16px rgb(0 0 0 / 10%);
 }
-.green:hover{
-  background: linear-gradient(to right, rgb(91, 144, 39), rgb(78, 124, 34));  
+.green:hover {
+  background: linear-gradient(to right, rgb(91, 144, 39), rgb(78, 124, 34));
 }
-.orange:hover{
-  background: linear-gradient(to right, rgb(221, 157, 18), rgb(197, 140, 16));  
+.orange:hover {
+  background: linear-gradient(to right, rgb(221, 157, 18), rgb(197, 140, 16));
 }
-.purple:hover{
+.purple:hover {
   background: linear-gradient(to right, rgb(170, 102, 204), rgb(159, 83, 198));
 }
-.maroon:hover{
+.maroon:hover {
   background: linear-gradient(to right, rgb(211, 42, 14), rgb(187, 37, 12));
 }
-.grey:hover{
+.grey:hover {
   background: linear-gradient(to right, rgb(68, 67, 64), rgb(55, 54, 52));
 }
 button.gs-btn span {
@@ -834,7 +832,6 @@ button.gs-btn span {
   vertical-align: middle;
   height: 150px;
 }
-
 
 /*<!-------------- Global scape CSS End ------------> */
 
@@ -953,8 +950,8 @@ button.gs-btn span {
 
 .Card:hover {
   transform: scale(0.9, 0.9);
-  box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
-    -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.25),
+    -2px -2px 10px 5px rgba(0, 0, 0, 0.22);
 }
 
 .form-check {
@@ -1028,8 +1025,47 @@ select.classic:focus {
 }
 
 .form-switch {
-  margin-left: 8px;
+  margin-left: 18px;
 }
+.radioselect {
+  margin-top: 7px;
+  font-size: 1rem;
+  font-weight: 100;
+}
+.tableheading {
+  font-size: 1rem;
+}
+.alignbox {
+  padding-left: 1.5%;
+}
+.align-row {
+  padding-left: 21px;
+}
+.fieldhelm {
+  margin-left: -1%;
+}
+.vlanfield {
+  margin-left: -1%;
+  margin-top: 13px;
+}
+.alignupdateRow {
+  padding-left: 18px;
+}
+.tc-manage .col-md-3 {
+  position: unset !important;
+}
+.submit {
+  margin-left: 17px;
+}
+.tc-manage {
+  position: unset !important;
+}
+/* .tc-manage .row,
+.tc-manage .col,
+.tc-manage .col-md-3,
+.tc-manage .card {
+  position: unset !important;
+} */
 /* <----- new provisioning css End ---> */
 
 /* <------ new subscription --------> */
@@ -1050,12 +1086,18 @@ select.classic:focus {
   height: 40px;
 }
 .mb-3.subscription-submit.row {
-  margin-left: 20px;
+  margin-left: 23px;
   margin-top: 10px;
 }
 .mb-3.UpdateSubmit.row {
-  margin-left: 20px;
+  margin-left: 25px;
   margin-top: 10px;
+}
+.newSubAlign {
+  padding-left: 30px;
+}
+.updateSubAlign {
+  padding-left: 3%;
 }
 
 /* <------ new subscription End -----> */
@@ -1070,6 +1112,7 @@ select.classic:focus {
 /* <-------- manage component ---------> */
 .aligncenter {
   text-align: center;
+  position: unset !important;
 }
 /* <--------- manage component end --------> */
 
