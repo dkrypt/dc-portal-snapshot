@@ -392,9 +392,14 @@ a:hover {
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.loader .row{
+  align-content: center;
+}
+
 .toggle-persona .dropdown-toggle{
   color: white;
 }
+
 
 
 /*<!-------------- Global scape CSS start ------------> */

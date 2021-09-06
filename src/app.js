@@ -33,13 +33,12 @@ export default class App extends React.Component {
 
   componentDidMount() {
     let authToken = this.getToken("ec-config");
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setState({
         authToken: authToken,
-        isloading: "none"
+        isloading: "none",
       });
-    },4000)
-    
+    }, 3000);
   }
 
   componentDidUpdate(prevprops, prevstate) {
@@ -56,7 +55,7 @@ export default class App extends React.Component {
     this.setState({
       previousPageDetails: {
         previousPage: this.state.currentPage,
-        headerText: this.state.headerText,        
+        headerText: this.state.headerText,
         subHeaderText: this.state.subHeaderText,
       },
       currentPage: changePageTo.pageName,
@@ -96,20 +95,21 @@ export default class App extends React.Component {
     return (
       <BrowserRouter basename={BASE_ENDPOINT}>
         <Fragment>
-        
-        <div className="loader container-fluid" style={{ display: this.state.isloading }}>
-            <div className="row w-100 h-100 text-center" 
-                style={{alignContent: "center"}}>
-            <Loader
+          <div
+            className="loader container-fluid"
+            style={{ display: this.state.isloading }}
+          >
+            <div className="row w-100 h-100 text-center">
+              <Loader
                 className="col-sm-12"
-                type="Rings"
+                type="Oval"
                 color="#00BFFF"
                 height={80}
                 width={80}
                 timeout={4000} //3 secs
               />
             </div>
-            </div>
+          </div>
           <div className="MainDiv">
             <div className="row m-0">
               <Sidebar clickEvent={this.switchPage.bind(this)} />
@@ -123,7 +123,7 @@ export default class App extends React.Component {
                 />
 
                 <div className="container-fluid center-container d-grid mb-2">
-                  <Breadcrumb/>
+                  <Breadcrumb />
                   <Router
                     clickEvent={this.switchPage.bind(this)}
                     persona={this.state.subHeaderText}
