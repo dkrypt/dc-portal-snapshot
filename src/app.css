@@ -446,7 +446,6 @@ a:hover {
 /*<!-------------- Global scape CSS start ------------> */
 
 #gs_event-table .btn-primary {
- 
   background-color: #005eb8;
 
   padding: 3px 12px;
@@ -457,7 +456,6 @@ a:hover {
   padding: 8px;
 }
 
-
 #gs_event-table tr:hover {
   box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
     0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
@@ -465,8 +463,8 @@ a:hover {
 }
 
 #gs_event-table td.gs_event-col {
-  width: 658px;  
-  overflow-x: scroll;  
+  width: 658px;
+  overflow-x: scroll;
   float: left;
 }
 td.gs_event-col div {
@@ -475,26 +473,21 @@ td.gs_event-col div {
 }
 #gs_event-table button.btn.btn-primary:hover {
   box-shadow: 1px 4px 8px black;
- 
 }
 .gs-container {
   padding: 20px;
 }
 .gs-container form {
- 
   width: 100%;
 }
 .gs-container p {
- 
   position: relative;
 }
 .gs-container label {
- 
   padding-right: 30px;
- 
 }
-.gs-container input[type="text"] { 
-  width: 100%; 
+.gs-container input[type="text"] {
+  width: 100%;
 }
 td.gs_event-col input {
   margin-right: 12px;
@@ -524,7 +517,7 @@ td.gs_event-col input {
 .gs-tabs {
   cursor: pointer;
   box-shadow: 0px 0px 0px grey;
-  -webkit-transition: box-shadow 0.6s ease-out;  
+  -webkit-transition: box-shadow 0.6s ease-out;
 }
 .gs-tabs:hover {
   box-shadow: 1px 4px 6px gainsboro;
@@ -555,13 +548,11 @@ td.gs_event-col input {
   padding: 0 6px;
 }
 .gs_event-header ul li:first-child {
- 
   padding-left: 0px;
-  }
+}
 .gs_event-header ul li:last-child {
- 
   padding-left: 0px;
-  }
+}
 .gs_event-header ul li:last-child {
   padding-right: 0px;
 }
@@ -676,7 +667,7 @@ button.gs-btn.disabled {
   position: relative;
   min-height: 75vh;
 }
-.gs-btn {  
+.gs-btn {
   padding: 7px 14px;
   font-size: 1rem;
   font-weight: 400;
@@ -685,7 +676,7 @@ button.gs-btn.disabled {
   background-color: #f6f9fc;
   border-radius: 0.375rem;
   border: 0;
-  text-align: left; 
+  text-align: left;
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
@@ -739,13 +730,12 @@ button.gs-btn span {
 
 .gs-table-row {
   width: 100%;
-  float: left; 
+  float: left;
   margin-bottom: 10px;
   padding: 20px;
   color: black;
 }
 .gs-table-row:hover {
- 
   background: aliceblue;
 }
 .gs-bottom-row {
@@ -754,7 +744,7 @@ button.gs-btn span {
 }
 .gs_event-col {
   font-size: 12px;
-  padding-bottom: 10px;  
+  padding-bottom: 10px;
   white-space: nowrap;
   overflow-x: auto;
 }
@@ -771,7 +761,7 @@ button.gs-btn span {
   margin-top: 6px;
   float: left;
 }
-.gs-inner-row{
+.gs-inner-row {
   padding: 5px;
 }
 

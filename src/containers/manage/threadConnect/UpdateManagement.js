@@ -516,12 +516,10 @@ const UpdateManagement = (props) => {
   };
 
   const handleMultipleSubmit = (senddata) => {
-    console.log("senddata", senddata);
     let data = {
       projectid: senddata.id,
       initialSize: "1g",
       maxSize: "2g",
-
       version: senddata.version,
       host: "aviation-tc-dev-aws.digitalconnect.apps.ge.com",
       minMemory: senddata.min_memory,
