@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import ViewSchedule from "./ViewSchedule.js";
 import ToastMessage from "../ToastMessage.js";
 import EventListButtons from "./EventListButtons.js";
 import AxiosInstance from "../api/api.js";
@@ -46,16 +45,16 @@ export default class EventList extends React.Component {
   //   });
   // }
 
-  // closeModal() {
-  //   console.log("in close modal", this);
-  //   this.setState({
-  //     showModal: false,
-  //     showSso: false,
-  //     showEnable: false,
-  //     showDisable: false,
-  //     showRunNow: false,
-  //   });
-  // }
+  closeModal() {
+    console.log("in close modal", this);
+    this.setState({
+      showModal: false,
+      showSso: false,
+      showEnable: false,
+      showDisable: false,
+      showRunNow: false,
+    });
+  }
   render() {
     return (
       <div className="container-lg w-100 p-3 borderStyle mb-5 gs-container">

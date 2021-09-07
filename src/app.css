@@ -567,6 +567,10 @@ td.gs_event-col input {
   padding-left: 0px;
   }
 .gs_event-header ul li:last-child {
+ 
+  padding-left: 0px;
+  }
+.gs_event-header ul li:last-child {
   padding-right: 0px;
 }
 .gs_event-header .titles {
