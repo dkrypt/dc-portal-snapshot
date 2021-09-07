@@ -17,7 +17,7 @@ function ManageUser(props) {
       headerText: "Manage User",
       subHeaderText: "GLOBAL",
     });
-  }, []);
+  }, [props]);
   return (
     <>
       <div className="container-lg w-100 p-3 mb-3 tc-manage">

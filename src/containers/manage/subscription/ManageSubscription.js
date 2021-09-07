@@ -10,7 +10,7 @@ function ManageSubscription(props) {
       headerText: "SUBSCRIPTION",
       subHeaderText: "GLOBAL",
     });
-  }, []);
+  }, [props]);
   return (
     <>
       <div className="container-lg w-100 p-3 mb-3">
