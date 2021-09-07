@@ -91,8 +91,13 @@
       "jsx-a11y/anchor-is-valid": "off",
       "jsx-a11y/role-supports-aria-props": "off",
       "react/jsx-no-target-blank": "off",
+<<<<<<< HEAD
       "no-useless-concat": "off",
       "react-hooks/exhaustive-deps": "off"
+=======
+      "no-useless-concat":"off",
+      "react-hooks/exhaustive-deps":"off"
+>>>>>>> 3a3a9f8d6225b0f408375905537d37fd9c5d6f5b
     }
   },
   "browserslist": {
