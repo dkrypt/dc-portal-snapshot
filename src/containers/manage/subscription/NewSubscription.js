@@ -126,36 +126,15 @@ const NewSubscription = (props) => {
         </Form.Group>
       </Row>
 
-      <Row
-        className="mb-6 bucAdnComNew"
-        // style={{ marginLeft: "30px" }}
-      >
+      <Row className="mb-6 bucAdnComNew">
         <BucAdnComponent />
       </Row>
       <Row className="mb-3 newSubAlign">
-        {/* <Row className="mb-3">
-              <div id="checkbox-group">Products</div>
-              <div role="group" aria-labelledby="checkbox-group">
-                <label>
-                  <Field type="checkbox" name="Products" value="ThreadConnect" />
-                  ThreadConnect
-                </label>
-                <label>
-                  <Field type="checkbox" name="Products" value="EnterpriseConnect" />
-                  EnterpriseConnect
-                </label>
-                <label>
-                  <Field type="checkbox" name="Products" value="DIVE" />
-                  DIVE
-                </label>
-              </div>
-            </Row> */}
         <Form.Group
           as={Col}
           md="6"
           controlId="validationFormik03"
           className="product-CheckBoxGroup"
-          // style={{ display: "flex" }}
         >
           <div id="checkbox-group">Products </div>
           <div className="product-checkBox">
@@ -175,7 +154,6 @@ const NewSubscription = (props) => {
               id="Products"
               className="form-check"
               onChange={handelInputChange}
-              // style={{ marginLeft: " 10px" }}
             />
             <Form.Check
               label="DIVE"
@@ -185,7 +163,6 @@ const NewSubscription = (props) => {
               value="DIVE"
               className="form-check"
               onChange={handelInputChange}
-              // style={{ marginLeft: " 10px" }}
             />
           </div>
         </Form.Group>

@@ -11,9 +11,6 @@ import {
 } from "react-bootstrap";
 import UserManagement from "./UserManagement.js";
 function ManageUser(props) {
-  // const UpdateManagement = () => {
-  //   return <UpdateManagement />;
-  // };
   useEffect(() => {
     props.clickEvent({
       pageName: "User",
@@ -23,7 +20,7 @@ function ManageUser(props) {
   }, []);
   return (
     <>
-      <div className="container-fluid center-container d-grid mb-2 tc-manage">
+      <div className="container-lg w-100 p-3 mb-3 tc-manage">
         <Tab.Container
           id="left-tabs-example"
           defaultActiveKey="first"

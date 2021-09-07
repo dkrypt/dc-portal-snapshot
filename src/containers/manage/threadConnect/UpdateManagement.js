@@ -502,7 +502,6 @@ const UpdateManagement = (props) => {
               user: updateInitialData.user,
             };
             setinitialData(obj);
-            // setError(errorData);
           }
         })
         .catch((err) => {
@@ -522,7 +521,7 @@ const UpdateManagement = (props) => {
       projectid: senddata.id,
       initialSize: "1g",
       maxSize: "2g",
-      // projectName: senddata.project_name,
+
       version: senddata.version,
       host: "aviation-tc-dev-aws.digitalconnect.apps.ge.com",
       minMemory: senddata.min_memory,
@@ -568,8 +567,6 @@ const UpdateManagement = (props) => {
           };
           setinitialData(obj);
           getmultiInstanceData();
-          // resetForm();
-          // advanceHandelChange();
         }
       })
       .catch((err) => {
@@ -612,14 +609,7 @@ const UpdateManagement = (props) => {
           as={Row}
           className="mb-3 form-mar"
           onChange={handelInputChange}
-          // onchange={(e) => {
-          //   handelInputChange(e);
-          //   handelChangeEnv(e);
-          // }}
         >
-          {/* <Form.Label as="legend" column sm={4} className="form-wid">
-            Env:
-          </Form.Label> */}
           <span className="radioselect">Environment</span>
           <Col sm={6} className="col-radio">
             <Form.Check
@@ -656,14 +646,7 @@ const UpdateManagement = (props) => {
           as={Row}
           className="mb-3 form-mar"
           onChange={handelInputChange}
-          // onchange={(e) => {
-          //   handelInputChange(e);
-          //   handelChangeEnv(e);
-          // }}
         >
-          {/* <Form.Label as="legend" column sm={4} className="form-wid">
-            user
-          </Form.Label> */}
           <span className="radioselect">InstanceName</span>
           <Col sm={6} className="col-radio">
             <Form.Check
@@ -686,8 +669,6 @@ const UpdateManagement = (props) => {
         </Form.Group>
         {updateInitialData.user === "single" ? (
           <Form.Group as={Col} md="6">
-            {/* <Form.Label className="select-label">Instance Name</Form.Label> */}
-
             <select
               className="form-select classic select-height"
               onChange={(e) => {
@@ -714,11 +695,7 @@ const UpdateManagement = (props) => {
                   );
                 })}
             </select>
-            <Form.Control.Feedback type="invalid">
-              {/* {updateInitialData.InstanceName === "" && error.InstanceName
-                ? error.InstanceName
-                : ""} */}
-            </Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
           </Form.Group>
         ) : (
           ""
@@ -737,7 +714,6 @@ const UpdateManagement = (props) => {
                 name="projectName"
                 value={updateInitialData.projectName}
                 onChange={handelInputChange}
-                // onInput={(e) => ProjectNameExit(e)}
                 isInvalid={
                   updateInitialData.projectName === "" &&
                   error.projectName !== ""
@@ -764,7 +740,6 @@ const UpdateManagement = (props) => {
                 name="version"
                 value={updateInitialData.version}
                 onChange={handelInputChange}
-                // onInput={(e) => ProjectNameExit(e)}
                 isInvalid={
                   updateInitialData.version === "" && error.version !== ""
                     ? true
@@ -813,7 +788,6 @@ const UpdateManagement = (props) => {
                 type="Number"
                 name="minMemory"
                 id="minMemory"
-                // onBlur={handleBlur}
                 value={updateInitialData.minMemory}
                 onChange={handelInputChange}
                 isInvalid={
@@ -857,7 +831,6 @@ const UpdateManagement = (props) => {
                 type="Number"
                 name="minCpu"
                 id="minCpu"
-                // onBlur={handleBlur}
                 value={updateInitialData.minCpu}
                 onChange={handelInputChange}
                 isInvalid={
@@ -879,7 +852,6 @@ const UpdateManagement = (props) => {
                 type="Number"
                 name="maxCpu"
                 id="maxCpu"
-                // onBlur={handleBlur}
                 value={updateInitialData.maxCpu}
                 onChange={handelInputChange}
                 isInvalid={
