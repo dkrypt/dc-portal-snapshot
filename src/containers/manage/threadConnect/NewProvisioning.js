@@ -501,7 +501,8 @@ const NewProvisioning = (props) => {
       seterrorStatus(false);
     }, 4000);
   }
-
+  console.log("error", error);
+  console.log("initialData", initialData);
   return (
     <>
       {successStatus == true ? (

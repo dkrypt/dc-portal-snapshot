@@ -79,10 +79,10 @@ const NewSubscription = (props) => {
       error.ADN !== "" ||
       error.Products !== ""
     ) {
-      alert("if part");
+  
       seterror(errorData);
     } else {
-      alert("else part");
+    
     }
   };
   console.log("initialValue", initialValue);

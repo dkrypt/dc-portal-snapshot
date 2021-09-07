@@ -110,7 +110,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/managetc">
+      <Route exact path="/manage/managetc">
         <ManageTC
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -119,7 +119,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/manage_ec">
+      <Route exact path="/manage/manage_ec">
         <ManageEc
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -128,7 +128,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/managesubscription">
+      <Route exact path="/manage/managesubscription">
         <ManageSubscription
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -137,7 +137,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/manageuser">
+      <Route exact path="/manage/manageuser">
         <ManageUser
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}

@@ -5,8 +5,13 @@ import Api from "../../../middleware/ManageApi.js";
 let initialValues = {
   projectName: "",
   ShortDescription: "",
-  ShortName: "",
-  Ci_Name: "",
+  Gateway: "",
+  EcClient: "",
+  OperatingSystem: "",
+  SystemType: "",
+  SystemPort: "",
+  SystemIp: "",
+  AttachFile: "",
   VLan: "",
   BUC: "",
   ADN: "",
@@ -30,8 +35,13 @@ let initialValues = {
 const Initialerror = {
   projectName: "",
   ShortDescription: "",
-  ShortName: "",
-  Ci_Name: "",
+  OperatingSystem: "",
+  SystemType: "",
+  SystemPort: "",
+  SystemIp: "",
+  AttachFile: "",
+  Gateway: "",
+  EcClient: "",
   VLan: "",
   BUC: "",
   ADN: "",
@@ -54,6 +64,7 @@ const EcNewProvisioning = (props) => {
   const [message, setMessage] = useState("");
   const [successStatus, setsuccessStatus] = useState(false);
   const [errorStatus, seterrorStatus] = useState(false);
+  const [TcsOption, setTcsOption] = useState(false);
   const handleChangeProject = (env) => {
     setenv(env);
     // resetValue();
@@ -69,8 +80,13 @@ const EcNewProvisioning = (props) => {
       setinitialData({
         projectName: "",
         ShortDescription: "",
-        ShortName: "",
-        Ci_Name: "",
+        OperatingSystem: "",
+        SystemType: "",
+        SystemPort: "",
+        SystemIp: "",
+        AttachFile: "",
+        Gateway: "",
+        EcClient: "",
         VLan: "",
         BUC: "",
         ADN: "",
@@ -95,6 +111,9 @@ const EcNewProvisioning = (props) => {
 
   const advanceHandelChange = () => {
     setadvanceOption(!advanceOption);
+  };
+  const TcsHandelChange = () => {
+    setTcsOption(!TcsOption);
   };
 
   const bucadnvalidate = (data) => {};
@@ -140,10 +159,25 @@ const EcNewProvisioning = (props) => {
     if (!initialData.ShortDescription) {
       errorData.ShortDescription = "ShortDescription  required";
     }
-    if (!initialData.ShortName) {
-      errorData.ShortName = "ShortName  required";
-    } else if (regExp.test(initialData.ShortName)) {
-      errorData.ShortName = "ShortName length should be 3 to 5";
+    if (!initialData.OperatingSystem) {
+      errorData.OperatingSystem = "Operating System Required";
+    }
+    if (!initialData.SystemType) {
+      errorData.SystemType = "SystemType Required";
+    }
+    if (!initialData.SystemPort) {
+      errorData.SystemPort = "SystemPort Required";
+    }
+
+    if (!initialData.SystemIp) {
+      errorData.SystemIp = "SystemIp Required";
+    }
+    if (!initialData.AttachFile) {
+      errorData.AttachFile = "AttachFile Required";
+    }
+
+    if (!initialData.Gateway) {
+      errorData.Gateway = "Gateway  required";
     }
     if (!initialData.minCpu) {
       errorData.minCpu = "MinCpu  required";
@@ -164,10 +198,20 @@ const EcNewProvisioning = (props) => {
     if (
       initialData.projectName === "" ||
       initialData.ShortDescription === "" ||
-      initialData.ShortName === "" ||
+      initialData.Gateway === "" ||
+      initialData.OperatingSystem === "" ||
+      initialData.SystemType === "" ||
+      initialData.SystemPort === "" ||
+      initialData.SystemIp === "" ||
+      initialData.AttachFile === "" ||
       !error.projectName === "" ||
       !error.ShortDescription === "" ||
-      !error.ShortName === ""
+      !error.Gateway === "" ||
+      !error.OperatingSystem === "" ||
+      !error.SystemType === "" ||
+      !error.SystemIp === "" ||
+      !error.SystemPort === "" ||
+      !error.AttachFile === ""
     ) {
       setError(errorData);
     } else {
@@ -187,8 +231,13 @@ const EcNewProvisioning = (props) => {
           "https://github.build.ge.com/digital-connect-devops/tc-aviation-argo-cd-apps.git",
         environment: env.toLowerCase(),
         replicaCount: initialData.replicaCount,
-        shortName: initialData.ShortName,
+        // shortName: initialData.ShortName,
         description: initialData.ShortDescription,
+        OperatingSystem: initialData.OperatingSystem,
+        SystemType: initialData.SystemType,
+        SystemIp: initialData.SystemIp,
+        SystemPort: initialData.SystemPort,
+        AttachFile: initialData.AttachFile,
       };
       Api.createTcNewProvisioning(data)
         .then((res) => {
@@ -295,7 +344,6 @@ const EcNewProvisioning = (props) => {
         maxCpu: initialData.maxCpu,
         replicaCount: initialData.replicaCount,
       };
-      // api call for create new provisioning
 
       Api.createNewInstance(data)
         .then((res) => {
@@ -317,8 +365,13 @@ const EcNewProvisioning = (props) => {
             setinitialData({
               projectName: "",
               ShortDescription: "",
-              ShortName: "",
-              Ci_Name: "",
+              OperatingSystem: "",
+              SystemType: "",
+              SystemPort: "",
+              SystemIp: "",
+              AttachFile: "",
+              Gateway: "",
+              EcClient: "",
               VLan: "",
               BUC: "",
               ADN: "",
@@ -415,8 +468,13 @@ const EcNewProvisioning = (props) => {
             setinitialData({
               projectName: "",
               ShortDescription: "",
-              ShortName: "",
-              Ci_Name: "",
+              OperatingSystem: "",
+              SystemType: "",
+              SystemPort: "",
+              SystemIp: "",
+              AttachFile: "",
+              Gateway: "",
+              EcClient: "",
               VLan: "",
               BUC: "",
               ADN: "",
@@ -568,26 +626,26 @@ const EcNewProvisioning = (props) => {
       {initialData.environment === "Dev" ? (
         <Row className="mb-3 alignbox tc-manage">
           <Form.Group as={Col} md="4">
-            <Form.Label>Project Name</Form.Label>
+            <Form.Label>Instance Name</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Project Name"
-              id="projectName"
-              name="projectName"
-              value={initialData.projectName}
+              placeholder="Instance Name"
+              id="InstanceName"
+              name="InstanceName"
+              value={initialData.InstanceName}
               onChange={handelInputChange}
-              onInput={(e) => ProjectNameExit(e)}
+              // onInput={(e) => ProjectNameExit(e)}
               isInvalid={
-                initialData.projectName === "" && error.projectName !== ""
+                initialData.InstanceName === "" && error.InstanceName !== ""
                   ? true
                   : false
               }
-              isValid={initialData.projectName ? true : false}
+              isValid={initialData.InstanceName ? true : false}
             />
 
             <Form.Control.Feedback type="invalid">
-              {initialData.projectName === "" && error.projectName !== ""
-                ? error.projectName
+              {initialData.InstanceName === "" && error.InstanceName !== ""
+                ? error.InstanceName
                 : ""}
             </Form.Control.Feedback>
           </Form.Group>
@@ -615,25 +673,23 @@ const EcNewProvisioning = (props) => {
             </Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="4">
-            <Form.Label>Short Name</Form.Label>
+            <Form.Label>Gate way</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Short Name"
-              name="ShortName"
-              id="ShortName"
-              value={initialData.ShortName}
+              placeholder="Gate Way"
+              name="Gateway"
+              id="Gateway"
+              value={initialData.Gateway}
               onChange={handelInputChange}
               isInvalid={
-                initialData.ShortName === "" && error.ShortName !== ""
+                initialData.Gateway === "" && error.Gateway !== ""
                   ? true
                   : false
               }
-              isValid={regExp.test(initialData.ShortName) ? true : false}
+              isValid={regExp.test(initialData.Gateway) ? true : false}
             />
             <Form.Control.Feedback type="invalid">
-              {initialData.ShortName === "" && error.ShortName
-                ? error.ShortName
-                : ""}
+              {initialData.Gateway === "" && error.Gateway ? error.Gateway : ""}
             </Form.Control.Feedback>
           </Form.Group>
         </Row>
@@ -672,6 +728,154 @@ const EcNewProvisioning = (props) => {
           </Form.Group>
         </Row>
       )}
+      <Row className="mb-3 alignbox tc-manage">
+        <Form.Group as={Col} md="4">
+          <Form.Label>Ec Client</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ec Client"
+            id="EcClient"
+            name="EcClient"
+            value={initialData.EcClient}
+            onChange={handelInputChange}
+            isInvalid={
+              initialData.EcClient === "" && error.EcClient !== ""
+                ? true
+                : false
+            }
+            isValid={initialData.EcClient ? true : false}
+          />
+
+          <Form.Control.Feedback type="invalid">
+            {initialData.EcClient === "" && error.EcClient !== ""
+              ? error.EcClient
+              : ""}
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="4" style={{ marginTop: "-13px" }}>
+          <Form.Label className="select-label">Operating System</Form.Label>
+          <br></br>
+          <select
+            className="form-select classic select-height"
+            onChange={(e) => {
+              handelInputChange(e);
+              FindInstanceInfo(e);
+            }}
+            style={{ height: "40px" }}
+            id="OperatingSystem"
+            name="OperatingSystem"
+            value={initialData.OperatingSystem}
+          >
+            <option value="">Select Operating System</option>
+            <option value="window">window</option>
+            <option value="LINUX">LINUX</option>
+            <option value="MAC">MAC</option>
+          </select>
+          <Form.Control.Feedback type="invalid">
+            {initialData.OperatingSystem === "" && error.OperatingSystem
+              ? error.OperatingSystem
+              : ""}
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="4">
+          <Form.Label>Target System Type</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="System Type"
+            name="SystemType"
+            id="SystemType"
+            value={initialData.SystemType}
+            onChange={handelInputChange}
+            isInvalid={
+              initialData.SystemType === "" && error.SystemType !== ""
+                ? true
+                : false
+            }
+            isValid={regExp.test(initialData.SystemType) ? true : false}
+          />
+          <Form.Control.Feedback type="invalid">
+            {initialData.SystemType === "" && error.SystemType
+              ? error.SystemType
+              : ""}
+          </Form.Control.Feedback>
+        </Form.Group>
+      </Row>
+
+      <Row className="mb-3 alignbox tc-manage">
+        <Form.Group as={Col} md="4">
+          <Form.Label className="select-label">Target System Ip</Form.Label>
+          <br></br>
+          <Form.Control
+            type="text"
+            placeholder="System Ip"
+            name="SystemIp"
+            id="SystemIp"
+            value={initialData.SystemIp}
+            onChange={handelInputChange}
+            isInvalid={
+              initialData.SystemIp === "" && error.SystemIp !== ""
+                ? true
+                : false
+            }
+            isValid={regExp.test(initialData.SystemIp) ? true : false}
+          />
+          <Form.Control.Feedback type="invalid">
+            {initialData.SystemIp === "" && error.SystemIp
+              ? error.SystemIp
+              : ""}
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="4" style={{ marginTop: "12px" }}>
+          <Form.Label>Target System Port</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="System Port"
+            name="SystemPort"
+            id="SystemPort"
+            value={initialData.SystemPort}
+            onChange={handelInputChange}
+            isInvalid={
+              initialData.SystemPort === "" && error.SystemPort !== ""
+                ? true
+                : false
+            }
+            isValid={regExp.test(initialData.SystemPort) ? true : false}
+          />
+          <Form.Control.Feedback type="invalid">
+            {initialData.SystemPort === "" && error.SystemPort
+              ? error.SystemPort
+              : ""}
+          </Form.Control.Feedback>
+        </Form.Group>
+        <Form.Group as={Col} md="1" style={{ marginTop: "50px" }}>
+          <Form.Check
+            type="switch"
+            id="custom-switch1"
+            label="Tcs"
+            onChange={() => TcsHandelChange()}
+          />
+        </Form.Group>
+        {TcsOption === true ? (
+          <Form.Group as={Col} md="3" style={{ marginTop: "18px" }}>
+            <Form.Label>Attach File</Form.Label>
+            <Form.Control
+              type="file"
+              placeholder="Attach File"
+              name="AttachFile"
+              id="AttachFile"
+              value={initialData.AttachFile}
+              onChange={handelInputChange}
+            />
+            <Form.Control.Feedback type="invalid">
+              {initialData.AttachFile === "" && error.AttachFile
+                ? error.AttachFile
+                : ""}
+            </Form.Control.Feedback>
+          </Form.Group>
+        ) : (
+          ""
+        )}
+      </Row>
 
       {initialData.environment === "Dev" ? (
         <Row className="mb-3 bucAdnCom tc-manage">
