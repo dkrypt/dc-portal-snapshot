@@ -1,21 +1,9 @@
 import React, { useEffect } from "react";
-import {
-  Tab,
-  Nav,
-  Row,
-  Col,
-  Tabs,
-  Container,
-  Card,
-  Button,
-} from "react-bootstrap";
+import { Tab, Nav, Col, Card } from "react-bootstrap";
 import Orgspaceinstance from "../orgSpaceInstance/OrgSpaceInstance.js";
 import NewSubscription from "./NewSubscription.js";
 import UpdateSubscription from "./UpdateSubscription.js";
 function ManageSubscription(props) {
-  // const UpdateManagement = () => {
-  //   return <UpdateManagement />;
-  // };
   useEffect(() => {
     props.clickEvent({
       pageName: "Subscription",
@@ -25,7 +13,7 @@ function ManageSubscription(props) {
   }, []);
   return (
     <>
-      <div className="container-fluid center-container d-grid mb-2">
+      <div className="container-lg w-100 p-3 mb-3">
         <Orgspaceinstance />
         <Tab.Container
           id="left-tabs-example"
@@ -56,7 +44,6 @@ function ManageSubscription(props) {
                 </Tab.Pane>
                 <Tab.Pane eventKey="second" className="tc-manage">
                   <UpdateSubscription />
-                  {/* {UpdateManagement} */}
                 </Tab.Pane>
               </Tab.Content>
             </Card.Body>

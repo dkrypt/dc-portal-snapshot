@@ -99,7 +99,6 @@ const UpdateSubscription = (props) => {
           <br></br>
           <select
             className="form-select classic form-height"
-            // style={{ height: "40px" }}
             value={initialValue.Org}
             onChange={(e) => {
               handelInputChange(e);
@@ -116,7 +115,6 @@ const UpdateSubscription = (props) => {
           <span className="errorMsg">
             {initialValue.Org === "" && error.Org !== "" ? error.Org : ""}
           </span>
-          {/* </Form.Control.Feedback> */}
         </Form.Group>
         <Form.Group as={Col} md="3">
           <Form.Label className="select-label">Space</Form.Label>
@@ -124,7 +122,6 @@ const UpdateSubscription = (props) => {
           <select
             name="Space"
             className="form-select classic form-height"
-            // style={{ height: "40px" }}
             value={initialValue.Space}
             onChange={(e) => {
               handelInputChange(e);
@@ -140,44 +137,14 @@ const UpdateSubscription = (props) => {
             {initialValue.Space === "" && error.Space !== "" ? error.Space : ""}
           </span>
         </Form.Group>
-
-        {/* <div role="group" aria-labelledby="checkbox-group">
-                  <label>
-                    <Field type="checkbox" name="Products" value="One" />
-                    One
-                  </label>
-                  <label>
-                    <Field type="checkbox" name="Products" value="Two" />
-                    Two
-                  </label>
-                  <label>
-                    <Field type="checkbox" name="Products" value="Three" />
-                    Three
-                  </label>
-                </div> */}
-        {/* </Form.Group> */}
       </Row>
-      <Row
-        className="mb-3 bucAdnComNew"
-        // style={{ marginLeft: "40px" }}
-      >
+      <Row className="mb-3 bucAdnComNew">
         <BucAdnComponent />
       </Row>
       <Row className="updateSubAlign">
-        <Form.Group
-          as={Col}
-          md="6"
-          className="product-CheckBoxGroup "
-          // style={{ display: "flex", marginTop: "30px" }}
-        >
+        <Form.Group as={Col} md="6" className="product-CheckBoxGroup ">
           <div id="checkbox-group">Products </div>
-          <div
-            className="product-checkBox"
-            // style={{
-            //   display: "flex",
-            //   marginLeft: " 20px",
-            // }}
-          >
+          <div className="product-checkBox">
             <Form.Check
               label="ThreadConnect"
               type="checkbox"
@@ -194,7 +161,6 @@ const UpdateSubscription = (props) => {
               id="Products"
               className="form-check"
               onChange={handelInputChange}
-              // style={{ marginLeft: " 10px" }}
             />
             <Form.Check
               label="DIVE"
@@ -204,7 +170,6 @@ const UpdateSubscription = (props) => {
               value="DIVE"
               className="form-check"
               onChange={handelInputChange}
-              // style={{ marginLeft: " 10px" }}
             />
           </div>
         </Form.Group>

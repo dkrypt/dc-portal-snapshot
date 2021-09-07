@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Form, Row, Col, Button, Alert } from "react-bootstrap";
-// import { Button, Alert } from "react-bootstrap";
 import BucAdnComponent from "../threadConnect/BucAdnComponent.js";
-// import * as yup from "yup";
 import Api from "../../../middleware/ManageApi.js";
-// import { Button, Alert } from "react-bootstrap";
-// import SuccessMessage from "../../toastMessage/SuccessMessage";
 let initialValues = {
   projectName: "",
   ShortDescription: "",
@@ -68,8 +64,6 @@ const EcNewProvisioning = (props) => {
   const handelInputChange = (event) => {
     const { name, value } = event.target;
     setinitialData({ ...initialData, [name]: value });
-    // setadvanceOption(false);
-    // document.getElementById("custom-switch").checked = false;
 
     if (name == "environment") {
       setinitialData({
@@ -167,7 +161,6 @@ const EcNewProvisioning = (props) => {
       errorData.replicaCount = "replicaCount  required";
     }
 
-    // api call for create new provisioning
     if (
       initialData.projectName === "" ||
       initialData.ShortDescription === "" ||
@@ -224,7 +217,7 @@ const EcNewProvisioning = (props) => {
         });
     }
   };
-  // project Name Exit or not
+
   const ProjectNameExit = (e) => {
     let data = {
       projectName: e.target.value,
@@ -345,7 +338,6 @@ const EcNewProvisioning = (props) => {
               gitRepo:
                 "https://github.build.ge.com/digital-connect-devops/tc-aviation-argo-cd-apps.git",
             });
-            // advanceHandelChange();
           }
         })
         .catch((err) => {
@@ -538,14 +530,7 @@ const EcNewProvisioning = (props) => {
           as={Row}
           className="mb-3 form-mar"
           onChange={handelInputChange}
-          // onchange={(e) => {
-          //   handelInputChange(e);
-          //   handelChangeEnv(e);
-          // }}
         >
-          {/* <Form.Label as="legend" column sm={4} className="form-wid">
-            Env:
-          </Form.Label> */}
           <span className="radioselect tc-manage">Environment</span>
           <Col sm={6} className="col-radio">
             <Form.Check
@@ -556,7 +541,6 @@ const EcNewProvisioning = (props) => {
               value="Dev"
               defaultValue="Dev"
               defaultChecked
-              // checked={initialData.environment === "Dev"}
             />
             <Form.Check
               type="radio"
@@ -564,7 +548,6 @@ const EcNewProvisioning = (props) => {
               name="environment"
               id="environment"
               value="Stage"
-              // checked={initialData.environment === "Stage"}
             />
             <Form.Check
               type="radio"
@@ -641,35 +624,13 @@ const EcNewProvisioning = (props) => {
               value={initialData.ShortName}
               onChange={handelInputChange}
               isInvalid={
-                // initialData.ShortName === "" &&
-                // error.ShortName !== "" &&
-                // initialData.ShortName.length < 2 &&
-                // initialData.ShortName.length > 5
                 initialData.ShortName === "" && error.ShortName !== ""
                   ? true
                   : false
               }
-              isValid={
-                // initialData.ShortName === "" &&
-                // error.ShortName !== "" &&
-                regExp.test(initialData.ShortName)
-                  ? // initialData.ShortName.length < 2 &&
-                    // initialData.ShortName.length > 5
-                    true
-                  : false
-              }
+              isValid={regExp.test(initialData.ShortName) ? true : false}
             />
             <Form.Control.Feedback type="invalid">
-              {/* {initialData.ShortName === "" && error.ShortName
-                ? error.ShortName
-                : error.ShortName.length > 2 && error.ShortName.length < 5
-                ? "ShortName length should be 3 to 5 "
-                : ""} */}
-              {/* {initialData.ShortName === "" && error.ShortName
-                ? error.ShortName
-                : regExp.test(initialData.ShortName)
-                ? ""
-                : "ShortName length should be 3 to 5"} */}
               {initialData.ShortName === "" && error.ShortName
                 ? error.ShortName
                 : ""}

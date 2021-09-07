@@ -502,7 +502,6 @@ const EcUpdateProvisioning = (props) => {
               user: updateInitialData.user,
             };
             setinitialData(obj);
-            // setError(errorData);
           }
         })
         .catch((err) => {
@@ -522,7 +521,6 @@ const EcUpdateProvisioning = (props) => {
       projectid: senddata.id,
       initialSize: "1g",
       maxSize: "2g",
-      // projectName: senddata.project_name,
       version: senddata.version,
       host: "aviation-tc-dev-aws.digitalconnect.apps.ge.com",
       minMemory: senddata.min_memory,
@@ -546,7 +544,7 @@ const EcUpdateProvisioning = (props) => {
         }
         if (res.status === 200 || res.status === 201) {
           setsuccessStatus(true);
-          // setShow(true);
+
           if (res.data.message === "") {
             setMessage("Successfully Updated");
           } else {
@@ -568,8 +566,6 @@ const EcUpdateProvisioning = (props) => {
           };
           setinitialData(obj);
           getmultiInstanceData();
-          // resetForm();
-          // advanceHandelChange();
         }
       })
       .catch((err) => {
@@ -612,14 +608,7 @@ const EcUpdateProvisioning = (props) => {
           as={Row}
           className="mb-3 form-mar"
           onChange={handelInputChange}
-          // onchange={(e) => {
-          //   handelInputChange(e);
-          //   handelChangeEnv(e);
-          // }}
         >
-          {/* <Form.Label as="legend" column sm={4} className="form-wid">
-            Env:
-          </Form.Label> */}
           <span className="radioselect">Environment</span>
           <Col sm={6} className="col-radio">
             <Form.Check
@@ -628,9 +617,7 @@ const EcUpdateProvisioning = (props) => {
               name="environment"
               id="environment"
               value="Dev"
-              // defaultValue
               defaultChecked
-              // checked={updateInitialData.environment === "Dev"}
             />
             <Form.Check
               type="radio"
@@ -638,7 +625,6 @@ const EcUpdateProvisioning = (props) => {
               name="environment"
               id="environment"
               value="Stage"
-              // checked={updateInitialData.environment === "Stage"}
             />
             <Form.Check
               type="radio"
@@ -646,7 +632,6 @@ const EcUpdateProvisioning = (props) => {
               name="environment"
               id="environment"
               value="Prod"
-              // checked={updateInitialData.environment === "Prod"}
             />
           </Col>
         </Form.Group>
@@ -656,14 +641,7 @@ const EcUpdateProvisioning = (props) => {
           as={Row}
           className="mb-3 form-mar"
           onChange={handelInputChange}
-          // onchange={(e) => {
-          //   handelInputChange(e);
-          //   handelChangeEnv(e);
-          // }}
         >
-          {/* <Form.Label as="legend" column sm={4} className="form-wid">
-            user
-          </Form.Label> */}
           <span className="radioselect">InstanceName</span>
           <Col sm={6} className="col-radio">
             <Form.Check
@@ -686,8 +664,6 @@ const EcUpdateProvisioning = (props) => {
         </Form.Group>
         {updateInitialData.user === "single" ? (
           <Form.Group as={Col} md="6">
-            {/* <Form.Label className="select-label">Instance Name</Form.Label> */}
-
             <select
               className="form-select classic select-height"
               onChange={(e) => {
@@ -714,11 +690,7 @@ const EcUpdateProvisioning = (props) => {
                   );
                 })}
             </select>
-            <Form.Control.Feedback type="invalid">
-              {/* {updateInitialData.InstanceName === "" && error.InstanceName
-                ? error.InstanceName
-                : ""} */}
-            </Form.Control.Feedback>
+            <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
           </Form.Group>
         ) : (
           ""
@@ -737,7 +709,6 @@ const EcUpdateProvisioning = (props) => {
                 name="projectName"
                 value={updateInitialData.projectName}
                 onChange={handelInputChange}
-                // onInput={(e) => ProjectNameExit(e)}
                 isInvalid={
                   updateInitialData.projectName === "" &&
                   error.projectName !== ""
@@ -764,7 +735,6 @@ const EcUpdateProvisioning = (props) => {
                 name="version"
                 value={updateInitialData.version}
                 onChange={handelInputChange}
-                // onInput={(e) => ProjectNameExit(e)}
                 isInvalid={
                   updateInitialData.version === "" && error.version !== ""
                     ? true
@@ -813,7 +783,6 @@ const EcUpdateProvisioning = (props) => {
                 type="Number"
                 name="minMemory"
                 id="minMemory"
-                // onBlur={handleBlur}
                 value={updateInitialData.minMemory}
                 onChange={handelInputChange}
                 isInvalid={
@@ -857,7 +826,6 @@ const EcUpdateProvisioning = (props) => {
                 type="Number"
                 name="minCpu"
                 id="minCpu"
-                // onBlur={handleBlur}
                 value={updateInitialData.minCpu}
                 onChange={handelInputChange}
                 isInvalid={
@@ -879,7 +847,6 @@ const EcUpdateProvisioning = (props) => {
                 type="Number"
                 name="maxCpu"
                 id="maxCpu"
-                // onBlur={handleBlur}
                 value={updateInitialData.maxCpu}
                 onChange={handelInputChange}
                 isInvalid={

@@ -8,24 +8,6 @@ const InitialError = {
   BUC: "",
   ADN: "",
 };
-// const onSubmit = (values) => {
-//   alert(JSON.stringify(values, null, 2));
-// };
-// const validate = (values) => {
-//   const errors = {};
-//   if (!values.BUC) {
-//     errors.BUC = "Required";
-//   }
-//   if (!values.ADN) {
-//     errors.ADN = "Required";
-//   }
-//   // if (!values.email) {
-//   //   errors.email = "Required";
-//   // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-//   //   errors.email = "Invalid email address";
-//   // }
-//   return errors;
-// };
 let BucAdnComponent = (props) => {
   const [initialData, setinitialData] = useState(initialValues);
   const [error, setError] = useState(InitialError);
@@ -48,8 +30,6 @@ let BucAdnComponent = (props) => {
   };
   return (
     <>
-      {/* <Form style={{ marginLeft: "-18px" }} onSubmit={formik.handleSubmit}> */}
-
       <Row className="mb-4">
         <Form.Group as={Col} md="5">
           <Form.Label>BUC</Form.Label>
