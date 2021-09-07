@@ -47,7 +47,7 @@ export default class ViewSchedule extends React.Component {
     return (
       <Modal show={this.props.openModal} onHide={this.props.closeModal}>
         <Modal.Header>
-          <Modal.Title>View Schedule</Modal.Title>
+          <Modal.Title>Modify Schedule</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div className="form-group row">

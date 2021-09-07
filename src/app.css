@@ -611,6 +611,10 @@ td.gs_event-col input {
   box-shadow: 0px 0px 24px -1px rgb(56 56 56);
   z-index: 99;
 }
+button.gs-btn.disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
 
 .Toastify__progress-bar.Toastify__progress-bar--animated.Toastify__progress-bar--success {
   position: absolute;

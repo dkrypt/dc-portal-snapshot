@@ -16,12 +16,9 @@ export default class EventList extends React.Component {
       eventsData: [],
       loading: true,
       checkedItems: [],      
-    };
-    this.closeModal = this.closeModal.bind(this);
+    };    
     this.updatedToastMessage = this.updatedToastMessage.bind(this);      
-  }
- 
-  
+  } 
 
   componentDidMount() {   
     this.props.clickEvent({
@@ -42,23 +39,23 @@ export default class EventList extends React.Component {
     this.setState({ showToastM: value, toastMessage: msg });
   }
 
-  viewScheduleFun(eventname) {
-    this.setState({
-      showModal: true,
-      selectedEventName: eventname,
-    });
-  }
+  // viewScheduleFun(eventname) {
+  //   this.setState({
+  //     showModal: true,
+  //     selectedEventName: eventname,
+  //   });
+  // }
 
-  closeModal() {
-    console.log("in close modal", this);
-    this.setState({
-      showModal: false,
-      showSso: false,
-      showEnable: false,
-      showDisable: false,
-      showRunNow: false,
-    });
-  }
+  // closeModal() {
+  //   console.log("in close modal", this);
+  //   this.setState({
+  //     showModal: false,
+  //     showSso: false,
+  //     showEnable: false,
+  //     showDisable: false,
+  //     showRunNow: false,
+  //   });
+  // }
   render() {
     return (
       <div className="container-lg w-100 p-3 borderStyle mb-5 gs-container">
@@ -90,14 +87,14 @@ export default class EventList extends React.Component {
               );
             })}
 
-            {this.state.showModal && (
+            {/* {this.state.showModal && (
               <ViewSchedule
                 openModal={this.state.showModal}
                 closeModal={this.closeModal}
                 eventName={this.state.selectedEventName}
                 toastMessage={this.updatedToastMessage}
               />
-            )}
+            )} */}
             {this.state.toastMessage && (
               <ToastMessage
                 showToast={this.state.showToastM}

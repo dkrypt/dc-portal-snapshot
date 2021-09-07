@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import AxiosInstance from "../api/api.js";
 import { Spinner } from "react-bootstrap";
+import ViewSchedule from "./ViewSchedule.js";
 
 export default class EventListButtons extends React.Component {
   constructor(props) {
@@ -9,11 +10,14 @@ export default class EventListButtons extends React.Component {
       runNowData: "",
       enableData: "",
       disableData: "",
+      selectedEventName: "",
       loaded: false,
       selectedOption: "",
+      showModal: false,
     };
     this.runNowClick = this.runNowClick.bind(this);
     this.enableNow = this.enableNow.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
 
@@ -38,13 +42,15 @@ export default class EventListButtons extends React.Component {
   onValueChange = (changeEvent) => {
     this.setState({
       selectedOption: changeEvent.currentTarget.value
+    },()=>{
+      if(this.state.selectedOption == "Enable"){     
+        this.enableNow();
+      }
+      else if(this.state.selectedOption == "Disable"){
+        this.disableNow();
+      }
     });
-    if(this.state.selectedOption == "Enable"){     
-      this.enableNow();
-    }
-    else if(this.state.selectedOption == "Disable"){
-      this.disableNow();
-    }
+   
   }
   
   enableNow() {
@@ -72,8 +78,21 @@ export default class EventListButtons extends React.Component {
       });
   }
 
+  viewScheduleFun(eventname) {
+    this.setState({
+      showModal: true,
+      selectedEventName: eventname,
+    });
+  }
+  closeModal() {
+    console.log("in close modal", this);
+    this.setState({
+      showModal: false     
+    });
+  }
   render() {
     return (
+      <Fragment>
       <div className="row gs-bottom-row">
         <h6 className="col-sm-2">Action</h6>
         <div className="col-sm-10">
@@ -129,9 +148,9 @@ export default class EventListButtons extends React.Component {
             )}</span>
             </button>
             <button
-              className="gs-btn grey fix-btn"
+              className="gs-btn grey fix-btn disabled"
               // onClick={() => this.viewScheduleFun(EVENT_NAME)}
-            >
+              >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
@@ -146,7 +165,7 @@ export default class EventListButtons extends React.Component {
             </button>
             <button
               className="gs-btn maroon fix-btn"
-              // onClick={() => this.viewScheduleFun(EVENT_NAME)}
+              onClick={() => this.viewScheduleFun(this.props.eventName)}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-file-break" viewBox="0 0 16 16">
   <path d="M0 10.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5zM12 0H4a2 2 0 0 0-2 2v7h1V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v7h1V2a2 2 0 0 0-2-2zm2 12h-1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-2H2v2a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-2z"/>
@@ -157,6 +176,15 @@ export default class EventListButtons extends React.Component {
          
         </div>
       </div>
+      {this.state.showModal && (
+        <ViewSchedule
+          openModal={this.state.showModal}
+          closeModal={this.closeModal}
+          eventName={this.state.selectedEventName}
+          toastMessage={this.updatedToastMessage}
+        />
+      )}
+      </Fragment>
     );
   }
 }
