@@ -1011,7 +1011,7 @@ select.classic:focus {
 /* <----- new provisioning css End ---> */
 
 /* <------ new subscription --------> */
-.mb-3.bucAdnComNew.row {
+.bucAdnComNew {
   margin-left: 30px !important;
 }
 .product-CheckBoxGroup {
@@ -1040,6 +1040,13 @@ select.classic:focus {
 }
 .updateSubAlign {
   padding-left: 3%;
+}
+.productCheck {
+  color: red;
+  margin-left: -36%;
+}
+.errorMsg {
+  color: red;
 }
 
 /* <------ new subscription End -----> */
