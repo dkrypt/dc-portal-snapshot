@@ -14,11 +14,13 @@ export default class EventList extends React.Component {
       toastMessage: "",     
       eventsData: [],
       loading: true,
-      checkedItems: [],      
+      checkedItems: [],   
+      filteredEvents : []
     };    
-    this.updatedToastMessage = this.updatedToastMessage.bind(this);      
+    this.updatedToastMessage = this.updatedToastMessage.bind(this);     
+    this.filterEvents = this.filterEvents.bind(this); 
   } 
-
+  
   componentDidMount() {   
     this.props.clickEvent({
       pageName: "EventManagement",
@@ -55,7 +57,17 @@ export default class EventList extends React.Component {
       showRunNow: false,
     });
   }
+
+  filterEvents(e){
+    const events = this.state.eventsData;
+    if(events?.length > 0){
+      const filteredEvents = events.filter(({EVENT_NAME})=>EVENT_NAME.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1);
+     this.setState({filteredEvents : filteredEvents});
+    }
+
+  }
   render() {
+    const finalEventsList = this.state.filteredEvents && this.state.filteredEvents.length > 0 ? this.state.filteredEvents : this.state.eventsData;
     return (
       <div className="container-lg w-100 p-3 borderStyle mb-5 gs-container">
         {this.state.loading ? (
@@ -68,13 +80,14 @@ export default class EventList extends React.Component {
                   type="text"
                   name="search"
                   className="round borderStyle"
-                  placeholder="search"
+                  placeholder="Search"
+                  onChange={this.filterEvents}
                 />
                 <input type="submit" className="corner" value="" />
               </div>             
             </div>
 
-            {this.state.eventsData.map(({ EVENT_NAME }, index) => {
+            {finalEventsList.map(({ EVENT_NAME }, index) => {
               return (
                 <div className="gs-table-row borderStyle" key={index}>
                   <div className="gs-inner-row borderStyle">

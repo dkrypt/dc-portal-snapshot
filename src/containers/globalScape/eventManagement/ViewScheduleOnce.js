@@ -13,14 +13,7 @@ export default class ViewScheduleOnce extends React.Component {
 
   handleScheduleTime(e) {
     this.setState({ scheduleTime: e.target.value });
-    console.log("clicked");
-    // if (e.target.value === 'Once') {
-    //   console.log("once clicked");
-    //   this.setState({ showCalender: true })
-    // }
-    // if (e.target.value === 'Weekly') {
-    //   console.log("Weekly clicked");
-    // }
+    console.log("clicked");   
   }
   onEnablebuttonClick() {
     this.props.closeModal();

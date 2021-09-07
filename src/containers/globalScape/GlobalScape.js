@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-
 import EventList from "./eventManagement/EventList.js";
 import DelegatePriToSso from "./DelegatePriToSso.js";
 import RevokeSso from "./RevokeSso.js";
@@ -8,7 +7,6 @@ import ModifyEventNsg from "./ModifyEventNsg.js";
 import RemoveIP from "./RemoveIP.js";
 import AssignGroup from "./AssignGroup.js";
 import DisableAccount from "./DisableAccount.js";
-import Icon_TC from "../../assets/images/Icon-Globalscape.svg";
 import { Link } from "react-router-dom";
 
 export default class GlobalScape extends React.Component {
@@ -31,18 +29,9 @@ export default class GlobalScape extends React.Component {
             <div className="row mx-1 gs-row">
               <Link to="/globalscape/eventmanagement">
                 <div className="Card gs-card">
-                  {/* <div className="gs-tabs col m-1 borderStyle p-2">
-                <div className="service-tile-content" style={{}}> */}
-                  {/* <img
-                    className="img-fluid"
-                    src={Icon_TC}
-                    alt="TC-Icon"
-                    style={{ width: "87%" }}
-                  /> */}
                   <span className="titles" onClick={() => this.updateStep(1)}>
                     Event Management
                   </span>
-                  {/* </div> */}
                 </div>
               </Link>
               <Link to="/globalscape/delegatepriviledgestosso">
@@ -91,7 +80,7 @@ export default class GlobalScape extends React.Component {
               <Link to="/globalscape/disableaccount">
                 <div className="Card gs-card">
                   <span className="titles" onClick={() => this.updateStep(8)}>
-                  Disable Account
+                    Disable Account
                   </span>
                 </div>
               </Link>
