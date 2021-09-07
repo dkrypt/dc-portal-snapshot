@@ -2,15 +2,15 @@ import React, { Fragment } from "react";
 import { Modal, Button } from 'react-bootstrap';
 
 
-export default class EnableAccount extends React.Component {
+export default class DisableAccount extends React.Component {
   constructor(props) {
     super(props);
 
   }
   componentDidMount(){
     this.props.clickEvent({
-      pageName: "EnableAccount",
-      headerText: "ENABLE ACCOUNT",
+      pageName: "DisableAccount",
+      headerText: "DISABLE ACCOUNT",
       subHeaderText: "GLOBAL",
     })
   }
@@ -18,7 +18,7 @@ export default class EnableAccount extends React.Component {
   render() {
     return (
       <div className="container-lg w-100 p-3 borderStyle mb-5">
-      <h5>Enable Account</h5>
+      <h5>Disable Account</h5>
       <form>
         <div className="form-group row">
           <label for="inputPassword" className="col-sm-3 col-form-label">GlobalScape Account Name</label>
@@ -30,7 +30,7 @@ export default class EnableAccount extends React.Component {
         <div className="form-group row">
         <div className="col-sm-10 text-center">
           <Button variant="primary" onClick="">
-            Enabled
+            Disable
           </Button>
           </div>
         </div>

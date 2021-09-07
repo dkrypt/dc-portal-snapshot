@@ -446,9 +446,9 @@ a:hover {
 /*<!-------------- Global scape CSS start ------------> */
 
 #gs_event-table .btn-primary {
-  /* background-color: #0C2340; */
+ 
   background-color: #005eb8;
-  /* 005eb8 #002e5d */
+
   padding: 3px 12px;
 }
 #gs_event-table td,
@@ -456,7 +456,7 @@ a:hover {
   border: 1px solid #ddd;
   padding: 8px;
 }
-/* #gs_event-table tr:nth-child(even){background-color: #f2f2f2;} */
+
 
 #gs_event-table tr:hover {
   box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0,
@@ -465,35 +465,36 @@ a:hover {
 }
 
 #gs_event-table td.gs_event-col {
-  width: 70%;
-  word-break: break-word;
+  width: 658px;  
+  overflow-x: scroll;  
+  float: left;
+}
+td.gs_event-col div {
+  white-space: nowrap;
+  font-size: 12px;
 }
 #gs_event-table button.btn.btn-primary:hover {
   box-shadow: 1px 4px 8px black;
-  /* opacity: 0.8; */
-  /* background-color: #005eb8; */
+ 
 }
 .gs-container {
   padding: 20px;
 }
 .gs-container form {
-  /* display: table;  */
+ 
   width: 100%;
 }
 .gs-container p {
-  /* display: table-row;  */
+ 
   position: relative;
 }
 .gs-container label {
-  /* display: table-cell; */
+ 
   padding-right: 30px;
-  /* padding-bottom: 16px; */
+ 
 }
-.gs-container input[type="text"] {
-  /* display: table-cell; */
-  width: 100%;
-  /* padding: 10px; */
-  /* text-align: center; */
+.gs-container input[type="text"] { 
+  width: 100%; 
 }
 td.gs_event-col input {
   margin-right: 12px;
@@ -519,15 +520,11 @@ td.gs_event-col input {
 .modal-dialog {
   max-width: 60%;
 }
-/* p.form-group div{
-    display: inline-block;
-  } */
+
 .gs-tabs {
   cursor: pointer;
-  /* margin: 10px 20px !important; */
   box-shadow: 0px 0px 0px grey;
-  -webkit-transition: box-shadow 0.6s ease-out;
-  /* box-shadow: .8px .9px 3px grey; */
+  -webkit-transition: box-shadow 0.6s ease-out;  
 }
 .gs-tabs:hover {
   box-shadow: 1px 4px 6px gainsboro;
@@ -555,9 +552,16 @@ td.gs_event-col input {
   list-style: none;
   display: inline;
   float: left;
-  padding: 0 10px;
+  padding: 0 6px;
 }
-
+.gs_event-header ul li:first-child {
+ 
+  padding-left: 0px;
+  }
+.gs_event-header ul li:last-child {
+ 
+  padding-left: 0px;
+  }
 .gs_event-header ul li:last-child {
   padding-right: 0px;
 }
@@ -565,13 +569,6 @@ td.gs_event-col input {
   line-height: 33px;
   float: left;
 }
-/* .gs_event-header .search{
-  float: right;
-} */
-/* .gs-toast .toast-header{
-  background-color: transparent;
-  height: 15px;
-} */
 .toast-header {
   padding: 0.25rem 0.1rem;
 }
@@ -586,6 +583,7 @@ td.gs_event-col input {
 }
 .gs-toast {
   height: 100px;
+  max-width: fit-content;
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -601,6 +599,10 @@ td.gs_event-col input {
   border-radius: 0px;
   box-shadow: 0px 0px 24px -1px rgb(56 56 56);
   z-index: 99;
+}
+button.gs-btn.disabled {
+  opacity: 0.7;
+  pointer-events: none;
 }
 
 .Toastify__progress-bar.Toastify__progress-bar--animated.Toastify__progress-bar--success {
@@ -674,9 +676,8 @@ td.gs_event-col input {
   position: relative;
   min-height: 75vh;
 }
-.gs-btn {
-  /* padding: 1.5rem; */
-  padding: 12px 14px;
+.gs-btn {  
+  padding: 7px 14px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.25;
@@ -684,14 +685,12 @@ td.gs_event-col input {
   background-color: #f6f9fc;
   border-radius: 0.375rem;
   border: 0;
-  text-align: left;
-  /* font-family: sans-serif; */
+  text-align: left; 
   display: inline-block;
   vertical-align: middle;
   text-decoration: none;
   -moz-appearance: none;
   cursor: pointer;
-  width: 100%;
 }
 .gs-btn:hover {
   color: rgb(255, 255, 255);
@@ -713,22 +712,21 @@ td.gs_event-col input {
   background: linear-gradient(to right, rgb(68, 67, 64), rgb(55, 54, 52));
 }
 button.gs-btn span {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 .gs-search.search {
   margin-top: 3px;
 }
 
 .fix-btn {
-  width: 170px;
   background-color: #005eb8;
   color: white;
+  margin-right: 20px;
 }
 
 .gs-row a {
   padding: 19px;
   text-align: center;
-  /* vertical-align: middle; */
   display: table;
   color: #005eb8;
 }
@@ -736,7 +734,45 @@ button.gs-btn span {
   padding: 20px;
   display: table-cell;
   vertical-align: middle;
-  height: 150px;
+  height: 110px;
+}
+
+.gs-table-row {
+  width: 100%;
+  float: left; 
+  margin-bottom: 10px;
+  padding: 20px;
+  color: black;
+}
+.gs-table-row:hover {
+ 
+  background: aliceblue;
+}
+.gs-bottom-row {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+.gs_event-col {
+  font-size: 12px;
+  padding-bottom: 10px;  
+  white-space: nowrap;
+  overflow-x: auto;
+}
+.gs-radio {
+  display: inline-block;
+}
+.gs-container {
+  position: relative;
+  min-height: 75vh;
+  float: left;
+}
+.gs-bottom-row input[type="radio"] {
+  margin-right: 6px;
+  margin-top: 6px;
+  float: left;
+}
+.gs-inner-row{
+  padding: 5px;
 }
 
 /*<!-------------- Global scape CSS End ------------> */
