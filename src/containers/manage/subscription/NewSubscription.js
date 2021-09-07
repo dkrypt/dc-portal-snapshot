@@ -2,25 +2,91 @@ import React, { useState } from "react";
 
 import { Form, Row, Col, Button } from "react-bootstrap";
 import BucAdnComponent from "../threadConnect/BucAdnComponent.js";
+let initialValues = {
+  Org: "",
+  Space: "",
+  BUC: "",
+  ADN: "",
+  Products: [],
+};
+let initialError = {
+  Org: "",
+  Space: "",
+  BUC: "",
+  ADN: "",
+  Products: "",
+};
 const NewSubscription = (props) => {
-  const [initialValue, setinitialValue] = useState({
-    Org: "",
-    Space: "",
-    BUC: "",
-    ADN: "",
-    Products: [],
-  });
-  console.log("props NewProvisioning", props);
+  const [initialValue, setinitialValue] = useState(initialValues);
+  const [error, seterror] = useState(initialError);
 
   const resetValue = () => {
-    setinitialValue({
-      Org: "",
-      Space: "",
-      BUC: "",
-      ADN: "",
-      Products: [],
-    });
+    setinitialValue(initialValues);
   };
+  const handelInputChange = (event) => {
+    const { name, value } = event.target;
+    setinitialValue({ ...initialValue, [name]: value });
+    const checkedArr = [];
+    let value1;
+    if (event.target.type !== "checkbox") {
+      value1 = event.target.value;
+    } else {
+      const checkeds = document.getElementsByTagName("input");
+      for (let i = 0; i < checkeds.length; i++) {
+        if (checkeds[i].checked) {
+          checkedArr.push(checkeds[i].value);
+        }
+      }
+      value1 = checkedArr;
+      const obj = {
+        ...initialValue,
+        Products: value1,
+      };
+      setinitialValue(obj);
+    }
+
+    seterror(initialError);
+  };
+  const handelSubmit = (e) => {
+    let errorData = {
+      ...error,
+    };
+    e.preventDefault();
+    if (initialValue.Org === "") {
+      errorData.Org = "Org required";
+    }
+    if (initialValue.Space === "") {
+      errorData.Space = "Space  required";
+    }
+    if (initialValue.BUC === "") {
+      errorData.BUC = "Buc  required";
+    }
+    if (initialValue.ADN === "") {
+      errorData.ADN = "ADN  required";
+    }
+    if (initialValue.Products.length == 0) {
+      errorData.Products = "Select Atleast 1 product";
+    }
+    if (
+      initialValue.Org === "" ||
+      initialValue.Space === "" ||
+      initialValue.BUC === "" ||
+      initialValue.ADN === "" ||
+      initialValue.Products.length == 0 ||
+      error.Org !== "" ||
+      error.Space !== "" ||
+      error.BUC !== "" ||
+      error.ADN !== "" ||
+      error.Products !== ""
+    ) {
+      alert("if part");
+      seterror(errorData);
+    } else {
+      alert("else part");
+    }
+  };
+  console.log("initialValue", initialValue);
+  console.log("error", error);
   return (
     <div>
       <Row className="mb-3 newSubAlign">
@@ -30,13 +96,15 @@ const NewSubscription = (props) => {
             type="text"
             name="Org"
             placeholder="Please Enter Org"
-            //   value={values.Org}
-            //   onChange={handleChange}
-            //   // isValid={touched.BusinessName && !errors.BusinessName}
-            //   isInvalid={!!errors.Org}
+            value={initialValue.Org}
+            onChange={handelInputChange}
+            isInvalid={
+              initialValue.Org === "" && error.Org !== "" ? true : false
+            }
+            isValid={initialValue.Org ? true : false}
           />
           <Form.Control.Feedback type="invalid">
-            {/* {errors.Org} */}
+            {initialValue.Org === "" && error.Org !== "" ? error.Org : ""}
           </Form.Control.Feedback>
         </Form.Group>
         <Form.Group as={Col} md="4">
@@ -45,13 +113,15 @@ const NewSubscription = (props) => {
             type="text"
             placeholder="Please Enter Space"
             name="Space"
-            //   value={values.Space}
-            //   onChange={handleChange}
-            //   isInvalid={!!errors.Space}
+            value={initialValue.Space}
+            onChange={handelInputChange}
+            isInvalid={
+              initialValue.Space === "" && error.Space !== "" ? true : false
+            }
+            isValid={initialValue.Space ? true : false}
           />
-
           <Form.Control.Feedback type="invalid">
-            {/* {errors.Space} */}
+            {initialValue.Space === "" && error.Space !== "" ? error.Space : ""}
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
@@ -95,6 +165,7 @@ const NewSubscription = (props) => {
               name="Products"
               value="ThreadConnect"
               id="Products"
+              onChange={handelInputChange}
             />
             <Form.Check
               label="EnterpriseConnect"
@@ -103,6 +174,7 @@ const NewSubscription = (props) => {
               value="EnterpriseConnect"
               id="Products"
               className="form-check"
+              onChange={handelInputChange}
               // style={{ marginLeft: " 10px" }}
             />
             <Form.Check
@@ -112,13 +184,22 @@ const NewSubscription = (props) => {
               id="Products"
               value="DIVE"
               className="form-check"
+              onChange={handelInputChange}
               // style={{ marginLeft: " 10px" }}
             />
           </div>
         </Form.Group>
+        <div className="productCheck">
+          <br></br>
+          {initialValue.Products == 0 && error.Products !== ""
+            ? error.Products
+            : ""}
+        </div>
       </Row>
       <Row className="mb-3 subscription-submit">
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={(e) => handelSubmit(e)}>
+          Submit
+        </Button>
       </Row>
     </div>
   );

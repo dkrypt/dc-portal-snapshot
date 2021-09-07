@@ -172,7 +172,7 @@ function Manage(props) {
           > */}
           <Link
             // className="list-group-item list-group-item-action"
-            to="/managetc"
+            to="/manage_ec"
             onClick={props.clickEvent.bind(this, {
               pageName: "Enterpriseconnect",
               headerText: "ENTERPRISECONNECT",

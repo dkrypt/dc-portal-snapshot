@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Row, Col, Button, Modal, Alert } from "react-bootstrap";
-import BucAdnComponent from "./BucAdnComponent.js";
+import BucAdnComponent from "../threadConnect/BucAdnComponent.js";
 import DataTable from "react-data-table-component";
 import Api from "../../../middleware/ManageApi.js";
 import Select from "react-select";
@@ -49,7 +49,7 @@ const Initialerror = {
   InstanceName: "",
   version: "",
 };
-const UpdateManagement = (props) => {
+const EcUpdateProvisioning = (props) => {
   // const [env, setenv] = useState("Dev");
   const [updateInitialData, setinitialData] = useState(initialValues);
   const [error, setError] = useState(Initialerror);
@@ -947,4 +947,4 @@ const UpdateManagement = (props) => {
   );
 };
 
-export default UpdateManagement;
+export default EcUpdateProvisioning;
