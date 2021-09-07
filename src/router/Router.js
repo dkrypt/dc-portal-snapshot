@@ -19,6 +19,8 @@ import DelegatePriToSso from "../containers/globalScape/DelegatePriToSso.js";
 import RevokeSso from "../containers/globalScape/RevokeSso.js";
 import ModifyEventNsg from "../containers/globalScape/ModifyEventNsg.js";
 import RemoveIP from "../containers/globalScape/RemoveIP.js";
+import AssignGroup from "../containers/globalScape/AssignGroup.js";
+import DisableAccount from "../containers/globalScape/DisableAccount.js";
 
 export default function Router(props) {
   return (
@@ -185,6 +187,25 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
+      <Route exact path="/globalscape/assigngroup">
+        <AssignGroup
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+       
+      <Route exact path="/globalscape/disableaccount">
+        <DisableAccount
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>    
     </Switch>
   );
 }
