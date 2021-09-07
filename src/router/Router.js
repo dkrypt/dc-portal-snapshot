@@ -19,12 +19,9 @@ import DelegatePriToSso from "../containers/globalScape/DelegatePriToSso.js";
 import RevokeSso from "../containers/globalScape/RevokeSso.js";
 import ModifyEventNsg from "../containers/globalScape/ModifyEventNsg.js";
 import RemoveIP from "../containers/globalScape/RemoveIP.js";
-<<<<<<< HEAD
 import AssignGroup from "../containers/globalScape/AssignGroup.js";
 import DisableAccount from "../containers/globalScape/DisableAccount.js";
-=======
 import ManageEc from "../containers/manage/enterpriseConnect/ManageEc.js";
->>>>>>> b76c315 (changes in subscription and add enterprise module)
 
 export default function Router(props) {
   return (
@@ -209,7 +206,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-       
+
       <Route exact path="/globalscape/disableaccount">
         <DisableAccount
           clickEvent={props.clickEvent.bind(this)}
@@ -218,7 +215,7 @@ export default function Router(props) {
           baseUrl={props.baseUrl}
           authToken={props.authToken}
         />
-      </Route>    
+      </Route>
     </Switch>
   );
 }
