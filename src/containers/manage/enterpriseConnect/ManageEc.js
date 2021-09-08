@@ -1,13 +1,22 @@
 import React, { useEffect } from "react";
-import { Tab, Nav, Col, Card } from "react-bootstrap";
+import {
+  Tab,
+  Nav,
+  Row,
+  Col,
+  Tabs,
+  Container,
+  Card,
+  Button,
+} from "react-bootstrap";
 import Orgspaceinstance from "../orgSpaceInstance/OrgSpaceInstance.js";
-import NewProvisioning from "./NewProvisioning.js";
-import UpdateManagement from "./UpdateManagement.js";
-function ThreadConnect(props) {
+import EcNewProvisioning from "./EcNewProvisioning.js";
+import EcUpdateProvisioning from "./EcUpdateProvisioning.js";
+function ManageEc(props) {
   useEffect(() => {
     props.clickEvent({
-      pageName: "ManageTC",
-      headerText: "MANAGE THREAD CONNECT",
+      pageName: "ManageEC",
+      headerText: "MANAGE ENTERPRISE CONNECT",
       subHeaderText: "GLOBAL",
     });
   }, []);
@@ -52,10 +61,10 @@ function ThreadConnect(props) {
             <Card.Body className="tc-manage">
               <Tab.Content className="tc-manage">
                 <Tab.Pane eventKey="first" className="tc-manage">
-                  <NewProvisioning />
+                  <EcNewProvisioning />
                 </Tab.Pane>
                 <Tab.Pane eventKey="second" className="tc-manage">
-                  <UpdateManagement />
+                  <EcUpdateProvisioning />
                 </Tab.Pane>
                 <Tab.Pane eventKey="third" className="tc-manage">
                   {" "}
@@ -73,4 +82,4 @@ function ThreadConnect(props) {
   );
 }
 
-export default ThreadConnect;
+export default ManageEc;

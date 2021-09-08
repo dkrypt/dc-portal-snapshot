@@ -21,6 +21,7 @@ import ModifyEventNsg from "../containers/globalScape/ModifyEventNsg.js";
 import RemoveIP from "../containers/globalScape/RemoveIP.js";
 import AssignGroup from "../containers/globalScape/AssignGroup.js";
 import DisableAccount from "../containers/globalScape/DisableAccount.js";
+import ManageEc from "../containers/manage/enterpriseConnect/ManageEc.js";
 
 export default function Router(props) {
   return (
@@ -106,7 +107,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/managetc">
+      <Route exact path="/manage/managetc">
         <ManageTC
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -115,7 +116,16 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/managesubscription">
+      <Route exact path="/manage/manage_ec">
+        <ManageEc
+          clickEvent={props.clickEvent.bind(this)}
+          persona={props.persona}
+          setPersonaHandler={props.setPersonaHandler.bind(this)}
+          baseUrl={props.baseUrl}
+          authToken={props.authToken}
+        />
+      </Route>
+      <Route exact path="/manage/managesubscription">
         <ManageSubscription
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -124,7 +134,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-      <Route exact path="/manageuser">
+      <Route exact path="/manage/manageuser">
         <ManageUser
           clickEvent={props.clickEvent.bind(this)}
           persona={props.persona}
@@ -196,7 +206,7 @@ export default function Router(props) {
           authToken={props.authToken}
         />
       </Route>
-       
+
       <Route exact path="/globalscape/disableaccount">
         <DisableAccount
           clickEvent={props.clickEvent.bind(this)}
@@ -205,7 +215,7 @@ export default function Router(props) {
           baseUrl={props.baseUrl}
           authToken={props.authToken}
         />
-      </Route>    
+      </Route>
     </Switch>
   );
 }

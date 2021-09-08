@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Row, Col, Button, Modal, Alert } from "react-bootstrap";
-import BucAdnComponent from "./BucAdnComponent.js";
+import BucAdnComponent from "../threadConnect/BucAdnComponent.js";
 import DataTable from "react-data-table-component";
 import Api from "../../../middleware/ManageApi.js";
 import Select from "react-select";
@@ -49,7 +49,7 @@ const Initialerror = {
   InstanceName: "",
   version: "",
 };
-const UpdateManagement = (props) => {
+const EcUpdateProvisioning = (props) => {
   // const [env, setenv] = useState("Dev");
   const [updateInitialData, setinitialData] = useState(initialValues);
   const [error, setError] = useState(Initialerror);
@@ -516,6 +516,7 @@ const UpdateManagement = (props) => {
   };
 
   const handleMultipleSubmit = (senddata) => {
+    console.log("senddata", senddata);
     let data = {
       projectid: senddata.id,
       initialSize: "1g",
@@ -543,7 +544,7 @@ const UpdateManagement = (props) => {
         }
         if (res.status === 200 || res.status === 201) {
           setsuccessStatus(true);
-          // setShow(true);
+
           if (res.data.message === "") {
             setMessage("Successfully Updated");
           } else {
@@ -616,9 +617,7 @@ const UpdateManagement = (props) => {
               name="environment"
               id="environment"
               value="Dev"
-              // defaultValue
               defaultChecked
-              // checked={updateInitialData.environment === "Dev"}
             />
             <Form.Check
               type="radio"
@@ -626,7 +625,6 @@ const UpdateManagement = (props) => {
               name="environment"
               id="environment"
               value="Stage"
-              // checked={updateInitialData.environment === "Stage"}
             />
             <Form.Check
               type="radio"
@@ -634,7 +632,6 @@ const UpdateManagement = (props) => {
               name="environment"
               id="environment"
               value="Prod"
-              // checked={updateInitialData.environment === "Prod"}
             />
           </Col>
         </Form.Group>
@@ -917,4 +914,4 @@ const UpdateManagement = (props) => {
   );
 };
 
-export default UpdateManagement;
+export default EcUpdateProvisioning;
