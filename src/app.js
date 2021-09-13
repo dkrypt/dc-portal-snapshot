@@ -4,9 +4,9 @@ import Loader from "react-loader-spinner";
 import "./app.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-import Sidebar from "./components/Sidebar.js";
-import CenterHeader from "./components/CenterHeader.js";
-import CookieNotification from "./components/CookieNotification";
+import {Sidebar} from "./components/Sidebar.js";
+import {CenterHeader} from "./components/CenterHeader.js";
+import {CookieNotification} from "./components/CookieNotification";
 import Router from "./router/Router.js";
 import Breadcrumb from "./breadcrumb/Breadcrumb.js";
 

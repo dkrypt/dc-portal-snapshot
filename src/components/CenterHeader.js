@@ -1,75 +1,69 @@
 import React, { Fragment } from "react";
 
-export default class CenterHeader extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+export const CenterHeader = (props) => {
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light">
+      <div className="headers row">
+        <div className="col pr-0">
+          {props.headerText}
 
-  render() {
-    return (
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="headers row">
-          <div className="col pr-0">
-            {this.props.headerText}
+          <span className="global-icon ml-1">
+            <a
+              className="dropdown-toggle"
+              href="#"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              {props.subText}
+            </a>
 
-            <span className="global-icon ml-1">
+            <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a
-                className="dropdown-toggle"
+                className="dropdown-item"
                 href="#"
-                id="dropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
+                onClick={props.onPersonaChange.bind(this, {
+                  personaName: "GLOBAL",
+                })}
               >
-                {this.props.subText}
+                GLOBAL
               </a>
 
-              <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a
-                  className="dropdown-item"
-                  href="#"
-                  onClick={this.props.onPersonaChange.bind(this, {
-                    personaName: "GLOBAL",
-                  })}
-                >
-                  GLOBAL
-                </a>
-
-                {this.props.subHeaderOpts.map((option, index) => {
-                  return (
-                    <Fragment key={index}>
-                      <div className="dropdown-divider"></div>
-                      <a
-                        className="dropdown-item"
-                        href="#"
-                        onClick={this.props.onPersonaChange.bind(this, {
-                          personaName: option,
-                        })}
-                      >
-                        {option}
-                      </a>
-                    </Fragment>
-                  );
-                })}
-              </div>
-            </span>
-          </div>
-        </div>
-        <div className="col-sm"></div>
-        <div className="search-bar">
-          <form id="search-form">
-            <div className="search">
-              <input
-                type="text"
-                name="search"
-                className="round"
-                placeholder="search"
-              />
-              <input type="submit" className="corner" value="" />
+              {props.subHeaderOpts.map((option, index) => {
+                return (
+                  <Fragment key={index}>
+                    <div className="dropdown-divider"></div>
+                    <a
+                      className="dropdown-item"
+                      href="#"
+                      onClick={props.onPersonaChange.bind(this, {
+                        personaName: option,
+                      })}
+                    >
+                      {option}
+                    </a>
+                  </Fragment>
+                );
+              })}
             </div>
-          </form>
+          </span>
         </div>
-      </nav>
-    );
-  }
-}
+      </div>
+      <div className="col-sm"></div>
+      <div className="search-bar">
+        <form id="search-form">
+          <div className="search">
+            <input
+              type="text"
+              name="search"
+              className="round"
+              placeholder="search"
+            />
+            <input type="submit" className="corner" value="" />
+          </div>
+        </form>
+      </div>
+    </nav>
+  );
+};

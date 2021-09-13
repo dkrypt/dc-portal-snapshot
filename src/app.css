@@ -192,17 +192,43 @@ a:hover {
 }
 
 .footer {
-  position: fixed !important;
-  bottom: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  margin-bottom: 1em;
 }
 
+/* What is this??? */
 .social-tag {
-  font-size: 0.9vw;
+  /* font-size: 0.9vw; */
+  font-size: 1.2em;
 }
 
-.footer-copyright {
-  font-size: 1vw;
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.social-media-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+.img-size-2 {
+  height: 40px;
+  width: 40px;
+}
+/* What is this??? */
+.footer-copyright {
+  /* font-size: 1vw;  */
+}
+
+.text-meta {
+  font-size: 0.8em;
+}
+
 
 .center-container {
   margin-top: 6.8rem;

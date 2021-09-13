@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 
-import CustomCarousel from "../../components/Carousal.js";
+import {CarouselItem} from "../../components/Carousal.js";
 
 import Icon_TC from "../../assets/images/Icon-TC.png";
 import Icon_EC from "../../assets/images/Icon-EC.svg";
@@ -293,7 +293,7 @@ export default class Dashboard extends React.Component {
       <Fragment>
         <div className="container-lg w-100 p-3 borderStyle mb-4 main-dashboard">
           <div className="text-center titles mb-3">MY SERVICES</div>
-          <CustomCarousel
+          <CarouselItem
             serviceCardDisplay={this.state.serviceCardDisplay}
             clickEvent={this.props.clickEvent}
           />
