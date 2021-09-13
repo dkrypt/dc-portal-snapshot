@@ -3,8 +3,8 @@ import { Switch, Route } from "react-router-dom";
 
 import Dashboard from "../containers/mainDashboard/Dashboard.js";
 import ThreadConnect from "../containers/threadConnect/ThreadConnect.js";
-import EnterpriseConnect from "../containers/enterpriseConnect/EnterpriseConnect.js";
-import Dive from "../containers/dive/Dive.js";
+import {EnterpriseConnect} from "../containers/enterpriseConnect/EnterpriseConnect.js";
+import {Dive} from "../containers/dive/Dive.js";
 import {DivePower} from "../containers/dive/DivePower.js";
 import NewEngagementRequest from "../containers/engagementRequest/NewEngagementRequest.js";
 import TCDashboard from "../containers/threadConnect/Dashboard.js";

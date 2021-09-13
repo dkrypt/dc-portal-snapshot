@@ -10,8 +10,10 @@ import Icon_Snow from "../assets/images/Icon-Snow.png";
 const DOLLARREGEX = /[$].+/gm;
 
 export const CarouselItem = ({ clickEvent, serviceCardDisplay }) => {
-  const [date, setDate] = useState(moment.format('DD-MM-YYYY'));
-  const [month, setMonth] = useState(moment.format('MMMM'));
+  const defaultDate = moment().format('DD-MM-YYYY');
+  const defaultMonth = moment().format('MMMM');
+  const [date, setDate] = useState(defaultDate);
+  const [month, setMonth] = useState(defaultMonth);
   useEffect(() => {
     setTimeout(() => {
       const carouselNode = document.querySelector('.carousel-indicators');
@@ -21,7 +23,8 @@ export const CarouselItem = ({ clickEvent, serviceCardDisplay }) => {
     }, 100);
   }, []);
   const handleExternalLink = (url) => {
-    window.open(url, '_blank');
+    console.log(url);
+    // window.open(url, '_blank');
   };
   return (
     <Carousel interval={3000}>

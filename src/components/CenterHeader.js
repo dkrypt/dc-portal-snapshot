@@ -23,9 +23,7 @@ export const CenterHeader = (props) => {
               <a
                 className="dropdown-item"
                 href="#"
-                onClick={props.onPersonaChange.bind(this, {
-                  personaName: "GLOBAL",
-                })}
+                onClick={() => props.onPersonaChange({personaName: "GLOBAL"})}
               >
                 GLOBAL
               </a>
@@ -37,9 +35,7 @@ export const CenterHeader = (props) => {
                     <a
                       className="dropdown-item"
                       href="#"
-                      onClick={props.onPersonaChange.bind(this, {
-                        personaName: option,
-                      })}
+                      onClick={()=>props.onPersonaChange({personaName: option})}
                     >
                       {option}
                     </a>
