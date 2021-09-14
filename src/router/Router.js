@@ -7,7 +7,7 @@ import {EnterpriseConnect} from "../containers/enterpriseConnect/EnterpriseConne
 import {Dive} from "../containers/dive/Dive.js";
 import {DivePower} from "../containers/dive/DivePower.js";
 import NewEngagementRequest from "../containers/engagementRequest/NewEngagementRequest.js";
-import TCDashboard from "../containers/threadConnect/Dashboard.js";
+import {Dashboard as TCDashboard} from "../containers/threadConnect/Dashboard.js";
 import {GlobalScape} from "../containers/globalScape/GlobalScape.js";
 import Manage from "../containers/manage/Manage.js";
 import ManageTC from "../containers/manage/threadConnect/ManageTC.js";
